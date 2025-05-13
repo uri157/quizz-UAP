@@ -1,0 +1,687 @@
+[
+    {
+    "tema": "Introducción a las Redes",
+    "preguntas": [
+    {
+    "pregunta": "¿Por qué surgieron las redes de computadoras personales?",
+    "opciones": {
+    "a": "Para conectar múltiples terminales de procesamiento entre sí",
+    "b": "Para incrementar la velocidad del procesador de una computadora",
+    "c": "Para reducir la cantidad de computadoras necesarias en una oficina",
+    "d": "Para garantizar el cifrado de todos los datos por defecto"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál de las siguientes NO fue mencionada como una comunicación entre dispositivos en los apuntes?",
+    "opciones": {
+    "a": "Computadora a impresora",
+    "b": "Computadora a servidor",
+    "c": "Computadora a dispositivo móvil",
+    "d": "Impresora a impresora"
+    },
+    "respuesta_correcta": "d"
+    }
+    ]
+    },
+    {
+    "tema": "Clasificación de Redes por Alcance Geográfico",
+    "preguntas": [
+    {
+    "pregunta": "¿Qué tipo de red conecta dispositivos dentro de un mismo edificio o campus cercano?",
+    "opciones": {
+    "a": "LAN (Red de Área Local)",
+    "b": "WAN (Red de Área Amplia)",
+    "c": "MAN (Red de Área Metropolitana)",
+    "d": "PAN (Red de Área Personal)"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué tipo de red cubriría típicamente toda una ciudad?",
+    "opciones": {
+    "a": "MAN (Red de Área Metropolitana)",
+    "b": "LAN (Red de Área Local)",
+    "c": "WAN (Red de Área Amplia)",
+    "d": "PAN (Red de Área Personal)"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál de los siguientes es un ejemplo de una red WAN?",
+    "opciones": {
+    "a": "La Internet que interconecta redes a nivel mundial",
+    "b": "La red de cámaras de vigilancia de una ciudad",
+    "c": "La red de computadoras de una oficina en un edificio",
+    "d": "La conexión Bluetooth entre un teléfono y un auricular"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre las redes PAN (Personal Area Network) es correcta?",
+    "opciones": {
+    "a": "Interconectan dispositivos personales en un área de pocos metros, por ejemplo via Bluetooth",
+    "b": "Cubre las mismas distancias que una red MAN típica",
+    "c": "Requieren equipamiento costoso y especializado para funcionar",
+    "d": "Existen desde los años 1980 y fueron de las primeras redes desarrolladas"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Topologías de Red",
+    "preguntas": [
+    {
+    "pregunta": "¿Qué topología de red utiliza un solo cable troncal compartido y requiere terminadores de 50Ω en los extremos?",
+    "opciones": {
+    "a": "Topología en Bus",
+    "b": "Topología en Estrella",
+    "c": "Topología en Anillo",
+    "d": "Topología en Malla"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "En una red con topología en bus, ¿qué ocurre si un nodo o conector se desconecta de forma incorrecta, dejando el cable 'abierto'?",
+    "opciones": {
+    "a": "Toda la red deja de funcionar debido a reflejos y pérdida de señal",
+    "b": "Solo el nodo desconectado queda aislado y la red sigue funcionando",
+    "c": "El rendimiento de la red mejora al reducirse la carga en el bus",
+    "d": "Los demás nodos pueden seguir comunicándose sin problemas gracias a rutas alternativas"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál es una ventaja de la topología en estrella comparada con la topología en bus?",
+    "opciones": {
+    "a": "Un fallo en un nodo o cable no afecta al resto de la red",
+    "b": "No requiere un dispositivo central para interconectar nodos",
+    "c": "Utiliza menos cableado total que una topología en bus",
+    "d": "Todas las estaciones comparten el mismo medio de transmisión"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué mecanismo se empleaba en las redes con topología en anillo para evitar las colisiones de datos?",
+    "opciones": {
+    "a": "El paso de un token (testigo) entre los nodos",
+    "b": "El protocolo CSMA/CD (detección de colisiones)",
+    "c": "Confirmaciones (ACK) del receptor por cada trama recibida",
+    "d": "Escucha de portadora antes de transmitir (carrier sensing)"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿En qué topología cada dispositivo de la red está conectado directamente con todos los demás dispositivos?",
+    "opciones": {
+    "a": "Topología en Malla",
+    "b": "Topología en Estrella",
+    "c": "Topología en Anillo",
+    "d": "Topología en Bus"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál es una desventaja de implementar una red con topología en malla completa?",
+    "opciones": {
+    "a": "Requiere una gran cantidad de enlaces y puertos, lo que la hace costosa",
+    "b": "Tiene baja tolerancia a fallos debido a la ausencia de rutas redundantes",
+    "c": "Dificulta la comunicación ya que solo conecta dos nodos a la vez",
+    "d": "No es escalable, pues no se pueden añadir enlaces adicionales una vez instalada"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál de las siguientes es una característica de una red inalámbrica WLAN de área local?",
+    "opciones": {
+    "a": "Utiliza antenas omnidireccionales para transmitir las señales entre dispositivos",
+    "b": "Requiere conectar cada estación con cables coaxiales a un concentrador central",
+    "c": "Cada nodo está conectado punto a punto con todos los demás nodos de la red",
+    "d": "No permite la movilidad de los dispositivos dentro del área de cobertura"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Medios de Transmisión Guiados: Par Trenzado",
+    "preguntas": [
+    {
+    "pregunta": "¿Cuál es la composición típica de un cable de par trenzado utilizado en redes?",
+    "opciones": {
+    "a": "Ocho conductores de cobre agrupados en cuatro pares trenzados",
+    "b": "Un solo conductor de cobre rodeado de un blindaje metálico trenzado",
+    "c": "Varios filamentos de vidrio o plástico cubiertos por una chaqueta",
+    "d": "Dos conductores paralelos separados por un dieléctrico"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Por qué los hilos de un cable UTP (par trenzado sin blindaje) van trenzados de dos en dos?",
+    "opciones": {
+    "a": "Para disminuir las interferencias electromagnéticas y el diafonía entre conductores",
+    "b": "Para facilitar su inserción en el conector RJ-45",
+    "c": "Para incrementar la velocidad de transmisión en el cable",
+    "d": "Para diferenciar cada par por su color de aislamiento"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿En qué situaciones es preferible usar cables STP o FTP (par trenzado apantallado) en lugar de UTP?",
+    "opciones": {
+    "a": "En entornos con mucho ruido eléctrico donde se requiere mayor protección contra interferencias",
+    "b": "En conexiones de corta distancia donde la flexibilidad del cable no es importante",
+    "c": "En redes inalámbricas de corto alcance para mejorar la recepción de señal",
+    "d": "En instalaciones donde el costo del cableado debe mantenerse lo más bajo posible"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Medios de Transmisión Guiados: Cable Coaxial",
+    "preguntas": [
+    {
+    "pregunta": "¿Qué componentes conforman la estructura de un cable coaxial típico?",
+    "opciones": {
+    "a": "Un núcleo central de cobre, un aislante dieléctrico, una malla metálica de blindaje y una cubierta externa",
+    "b": "Cuatro pares de hilos de cobre trenzados con un revestimiento plástico común",
+    "c": "Dos conductores paralelos separados por un material dieléctrico espaciador",
+    "d": "Fibras ópticas envueltas en una capa de kevlar y recubiertas de plástico"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál de las siguientes fue una aplicación común del cable coaxial en redes o telecomunicaciones?",
+    "opciones": {
+    "a": "Redes Ethernet con topología en bus durante las décadas de 1980 y 1990",
+    "b": "Cableado estructurado horizontal en redes LAN modernas",
+    "c": "Enlaces de datos de corta distancia dentro de un mismo dispositivo (p. ej., conexiones de circuitos integrados)",
+    "d": "Transmisión de datos ópticos en redes troncales de alta velocidad"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Por qué el cable coaxial ha sido en gran medida reemplazado por la fibra óptica en nuevas instalaciones de redes de datos?",
+    "opciones": {
+    "a": "Porque la fibra óptica ofrece mayor ancho de banda y menor atenuación que el coaxial",
+    "b": "Porque el coaxial solo permite comunicaciones inalámbricas de corto alcance",
+    "c": "Porque el coaxial no puede transportar señales analógicas, solo digitales",
+    "d": "Porque la fibra óptica es significativamente más económica que el coaxial"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Medios de Transmisión Guiados: Fibra Óptica",
+    "preguntas": [
+    {
+    "pregunta": "¿Qué principio físico permite que la luz se confine y se propague a lo largo de una fibra óptica?",
+    "opciones": {
+    "a": "La reflexión interna total de la luz en la frontera entre el núcleo y el revestimiento",
+    "b": "La conversión de la señal óptica en corriente eléctrica dentro del núcleo",
+    "c": "La resonancia magnética de las partículas de vidrio del núcleo",
+    "d": "La polarización constante de la onda lumínica a lo largo del cable"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿En qué se diferencia una fibra óptica monomodo de una multimodo?",
+    "opciones": {
+    "a": "La fibra monomodo tiene un núcleo mucho más pequeño y permite que solo un modo de luz se propague, alcanzando mayores distancias sin dispersión modal",
+    "b": "La fibra monomodo está hecha de vidrio, mientras que la multimodo es de plástico",
+    "c": "La fibra multimodo solo se utiliza para comunicaciones unidireccionales, la monomodo es bidireccional",
+    "d": "La fibra multimodo opera con láseres, mientras que la monomodo utiliza LED"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál es una característica de la fibra óptica de índice gradual (Graded-Index) comparada con la de índice escalonado (Step-Index)?",
+    "opciones": {
+    "a": "En la fibra de índice gradual, el índice de refracción del núcleo disminuye gradualmente hacia el revestimiento, lo que reduce la dispersión modal",
+    "b": "La fibra de índice gradual tiene un perfil de índice uniforme en todo el núcleo, causando mayor dispersión de la señal",
+    "c": "La fibra de índice escalonado solo permite un modo de propagación de la luz",
+    "d": "La fibra de índice escalonado se utiliza únicamente en aplicaciones de muy corto alcance por su alta atenuación"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál de las siguientes NO es una ventaja de la fibra óptica sobre los cables de cobre?",
+    "opciones": {
+    "a": "Requiere menos dispositivos de repetición de señal en largas distancias debido a su baja atenuación",
+    "b": "Es inmune a las interferencias electromagnéticas y al ruido eléctrico",
+    "c": "Puede transmitir datos a velocidades mucho más altas",
+    "d": "Permite conducir electricidad para alimentar dispositivos remotos junto con los datos"
+    },
+    "respuesta_correcta": "d"
+    }
+    ]
+    },
+    {
+    "tema": "Medios de Transmisión No Guiados (Inalámbricos)",
+    "preguntas": [
+    {
+    "pregunta": "¿Cuál de los siguientes medios de transmisión inalámbrica requiere línea de vista directa entre antenas para funcionar eficientemente?",
+    "opciones": {
+    "a": "Enlaces de microondas terrestres punto a punto",
+    "b": "Redes Wi-Fi de frecuencia sub-6 GHz dentro de edificios",
+    "c": "Enlaces por cable coaxial entre dos puntos distantes",
+    "d": "Conexiones Bluetooth de corto alcance"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué es un satélite de comunicaciones geoestacionario (GEO)?",
+    "opciones": {
+    "a": "Un satélite ubicado a unos 36.000 km de la Tierra que orbita a la misma velocidad angular, permaneciendo fijo sobre un punto del ecuador",
+    "b": "Un satélite en baja órbita terrestre (unos 300 km) que da vueltas a la Tierra en minutos",
+    "c": "Un satélite experimental que refleja señales sin amplificarlas ni retransmitirlas",
+    "d": "Un satélite que orbita pasando regularmente por los polos de la Tierra"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál es la principal ventaja de los satélites en órbita LEO (Baja Órbita Terrestre) comparada con los satélites GEO?",
+    "opciones": {
+    "a": "Tienen una latencia de comunicación mucho menor debido a su proximidad a la Tierra",
+    "b": "Cuentan con cobertura permanente de casi medio planeta con un solo satélite",
+    "c": "No requieren constelaciones numerosas para cubrir grandes áreas",
+    "d": "No sufren atenuación ni interferencia por condiciones atmosféricas"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué efecto tiene la lluvia intensa sobre las señales de alta frecuencia (bandas Ku/Ka) en comunicaciones satelitales?",
+    "opciones": {
+    "a": "Puede causar una atenuación significativa de la señal, reduciendo la calidad o interrumpiendo la comunicación",
+    "b": "Mejora la propagación de la señal al refractarla hacia el satélite",
+    "c": "No tiene efecto apreciable en frecuencias tan altas",
+    "d": "Solo afecta a satélites en órbita baja, no a los geoestacionarios"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿En qué se diferencia un satélite activo de uno pasivo en telecomunicaciones?",
+    "opciones": {
+    "a": "El satélite activo amplifica y retransmite las señales recibidas, mientras que el pasivo solo las refleja",
+    "b": "El satélite activo orbita la Tierra, el pasivo permanece fijo en el espacio",
+    "c": "El satélite pasivo se utiliza para comunicaciones y el activo solo para observación",
+    "d": "El satélite activo funciona en bandas de frecuencia bajas y el pasivo en altas"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Dispositivos de Red",
+    "preguntas": [
+    {
+    "pregunta": "¿Qué función realiza un switch (conmutador) Ethernet en una red LAN?",
+    "opciones": {
+    "a": "Interconecta equipos en capa 2, enviando cada trama solo al puerto del destinatario según la dirección MAC",
+    "b": "Repite todas las señales eléctricas que recibe a todos los puertos sin procesar (capa física)",
+    "c": "Asigna direcciones IP a las computadoras de la red local automáticamente",
+    "d": "Enruta paquetes entre diferentes redes identificando la dirección IP destino"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál es la diferencia principal entre un concentrador (hub) y un switch en una red Ethernet?",
+    "opciones": {
+    "a": "El hub opera en capa física y retransmite todo a todos los puertos, mientras el switch opera en capa 2 y envía datos solo al puerto necesario",
+    "b": "El hub asigna direcciones IP automáticamente y el switch no",
+    "c": "El switch utiliza señales analógicas y el hub digitales",
+    "d": "El hub evita las colisiones dividiendo la red en dominios, el switch no"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué dispositivo de red es necesario para interconectar dos redes IP diferentes (por ejemplo, una red LAN con Internet)?",
+    "opciones": {
+    "a": "Un router (encaminador), operando en la capa de red (capa 3)",
+    "b": "Un switch gestionable, operando en la capa de enlace de datos (capa 2)",
+    "c": "Un repetidor/amplificador de señal, operando en capa física (capa 1)",
+    "d": "Un bridge (puente) inalámbrico que retransmite todas las tramas"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál de los siguientes dispositivos actúa como un punto de acceso (Access Point) en una red inalámbrica?",
+    "opciones": {
+    "a": "Un puente que conecta dispositivos Wi-Fi con la red cableada, operando típicamente en capa 2",
+    "b": "Un router que asigna direcciones MAC a los clientes inalámbricos",
+    "c": "Un concentrador inalámbrico que transmite en todas direcciones sin filtrar tramas",
+    "d": "Un repetidor de señal óptica para ampliar el alcance de fibra en un edificio"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Cableado Estructurado (Horizontal y Vertical)",
+    "preguntas": [
+    {
+    "pregunta": "¿Qué es el cableado horizontal en una instalación de cableado estructurado?",
+    "opciones": {
+    "a": "El conjunto de cables que van desde el cuarto de telecomunicaciones o rack hasta las tomas de red en las estaciones de trabajo",
+    "b": "Los cables principales que enlazan distintos pisos o zonas distribuidos verticalmente entre gabinetes",
+    "c": "El cableado exterior que conecta diferentes edificios en un campus",
+    "d": "El cable temporario tendido por el suelo para pruebas antes de la instalación definitiva"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué función cumple el cableado vertical (backbone) en una red interna de un edificio?",
+    "opciones": {
+    "a": "Conectar los cuartos de telecomunicaciones de diferentes pisos o áreas, formando el enlace troncal de la red",
+    "b": "Interconectar los dispositivos dentro de una misma sala de trabajo",
+    "c": "Proveer la conexión a Internet desde el proveedor de servicios hacia el edificio",
+    "d": "Sostener físicamente los cables horizontales mediante canaletas verticales"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Por qué se recomienda que la capacidad (velocidad) del cableado vertical sea mayor que la del cableado horizontal?",
+    "opciones": {
+    "a": "Para evitar cuellos de botella al transportar tráfico agregado de múltiples redes horizontales a través del backbone",
+    "b": "Porque los cables verticales suelen ser más largos y la señal se debilita si la velocidad es baja",
+    "c": "Para cumplir normas que exigen al backbone operar al doble de velocidad que las estaciones de trabajo",
+    "d": "Porque el cableado horizontal no admite altas velocidades, a diferencia del vertical"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Dónde suelen terminar los cables del cableado horizontal dentro del cuarto de telecomunicaciones?",
+    "opciones": {
+    "a": "En un panel de parcheo (patch panel) que los conecta al switch de la red",
+    "b": "Directamente en los routers de núcleo (core) de la red",
+    "c": "Se dejan sueltos ya que terminan directamente en las PC de los usuarios",
+    "d": "En una caja de empalmes intermedia antes de continuar hacia otro piso"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Modelo de Capas y Protocolos",
+    "preguntas": [
+    {
+    "pregunta": "¿Cuál es la idea básica detrás del uso de un modelo por capas en redes de computadoras?",
+    "opciones": {
+    "a": "Dividir la comunicación en niveles donde cada capa realiza una función específica y provee servicios a la capa superior, ocultando los detalles de implementación",
+    "b": "Utilizar una única capa de comunicación para simplificar el diseño del sistema de redes",
+    "c": "Permite que varias capas realicen funciones redundantes para mejorar la confiabilidad, a costa de mayor complejidad",
+    "d": "Duplicar la información en cada capa para garantizar que los datos lleguen completos al destino"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "En el contexto de un modelo por capas, ¿qué es un protocolo?",
+    "opciones": {
+    "a": "Un conjunto de reglas y convenciones que definen la comunicación entre entidades pares de la misma capa en distintos extremos",
+    "b": "El hardware específico que permite la comunicación entre dos capas adyacentes en la pila",
+    "c": "Un lenguaje de programación utilizado para crear aplicaciones de red",
+    "d": "Un dispositivo físico que conecta dos redes distintas a nivel de capa de aplicación"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cómo se denominan las entidades correspondientes de una misma capa que interactúan entre sí en diferentes máquinas?",
+    "opciones": {
+    "a": "Entidades pares (peers)",
+    "b": "Entidades adyacentes",
+    "c": "Entidades acopladas",
+    "d": "Entidades servidor-cliente"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué define la interfaz entre dos capas adyacentes en un modelo de capas?",
+    "opciones": {
+    "a": "Las operaciones y servicios básicos que la capa inferior ofrece a la capa superior inmediata",
+    "b": "El conjunto de protocolos que utilizan esas dos capas para comunicarse entre sí",
+    "c": "El formato específico de los paquetes que viajan por el medio físico",
+    "d": "El tipo de cable o medio de transmisión requerido para conectar las capas"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál de las siguientes es una ventaja de dividir la comunicación en múltiples capas?",
+    "opciones": {
+    "a": "Se puede cambiar la implementación de una capa sin afectar las demás mientras se mantenga la misma interfaz con ellas",
+    "b": "Se eliminan completamente los datos redundantes (overhead) en la transmisión",
+    "c": "Permite que varias capas realicen funciones redundantes para mejorar la confiabilidad, a costa de mayor complejidad",
+    "d": "Aumenta la complejidad del diseño facilitando el diagnóstico de problemas"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué ocurre durante el encapsulamiento de datos en un modelo por capas?",
+    "opciones": {
+    "a": "Cada capa añade su propio encabezado (y en ocasiones cola) a los datos recibidos de la capa superior, formando la unidad de datos de protocolo (PDU) de esa capa",
+    "b": "La capa de aplicación divide los datos en partes del mismo tamaño para que las capas inferiores no necesiten añadir información de control",
+    "c": "Todas las capas eliminan su información de control para enviar únicamente los datos puros por el medio",
+    "d": "Solo las capas de nivel inferior (física y enlace) agregan encabezados; las superiores transmiten los datos sin modificaciones"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cómo afecta el proceso de encapsulamiento al tamaño de los datos enviados a través de la red?",
+    "opciones": {
+    "a": "Aumenta el tamaño total de los datos transmitidos, debido a la agregación de información de control (encabezados y posibles colas) en cada capa",
+    "b": "No lo afecta en absoluto, ya que los encabezados añadidos se eliminan antes de la transmisión",
+    "c": "Reduce el tamaño efectivo de los datos porque cada capa comprime su porción antes de añadir el encabezado",
+    "d": "Lo disminuye, pues las capas superiores eliminan datos redundantes a medida que se encapsula la información"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Tipos de Servicios de Comunicación",
+    "preguntas": [
+    {
+    "pregunta": "¿Cuál es una característica de un servicio de comunicación orientado a la conexión?",
+    "opciones": {
+    "a": "Requiere establecer una sesión previa entre emisor y receptor, con confirmaciones y negociación antes de transferir datos",
+    "b": "Envía los datos sin establecimiento previo de sesión ni confirmación de recepción",
+    "c": "Utiliza siempre el protocolo IP para garantizar la entrega",
+    "d": "No ofrece control de errores ni garantía de entrega de los mensajes"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué define un servicio de comunicación no orientado a la conexión?",
+    "opciones": {
+    "a": "El envío de datos sin necesidad de establecer una sesión previa ni confirmar cada recepción, como ocurre con el UDP",
+    "b": "La transmisión de datos con un canal dedicado tras un proceso de establecimiento y liberación de la comunicación",
+    "c": "Un mecanismo que asegura la entrega ordenada y sin pérdidas de cada mensaje",
+    "d": "Una técnica de comunicación exclusiva de las capas físicas y de enlace"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Modelo OSI",
+    "preguntas": [
+    {
+    "pregunta": "¿Cuál de las capas del modelo OSI se encarga de la transmisión de bits a través del medio físico?",
+    "opciones": {
+    "a": "Capa Física",
+    "b": "Capa de Enlace de Datos",
+    "c": "Capa de Red",
+    "d": "Capa de Sesión"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué capa del modelo OSI es responsable de la entrega fiable de datos extremo a extremo, incluyendo segmentación y reensamblaje?",
+    "opciones": {
+    "a": "Capa de Transporte",
+    "b": "Capa de Red",
+    "c": "Capa de Presentación",
+    "d": "Capa Física"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál es la función principal de la Capa de Enlace de Datos en el modelo OSI?",
+    "opciones": {
+    "a": "Encapsular los datos en tramas, manejando la delimitación de tramas y la detección/corrección de errores a nivel de enlace",
+    "b": "Asignar direcciones lógicas y determinar rutas para los paquetes a través de múltiples redes",
+    "c": "Regular el diálogo entre aplicaciones estableciendo, manteniendo y terminando sesiones",
+    "d": "Proporcionar servicios de representación de datos, incluyendo encriptación y conversión de formatos"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué capa del modelo OSI se encarga del enrutamiento de paquetes entre redes y del direccionamiento lógico (por ejemplo, direcciones IP)?",
+    "opciones": {
+    "a": "Capa de Red",
+    "b": "Capa de Enlace de Datos",
+    "c": "Capa de Transporte",
+    "d": "Capa de Sesión"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "La capa de presentación en el modelo OSI típicamente se ocupa de:",
+    "opciones": {
+    "a": "La traducción y transformación del formato de los datos (por ejemplo, cifrado, compresión) para que sean independientes del sistema",
+    "b": "La entrega de datos con confiabilidad y control de flujo extremo a extremo",
+    "c": "El control de diálogo, gestionando la apertura, mantenimiento y cierre de sesiones entre procesos",
+    "d": "El control de acceso al medio y la detección de colisiones en redes compartidas"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué capa OSI proporciona servicios directamente a las aplicaciones de software del usuario final?",
+    "opciones": {
+    "a": "Capa de Aplicación",
+    "b": "Capa de Presentación",
+    "c": "Capa de Sesión",
+    "d": "Capa de Transporte"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué función realiza la capa de sesión en el modelo OSI?",
+    "opciones": {
+    "a": "Gestiona el establecimiento, mantenimiento y finalización ordenada de las sesiones o diálogos entre aplicaciones",
+    "b": "Garantiza que los datos lleguen sin errores mediante retransmisiones y ordenamiento",
+    "c": "Controla el formato de los datos para que la aplicación receptora pueda interpretarlos correctamente",
+    "d": "Administra el acceso al medio de red para evitar colisiones entre nodos"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Capa Física",
+    "preguntas": [
+    {
+    "pregunta": "¿Cuál es la responsabilidad principal de la capa física en una red basada en el modelo OSI?",
+    "opciones": {
+    "a": "Transmitir bits individuales (señales eléctricas, ópticas o radioeléctricas) a través del medio de comunicación",
+    "b": "Enrutar paquetes a su destino correcto a través de múltiples redes",
+    "c": "Establecer y mantener las sesiones de comunicación entre procesos de usuario",
+    "d": "Dividir los mensajes en segmentos y garantizar su entrega confiable"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál de las siguientes tareas corresponde a la capa física dentro de una red de datos?",
+    "opciones": {
+    "a": "Definir las características eléctricas, mecánicas y de señalización (como conectores, voltajes, sincronización) del medio de transmisión",
+    "b": "Agregar una dirección MAC de origen y destino para formar tramas y detectar colisiones",
+    "c": "Gestionar el establecimiento y terminación de sesiones entre aplicaciones remotas",
+    "d": "Comprimir los datos para optimizar el uso del ancho de banda del canal"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Codificación en Banda Base",
+    "preguntas": [
+    {
+    "pregunta": "¿Qué inconveniente tiene una codificación digital unipolar NRZ (No Retorno a Cero) ante largas secuencias de bits iguales?",
+    "opciones": {
+    "a": "Puede perderse la sincronización de reloj porque no hay transiciones en la señal durante secuencias largas de bits idénticos",
+    "b": "Requiere un ancho de banda doble que otras codificaciones para transmitir la misma señal",
+    "c": "Genera una componente de corriente directa (DC) nula que dificulta su detección en el receptor",
+    "d": "Invierte constantemente los niveles de voltaje para representar los bits, lo que complica su decodificación"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué característica distingue a la codificación Manchester utilizada en banda base?",
+    "opciones": {
+    "a": "Cada bit se divide en dos mitades e introduce una transición en la mitad del intervalo para sincronización",
+    "b": "Representa el bit 1 con un nivel alto constante durante todo el intervalo de bit",
+    "c": "No produce transiciones de voltaje, lo cual reduce el ancho de banda necesario",
+    "d": "Emplea tres niveles de señal (positivo, negativo y cero) para codificar los datos"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál es la ventaja de una codificación con Retorno a Cero (RZ) comparada con NRZ puro?",
+    "opciones": {
+    "a": "Introduce pulsos o transiciones por bit que facilitan la sincronización incluso si se transmiten bits iguales consecutivos",
+    "b": "Permite transmitir al doble de velocidad en el mismo canal sin aumentar el ancho de banda",
+    "c": "Elimina completamente cualquier componente de corriente directa (DC) en la señal",
+    "d": "Requiere menos cambios de voltaje, reduciendo así la posibilidad de error en recepción"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    },
+    {
+    "tema": "Modulación Digital",
+    "preguntas": [
+    {
+    "pregunta": "¿En qué consiste la modulación digital de una señal portadora?",
+    "opciones": {
+    "a": "En variar características de una onda portadora (como su amplitud, frecuencia o fase) de acuerdo con los bits de datos que se desean transmitir",
+    "b": "En enviar directamente los pulsos binarios originales a través del medio sin alteración de frecuencia",
+    "c": "En multiplexar múltiples señales digitales en diferentes canales lógicos sobre la misma frecuencia",
+    "d": "En convertir una señal analógica continua en una secuencia digital de bits para su transmisión"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Cuál de los siguientes parámetros de una señal portadora NO se modula en las técnicas de modulación digital básicas?",
+    "opciones": {
+    "a": "La dirección de propagación de la onda",
+    "b": "La amplitud de la onda",
+    "c": "La frecuencia de la onda",
+    "d": "La fase de la onda"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "Una técnica de modulación digital que codifica los datos alterando la fase de la portadora se conoce como:",
+    "opciones": {
+    "a": "Modulación por desplazamiento de fase (PSK)",
+    "b": "Modulación por desplazamiento de frecuencia (FSK)",
+    "c": "Modulación por amplitud (ASK)",
+    "d": "Multiplexación por división de frecuencia (FDM)"
+    },
+    "respuesta_correcta": "a"
+    },
+    {
+    "pregunta": "¿Qué sucede al incrementar la cantidad de niveles (o símbolos) utilizados en una modulación digital para transmitir más bits por símbolo?",
+    "opciones": {
+    "a": "La señal se vuelve más susceptible al ruido, por lo que se requiere un canal con menos interferencias para distinguir los niveles sin error",
+    "b": "Disminuye la potencia mínima necesaria para transmitir, pues cada símbolo lleva más información",
+    "c": "Disminuye la tasa de errores incluso en canales ruidosos, debido a que hay más separación entre niveles",
+    "d": "El receptor puede operar con una señal de menor potencia sin sacrificar la calidad, gracias a los múltiples niveles"
+    },
+    "respuesta_correcta": "a"
+    }
+    ]
+    }
+    ]
