@@ -187,40 +187,40 @@
                 "question": "¿Qué almacena la RAM? (Selecciona todas las que apliquen)",
                 "options": [
                     {
-                        "option": "a",
-                        "text": "Instrucciones en ejecución",
-                        "correct": true,
-                        "explanation": null
+                    "option": "a",
+                    "text": "Instrucciones en ejecución",
+                    "correct": true,
+                    "explanation": "La RAM guarda el código binario de las instrucciones que el CPU está ejecutando."
                     },
                     {
-                        "option": "b",
-                        "text": "Datos temporales",
-                        "correct": true,
-                        "explanation": null
+                    "option": "b",
+                    "text": "Datos temporales",
+                    "correct": true,
+                    "explanation": "La RAM almacena datos intermedios y temporales que usan los programas en ejecución."
                     },
                     {
-                        "option": "c",
-                        "text": "Variables de programa",
-                        "correct": true,
-                        "explanation": null
+                    "option": "c",
+                    "text": "Variables de programa",
+                    "correct": true,
+                    "explanation": "Las variables definidas por el programa se almacenan en RAM mientras dura su ejecución."
                     },
                     {
-                        "option": "d",
-                        "text": "Stack del SO",
-                        "correct": false,
-                        "explanation": "El stack del SO también está en RAM, pero en este contexto se considera parte de 'datos temporales'."
+                    "option": "d",
+                    "text": "Stack del SO",
+                    "correct": false,
+                    "explanation": "El stack del SO está en RAM pero en este contexto entra dentro de 'datos temporales'."
                     },
                     {
-                        "option": "e",
-                        "text": "Heap del usuario",
-                        "correct": false,
-                        "explanation": "El heap del usuario está en RAM pero entra en 'datos temporales'."
+                    "option": "e",
+                    "text": "Heap del usuario",
+                    "correct": false,
+                    "explanation": "El heap de usuario reside en RAM pero se considera parte de 'datos temporales'."
                     },
                     {
-                        "option": "f",
-                        "text": "Ninguna de las anteriores",
-                        "correct": false,
-                        "explanation": "Hay respuestas válidas: instrucciones, datos y variables."
+                    "option": "f",
+                    "text": "Ninguna de las anteriores",
+                    "correct": false,
+                    "explanation": "Hay respuestas correctas: instrucciones, datos y variables."
                     }
                 ]
             },

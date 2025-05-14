@@ -182,47 +182,74 @@
       const selected = inputs
         .filter(i => i.checked)
         .map(i => i.value);
-      if(selected.length === 0) return alert('Selecciona al menos una opción');
+      if (selected.length === 0) {
+        return alert('Selecciona al menos una opción');
+      }
 
       submitBtn.disabled = true;
       const q = questions[current];
-      const correctOpts = q.options.filter(o => o.correct).map(o => o.option);
+      // Opciones correctas
+      const correctOpts = q.options
+        .filter(o => o.correct)
+        .map(o => o.option);
 
-      // calcular extras y faltantes
-      const extras = selected.filter(v => !correctOpts.includes(v));
-      const missed = correctOpts.filter(v => !selected.includes(v));
-      let fb = '';
+      // ¿Es pregunta múltiple?
+      const multi = correctOpts.length > 1;
 
-      if(extras.length === 0 && missed.length === 0) {
-        fb = '<span style="color:var(--success-color)">¡Correcto!</span>';
-        score.correct++;
+      let fbHtml = '';
+      if (!multi) {
+        // única respuesta
+        const chosen = selected[0];
+        const o = q.options.find(o => o.option === chosen);
+        if (o.correct) {
+          fbHtml = `<span style="color:var(--success-color)">¡Correcto!</span>`;
+          score.correct++;
+        } else {
+          // incorrecto de una sola
+          const corr = correctOpts[0];
+          const explanation = o.explanation || 'Respuesta incorrecta.';
+          fbHtml = 
+            `<span style="color:var(--error-color)">Incorrecto: ${explanation}</span><br>` +
+            `Respuesta correcta: ${corr.toUpperCase()}`;
+          score.wrong++;
+          // marcar visualmente
+          inputs.forEach(i => {
+            const lbl = i.closest('label');
+            if (i.value === chosen) lbl.classList.add('wrong');
+            if (i.value === corr) lbl.classList.add('missed');
+            i.disabled = true;
+          });
+        }
       } else {
-        fb = `<span style="color:var(--error-color)">Incorrecto.</span><br>`;
-        // explicar extras
+        // múltiple respuestas (igual que antes)
+        const extras = selected.filter(v => !correctOpts.includes(v));
+        const missed = correctOpts.filter(v => !selected.includes(v));
+
+        fbHtml = `<span style="color:var(--error-color)">Incorrecto.</span><br>`;
         extras.forEach(opt => {
           const o = q.options.find(o => o.option === opt);
-          fb += `<div>- Opción ${opt.toUpperCase()} erronea. Explicación:  ${o.explanation || 'Incorrecta.'}</div>`;
+          fbHtml += `<div>- Opción ${opt.toUpperCase()} errónea. Explicación: ${o.explanation || 'Incorrecta.'}</div>`;
         });
-        // explicar faltantes
         missed.forEach(opt => {
           const o = q.options.find(o => o.option === opt);
-          fb += `<div>- Te faltó la respuesta correcta  ${opt.toUpperCase()}: ${o.text}</div>`;
+          fbHtml += `<div>- Te faltó la respuesta correcta: ${opt.toUpperCase()}</div>`;
         });
         score.wrong++;
+
+        // marcar visualmente
+        inputs.forEach(i => {
+          const lbl = i.closest('label');
+          if (extras.includes(i.value)) lbl.classList.add('wrong');
+          if (missed.includes(i.value)) lbl.classList.add('missed');
+          i.disabled = true;
+        });
       }
 
-      // marcar visualmente
-      inputs.forEach(i => {
-        const lbl = i.closest('label');
-        if(extras.includes(i.value)) lbl.classList.add('wrong');
-        if(missed.includes(i.value)) lbl.classList.add('missed');
-        i.disabled = true;
-      });
-
-      feedbackEl.innerHTML = fb;
+      feedbackEl.innerHTML = fbHtml;
       updateStatus();
       nextBtn.style.display = 'inline-block';
     };
+
 
     nextBtn.onclick = () => {
       current++;
