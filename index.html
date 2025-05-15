@@ -36,6 +36,16 @@
       text-align: center; margin: 1rem 0;
       font-size: 1.1rem; color: #666;
     }
+    #selector {
+      display: none;
+      margin: 1rem 0;
+      text-align: center;
+    }
+    #selector select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-right: 0.5rem;
+    }
     .question { margin-bottom: 1rem; }
     .options {
       display: flex; flex-direction: column;
@@ -59,9 +69,7 @@
       border-color: var(--missed-color);
       background: #fff4e5;
     }
-    .options input {
-      margin-right: 0.5rem;
-    }
+    .options input { margin-right: 0.5rem; }
     button {
       background: var(--accent-color); color: #fff;
       border: none; border-radius: 4px;
@@ -72,22 +80,31 @@
     }
     button:disabled { background: #aaa; cursor: not-allowed; }
     button:hover:enabled { background: #2980b9; }
-    #feedback {
-      margin-top: 0.75rem; font-weight: bold;
-    }
+    #feedback { margin-top: 0.75rem; font-weight: bold; }
     #status {
       margin-top: 1rem; text-align: center;
       font-weight: 600; color: var(--primary-color);
     }
     @media (max-width: 600px) {
       button { width: 100%; margin-bottom: 0.5rem; }
+      #selector { flex-direction: column; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Quiz de Repaso Arquitectura</h1>
+
     <div id="loader">Cargando preguntas...</div>
+
+    <!-- Selector de tema -->
+    <div id="selector">
+      <label for="topic-select">Elige un tema:</label>
+      <select id="topic-select"></select>
+      <button id="start-btn">Comenzar Quiz</button>
+    </div>
+
+    <!-- Quiz propiamente dicho -->
     <div id="quiz" style="display:none">
       <div class="question">
         <div id="topic" style="font-weight:bold; margin-bottom:0.5rem;"></div>
@@ -102,21 +119,24 @@
   </div>
 
   <script>
-    let questions = [], current = 0, score = { correct: 0, wrong: 0 };
-    const loader = document.getElementById('loader'),
-          quizEl = document.getElementById('quiz'),
-          topicEl = document.getElementById('topic'),
-          questionEl = document.getElementById('question-text'),
-          optionsEl = document.getElementById('options'),
-          submitBtn = document.getElementById('submit'),
-          nextBtn = document.getElementById('next'),
-          feedbackEl = document.getElementById('feedback'),
-          statusEl = document.getElementById('status');
+    let allQuestions = [], questions = [], current = 0, score = { correct: 0, wrong: 0 };
+    const loader      = document.getElementById('loader'),
+          selector    = document.getElementById('selector'),
+          topicSelect = document.getElementById('topic-select'),
+          startBtn    = document.getElementById('start-btn'),
+          quizEl      = document.getElementById('quiz'),
+          topicEl     = document.getElementById('topic'),
+          questionEl  = document.getElementById('question-text'),
+          optionsEl   = document.getElementById('options'),
+          submitBtn   = document.getElementById('submit'),
+          nextBtn     = document.getElementById('next'),
+          feedbackEl  = document.getElementById('feedback'),
+          statusEl    = document.getElementById('status');
 
     window.addEventListener('DOMContentLoaded', () => {
       fetch('preguntas.json')
-        .then(res => { if(!res.ok) throw new Error(res.status); return res.json(); })
-        .then(initQuiz)
+        .then(res => { if (!res.ok) throw new Error(res.status); return res.json(); })
+        .then(initData)
         .catch(setupFileLoader);
     });
 
@@ -127,32 +147,46 @@
       `;
       document.getElementById('loadBtn').onclick = () => {
         const file = document.getElementById('fileInput').files[0];
-        if(!file) return alert('Selecciona el archivo JSON');
+        if (!file) return alert('Selecciona el archivo JSON');
         const reader = new FileReader();
         reader.onload = e => {
-          try {
-            initQuiz(JSON.parse(e.target.result));
-          } catch {
-            alert('JSON inválido');
-          }
+          try { initData(JSON.parse(e.target.result)); }
+          catch { alert('JSON inválido'); }
         };
         reader.readAsText(file);
       };
     }
 
-    function initQuiz(data) {
+    function initData(data) {
+      // Aplanar y guardar todas las preguntas
       data.forEach(topic => {
         const t = topic.Topic || topic.tema || '';
         (topic.questions || topic.preguntas || []).forEach(q => {
           q.Topic = t;
-          questions.push(q);
+          allQuestions.push(q);
         });
       });
-      questions.sort(() => Math.random() - 0.5);
+      // Poblar selector de temas
+      const temas = Array.from(new Set(allQuestions.map(q => q.Topic))).sort();
+      topicSelect.innerHTML =
+        `<option value="Todos">— Todos —</option>` +
+        temas.map(t => `<option value="${t}">${t}</option>`).join('');
       loader.style.display = 'none';
+      selector.style.display = 'block';
+    }
+
+    startBtn.onclick = () => {
+      const selTema = topicSelect.value;
+      questions = selTema === 'Todos'
+        ? [...allQuestions]
+        : allQuestions.filter(q => q.Topic === selTema);
+      questions.sort(() => Math.random() - 0.5);
+      current = 0;
+      score = { correct: 0, wrong: 0 };
+      selector.style.display = 'none';
       quizEl.style.display = 'block';
       showQuestion();
-    }
+    };
 
     function showQuestion() {
       const q = questions[current];
@@ -163,8 +197,9 @@
       submitBtn.disabled = false;
       nextBtn.style.display = 'none';
 
-      // determinar si es multi-respuesta
-      const multi = q.options.filter(o => o.correct).length > 1;
+      const correctCount = q.options.filter(o => o.correct).length;
+      const multi = correctCount > 1;
+
       q.options.forEach(o => {
         const lbl = document.createElement('label');
         lbl.innerHTML = `
@@ -178,71 +213,62 @@
     }
 
     submitBtn.onclick = () => {
-      const inputs = Array.from(document.querySelectorAll('input[name="opt"]'));
-      const selected = inputs
-        .filter(i => i.checked)
-        .map(i => i.value);
-      if (selected.length === 0) {
-        return alert('Selecciona al menos una opción');
-      }
+      const inputs   = Array.from(document.querySelectorAll('input[name="opt"]'));
+      const selected = inputs.filter(i => i.checked).map(i => i.value);
+      if (selected.length === 0) return alert('Selecciona al menos una opción');
 
       submitBtn.disabled = true;
       const q = questions[current];
-      // Opciones correctas
-      const correctOpts = q.options
-        .filter(o => o.correct)
-        .map(o => o.option);
-
-      // ¿Es pregunta múltiple?
+      const correctOpts = q.options.filter(o => o.correct).map(o => o.option);
       const multi = correctOpts.length > 1;
-
       let fbHtml = '';
+
       if (!multi) {
-        // única respuesta
+        // Pregunta de respuesta única
         const chosen = selected[0];
         const o = q.options.find(o => o.option === chosen);
         if (o.correct) {
           fbHtml = `<span style="color:var(--success-color)">¡Correcto!</span>`;
           score.correct++;
         } else {
-          // incorrecto de una sola
           const corr = correctOpts[0];
           const explanation = o.explanation || 'Respuesta incorrecta.';
-          fbHtml = 
-            `<span style="color:var(--error-color)">Incorrecto: ${explanation}</span><br>` +
-            `Respuesta correcta: ${corr.toUpperCase()}`;
+          fbHtml = `<span style="color:var(--error-color)">Incorrecto: ${explanation}</span><br>`
+                 + `Respuesta correcta: ${corr.toUpperCase()}`;
           score.wrong++;
-          // marcar visualmente
           inputs.forEach(i => {
             const lbl = i.closest('label');
             if (i.value === chosen) lbl.classList.add('wrong');
-            if (i.value === corr) lbl.classList.add('missed');
+            if (i.value === corr)    lbl.classList.add('missed');
             i.disabled = true;
           });
         }
       } else {
-        // múltiple respuestas (igual que antes)
+        // Pregunta de múltiples respuestas
         const extras = selected.filter(v => !correctOpts.includes(v));
         const missed = correctOpts.filter(v => !selected.includes(v));
 
-        fbHtml = `<span style="color:var(--error-color)">Incorrecto.</span><br>`;
-        extras.forEach(opt => {
-          const o = q.options.find(o => o.option === opt);
-          fbHtml += `<div>- Opción ${opt.toUpperCase()} errónea. Explicación: ${o.explanation || 'Incorrecta.'}</div>`;
-        });
-        missed.forEach(opt => {
-          const o = q.options.find(o => o.option === opt);
-          fbHtml += `<div>- Te faltó la respuesta correcta: ${opt.toUpperCase()}</div>`;
-        });
-        score.wrong++;
-
-        // marcar visualmente
-        inputs.forEach(i => {
-          const lbl = i.closest('label');
-          if (extras.includes(i.value)) lbl.classList.add('wrong');
-          if (missed.includes(i.value)) lbl.classList.add('missed');
-          i.disabled = true;
-        });
+        if (extras.length === 0 && missed.length === 0) {
+          // TODO perfecto
+          fbHtml = `<span style="color:var(--success-color)">¡Correcto!</span>`;
+          score.correct++;
+        } else {
+          fbHtml = `<span style="color:var(--error-color)">Incorrecto.</span><br>`;
+          extras.forEach(opt => {
+            const o = q.options.find(o => o.option === opt);
+            fbHtml += `<div>- Opción ${opt.toUpperCase()} errónea. Explicación: ${o.explanation||'Incorrecta.'}</div>`;
+          });
+          missed.forEach(opt => {
+            fbHtml += `<div>- Te faltó la respuesta correcta: ${opt.toUpperCase()}</div>`;
+          });
+          score.wrong++;
+          inputs.forEach(i => {
+            const lbl = i.closest('label');
+            if (extras.includes(i.value)) lbl.classList.add('wrong');
+            if (missed.includes(i.value)) lbl.classList.add('missed');
+            i.disabled = true;
+          });
+        }
       }
 
       feedbackEl.innerHTML = fbHtml;
@@ -250,10 +276,9 @@
       nextBtn.style.display = 'inline-block';
     };
 
-
     nextBtn.onclick = () => {
       current++;
-      if(current >= questions.length) {
+      if (current >= questions.length) {
         alert(`Quiz terminado\nAcertadas: ${score.correct}\nErradas: ${score.wrong}`);
         location.reload();
       } else {

@@ -1,0 +1,561 @@
+[
+  {
+    "Topic": "Procesador e Instrucciones",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Un megabyte es equivalente a un mebibyte, solo que el megabyte está en base 2 y el mebibyte en base 10.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "MB y MiB utilizan bases distintas: MB decimal, MiB binario." },
+          { "option": "b", "text": "Falso", "correct": true, "explanation": null },
+          { "option": "c", "text": "Solo en sistemas de archivos", "correct": false, "explanation": "No depende del tipo de sistema de archivos." },
+          { "option": "d", "text": "Depende del sistema operativo", "correct": false, "explanation": "Es una convención de unidades, no de software." },
+          { "option": "e", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Existe una respuesta correcta: Falso." }
+        ]
+      },
+      {
+        "id": 2,
+        "question": "Cualquier usuario puede acceder manualmente a los “Registros visibles para el usuario” (William Stallings).",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Solo a través de instrucciones en lenguaje máquina, no manualmente." },
+          { "option": "b", "text": "Falso", "correct": true, "explanation": null },
+          { "option": "c", "text": "Solo en modo supervisor", "correct": false, "explanation": "Incluso en modo usuario se usan instrucciones para acceder." },
+          { "option": "d", "text": "Solo en modo kernel", "correct": false, "explanation": "Son accesibles desde usuario por código máquina." },
+          { "option": "e", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Existe una respuesta correcta: Falso." }
+        ]
+      },
+      {
+        "id": 3,
+        "question": "Seleccione los tipos de “Registros visibles para el usuario”:",
+        "options": [
+          { "option": "a", "text": "Registros de datos", "correct": true, "explanation": null },
+          { "option": "b", "text": "Registros de dirección", "correct": true, "explanation": null },
+          { "option": "c", "text": "Registros de bandera", "correct": false, "explanation": "Pertenecen al PSW, no al grupo visible estándar." },
+          { "option": "d", "text": "Registros de control", "correct": false, "explanation": "Forman parte de otro grupo distinto." },
+          { "option": "e", "text": "Registradores de punto flotante", "correct": false, "explanation": "Son un conjunto especializado, no general." },
+          { "option": "f", "text": "Todas son correctas", "correct": false, "explanation": "Solo datos y dirección son visibles para el usuario." },
+          { "option": "g", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay respuestas correctas listadas." }
+        ]
+      },
+      {
+        "id": 4,
+        "question": "Seleccione los registros que forman parte de los “Registros de control y estado”:",
+        "options": [
+          { "option": "a", "text": "PC", "correct": true, "explanation": null },
+          { "option": "b", "text": "IR", "correct": true, "explanation": null },
+          { "option": "c", "text": "PSW", "correct": true, "explanation": null },
+          { "option": "d", "text": "AX", "correct": false, "explanation": "Es un registro de datos de propósito general." },
+          { "option": "e", "text": "SP", "correct": false, "explanation": "Es un registro de dirección." },
+          { "option": "f", "text": "FLAGS", "correct": false, "explanation": "Los flags forman parte del PSW, no un registro independiente aquí." },
+          { "option": "g", "text": "Ninguno de los anteriores", "correct": false, "explanation": "Existen registros correctos: PC, IR y PSW." }
+        ]
+      },
+      {
+        "id": 5,
+        "question": "¿Cuál de los siguientes podría considerarse un registro de datos de propósito general?",
+        "options": [
+          { "option": "a", "text": "Registro índice", "correct": false, "explanation": "Es un registro de dirección." },
+          { "option": "b", "text": "Puntero de pila", "correct": false, "explanation": "Es un registro de dirección dedicado a la pila." },
+          { "option": "c", "text": "Registro de datos", "correct": true, "explanation": null },
+          { "option": "d", "text": "Puntero de segmento", "correct": false, "explanation": "Es un registro de dirección." },
+          { "option": "e", "text": "Registro de control", "correct": false, "explanation": "Forma parte de registros de control, no de datos." }
+        ]
+      },
+      {
+        "id": 6,
+        "question": "¿Cuál es la función principal de un registro de dirección?",
+        "options": [
+          { "option": "a", "text": "Almacenar datos intermedios", "correct": false, "explanation": "Eso es de un registro de datos." },
+          { "option": "b", "text": "Contener instrucciones a ejecutar", "correct": false, "explanation": "Lo hace el IR o la memoria." },
+          { "option": "c", "text": "Guardar direcciones de memoria (completas o parciales)", "correct": true, "explanation": null },
+          { "option": "d", "text": "Señalar condiciones de salto", "correct": false, "explanation": "Eso lo hacen los flags en el PSW." },
+          { "option": "e", "text": "Gestionar flags", "correct": false, "explanation": "Los flags residen en el PSW." }
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Seleccione todos los registros que pertenezcan al grupo de “registros de dirección”:",
+        "options": [
+          { "option": "a", "text": "Registro índice", "correct": true, "explanation": null },
+          { "option": "b", "text": "Puntero de pila", "correct": true, "explanation": null },
+          { "option": "c", "text": "Registro de datos", "correct": false, "explanation": "No es un registro de dirección." },
+          { "option": "d", "text": "Puntero de segmento", "correct": true, "explanation": null },
+          { "option": "e", "text": "Registro de condición", "correct": false, "explanation": "Forma parte del PSW." }
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Un registro de datos de propósito general puede usarse con cualquier instrucción sobre datos, sin excepción.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Algunas instrucciones imponen restricciones según el registro." },
+          { "option": "b", "text": "Falso", "correct": true, "explanation": null }
+        ]
+      },
+      {
+        "id": 9,
+        "question": "El puntero de pila (stack pointer) forma parte de los registros de dirección.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "Es un registro de dirección." }
+        ]
+      },
+      {
+        "id": 10,
+        "question": "El IR contiene la instrucción leída.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "El IR guarda la instrucción actual." },
+          { "option": "c", "text": "Solo en CISC", "correct": false, "explanation": "Es independiente del ISA." },
+          { "option": "d", "text": "Solo en RISC", "correct": false, "explanation": "Es independiente del ISA." },
+          { "option": "e", "text": "Depende del pipeline", "correct": false, "explanation": "Siempre contiene la instrucción leída." }
+        ]
+      },
+      {
+        "id": 11,
+        "question": "La PSW contiene…",
+        "options": [
+          { "option": "a", "text": "Registros de condición", "correct": true, "explanation": null },
+          { "option": "b", "text": "Código de operación", "correct": false, "explanation": "Ese lo define el opcode en la instrucción." },
+          { "option": "c", "text": "Dirección de la próxima instrucción", "correct": false, "explanation": "Eso lo hace el PC." },
+          { "option": "d", "text": "Bits de estado", "correct": true, "explanation": null },
+          { "option": "e", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Hay respuestas correctas listadas." }
+        ]
+      },
+      {
+        "id": 12,
+        "question": "¿Qué describe el bit de signo (S)?",
+        "options": [
+          { "option": "a", "text": "Resultado ≥ 0 / < 0", "correct": true, "explanation": null },
+          { "option": "b", "text": "Resultado = 0", "correct": false, "explanation": "Es función del bit Z." },
+          { "option": "c", "text": "Acarreo en suma", "correct": false, "explanation": "Es función del bit C." },
+          { "option": "d", "text": "Desbordamiento aritmético", "correct": false, "explanation": "Es función del bit O." },
+          { "option": "e", "text": "Ninguna", "correct": false, "explanation": "Hay una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 13,
+        "question": "¿Qué describe el bit de cero (Z)?",
+        "options": [
+          { "option": "a", "text": "Resultado ≥ 0 / < 0", "correct": false, "explanation": "Es función del bit S." },
+          { "option": "b", "text": "Resultado = 0", "correct": true, "explanation": null },
+          { "option": "c", "text": "Acarreo en suma", "correct": false, "explanation": "Es función del bit C." },
+          { "option": "d", "text": "Desbordamiento aritmético", "correct": false, "explanation": "Es función del bit O." },
+          { "option": "e", "text": "Ninguna", "correct": false, "explanation": "Hay una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 14,
+        "question": "¿Qué describe el bit de acarreo (C)?",
+        "options": [
+          { "option": "a", "text": "Resultado ≥ 0 / < 0", "correct": false, "explanation": "Es función del bit S." },
+          { "option": "b", "text": "Resultado = 0", "correct": false, "explanation": "Es función del bit Z." },
+          { "option": "c", "text": "Acarreo en suma", "correct": true, "explanation": null },
+          { "option": "d", "text": "Desbordamiento aritmético", "correct": false, "explanation": "Es función del bit O." },
+          { "option": "e", "text": "Ninguna", "correct": false, "explanation": "Hay una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 15,
+        "question": "¿Qué describe el bit de desbordamiento (O)?",
+        "options": [
+          { "option": "a", "text": "Resultado ≥ 0 / < 0", "correct": false, "explanation": "Es función del bit S." },
+          { "option": "b", "text": "Resultado = 0", "correct": false, "explanation": "Es función del bit Z." },
+          { "option": "c", "text": "Acarreo en suma", "correct": false, "explanation": "Es función del bit C." },
+          { "option": "d", "text": "Desbordamiento aritmético", "correct": true, "explanation": null },
+          { "option": "e", "text": "Ninguna", "correct": false, "explanation": "Hay una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 16,
+        "question": "¿Qué es una instrucción?",
+        "options": [
+          { "option": "a", "text": "Orden binaria al CPU", "correct": true, "explanation": null },
+          { "option": "b", "text": "Unidad de código de máquina", "correct": true, "explanation": null },
+          { "option": "c", "text": "Línea de alto nivel traducida", "correct": false, "explanation": "Es código fuente o bytecode, no instrucción máquina." },
+          { "option": "d", "text": "Operación de E/S", "correct": false, "explanation": "Es un tipo específico de instrucción, no definición general." },
+          { "option": "e", "text": "Todas son correctas", "correct": false, "explanation": "Solo a y b definen una instrucción máquina." },
+          { "option": "f", "text": "Ninguna es correcta", "correct": false, "explanation": "Existen definiciones correctas listadas." }
+        ]
+      },
+      {
+        "id": 17,
+        "question": "Cuando se compila el código fuente de un programa, se traduce a un conjunto de instrucciones en lenguaje máquina.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "Eso ocurre al compilar." },
+          { "option": "c", "text": "Solo en lenguajes interpretados", "correct": false, "explanation": "Los interpretes no compilan a código máquina." },
+          { "option": "d", "text": "Solo en ensamblador", "correct": false, "explanation": "Los compiladores de alto nivel también traducen a máquina." }
+        ]
+      },
+      {
+        "id": 18,
+        "question": "Seleccione las instrucciones que realiza la CPU:",
+        "options": [
+          { "option": "a", "text": "Lógicas", "correct": true, "explanation": null },
+          { "option": "b", "text": "Matemáticas", "correct": true, "explanation": null },
+          { "option": "c", "text": "Transferencia de datos", "correct": true, "explanation": null },
+          { "option": "d", "text": "Saltos", "correct": true, "explanation": null },
+          { "option": "e", "text": "Gestión de memoria", "correct": false, "explanation": "Es tarea del sistema operativo y MMU." },
+          { "option": "f", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Hay varias instrucciones correctas listadas." }
+        ]
+      },
+      {
+        "id": 19,
+        "question": "Las instrucciones lógicas son:",
+        "options": [
+          { "option": "a", "text": "AND, OR, NOT, XOR", "correct": true, "explanation": null },
+          { "option": "b", "text": "ADD, SUB, MUL, DIV", "correct": false, "explanation": "Son instrucciones aritméticas." },
+          { "option": "c", "text": "LOAD, STORE, MOV", "correct": false, "explanation": "Son de transferencia de datos." },
+          { "option": "d", "text": "JMP, CALL, RET", "correct": false, "explanation": "Son de salto y control." },
+          { "option": "e", "text": "Todas las anteriores", "correct": false, "explanation": "No todas son lógicas." }
+        ]
+      },
+      {
+        "id": 20,
+        "question": "Las instrucciones matemáticas son:",
+        "options": [
+          { "option": "a", "text": "ADD, SUB, MUL, DIV", "correct": true, "explanation": null },
+          { "option": "b", "text": "AND, OR, NOT, XOR", "correct": false, "explanation": "Son lógicas." },
+          { "option": "c", "text": "LOAD, STORE, MOV", "correct": false, "explanation": "Son de transferencia de datos." },
+          { "option": "d", "text": "JMP, CALL, RET", "correct": false, "explanation": "Son de salto y control." },
+          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 21,
+        "question": "Las instrucciones de transferencia de datos son:",
+        "options": [
+          { "option": "a", "text": "LOAD, STORE, MOV, PUSH, POP", "correct": true, "explanation": null },
+          { "option": "b", "text": "ADD, SUB, INC, DEC", "correct": false, "explanation": "Son instrucciones aritméticas." },
+          { "option": "c", "text": "JMP, JNZ, JZ", "correct": false, "explanation": "Son de salto." },
+          { "option": "d", "text": "AND, OR, NOT", "correct": false, "explanation": "Son lógicas." },
+          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 22,
+        "question": "La compatibilidad de un SO (Android) depende de que el CPU soporte las instrucciones requeridas; esto depende de la arquitectura.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "Depende de la ISA soportada por el CPU." },
+          { "option": "c", "text": "Solo en x86", "correct": false, "explanation": "Ocurre en cualquier ISA." },
+          { "option": "d", "text": "Solo en ARM", "correct": false, "explanation": "Ocurre en cualquier ISA." }
+        ]
+      },
+      {
+        "id": 23,
+        "question": "Las instrucciones dependen exclusivamente del hardware.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "También dependen de la ISA implementada." },
+          { "option": "b", "text": "Falso", "correct": true, "explanation": null },
+          { "option": "c", "text": "Solo en CISC", "correct": false, "explanation": "Es independiente del estilo ISA." },
+          { "option": "d", "text": "Solo en RISC", "correct": false, "explanation": "Es independiente del estilo ISA." }
+        ]
+      },
+      {
+        "id": 24,
+        "question": "Las instrucciones y los datos se encuentran almacenados en…",
+        "options": [
+          { "option": "a", "text": "Disco", "correct": false, "explanation": "Es almacenamiento secundario." },
+          { "option": "b", "text": "RAM", "correct": true, "explanation": null },
+          { "option": "c", "text": "Caché", "correct": false, "explanation": "Es memoria intermedia, no principal." },
+          { "option": "d", "text": "Registros del CPU", "correct": false, "explanation": "Son temporales y limitados." },
+          { "option": "e", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Existe una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 25,
+        "question": "Las arquitecturas pueden dividirse en distintos grupos:",
+        "options": [
+          { "option": "a", "text": "MIPS", "correct": false, "explanation": "Es una ISA específica, no grupo general." },
+          { "option": "b", "text": "RISC", "correct": true, "explanation": null },
+          { "option": "c", "text": "CISC", "correct": true, "explanation": null },
+          { "option": "d", "text": "VLIW", "correct": false, "explanation": "Es un diseño, no categoría ISA principal." },
+          { "option": "e", "text": "EPIC", "correct": false, "explanation": "Es un estilo derivado de VLIW." }
+        ]
+      },
+      {
+        "id": 26,
+        "question": "Las arquitecturas dependen del diseño del hardware subyacente.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "No dependen de la marca ni del SO." },
+          { "option": "c", "text": "Solo de la marca", "correct": false, "explanation": "Dependen del diseño, no de la marca." },
+          { "option": "d", "text": "Solo del sistema operativo", "correct": false, "explanation": "El SO se adapta a la ISA." }
+        ]
+      },
+      {
+        "id": 27,
+        "question": "Un programa está compuesto solo por un conjunto de instrucciones binarias y datos.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "Incluye también metadatos y encabezados en un ejecutable." },
+          { "option": "c", "text": "Incluye librerías dinámicas", "correct": false, "explanation": "Son externas al ejecutable." },
+          { "option": "d", "text": "Incluye metadatos", "correct": false, "explanation": "Son parte del formato, no del programa en tiempo de ejecución." }
+        ]
+      },
+      {
+        "id": 28,
+        "question": "¿Dónde se almacenan las instrucciones y los datos?",
+        "options": [
+          { "option": "a", "text": "DRAM", "correct": true, "explanation": null },
+          { "option": "b", "text": "SRAM", "correct": false, "explanation": "Es memoria cache, no principal." },
+          { "option": "c", "text": "Flash", "correct": false, "explanation": "Es almacenamiento no volátil." },
+          { "option": "d", "text": "EEPROM", "correct": false, "explanation": "Es memoria no volátil de configuración." }
+        ]
+      },
+      {
+        "id": 29,
+        "question": "Lo que se escribe en lenguajes de alto nivel se traduce a…",
+        "options": [
+          { "option": "a", "text": "Assembly", "correct": true, "explanation": null },
+          { "option": "b", "text": "Binario", "correct": true, "explanation": null },
+          { "option": "c", "text": "Bytecode", "correct": false, "explanation": "Es intermedio para VM, no siempre." },
+          { "option": "d", "text": "Todas son correctas", "correct": false, "explanation": "Bytecode no es universal." },
+          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay respuestas correctas listadas." }
+        ]
+      },
+      {
+        "id": 30,
+        "question": "La CPU decodifica las instrucciones para identificar la operación.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "La decodificación es paso esencial." },
+          { "option": "c", "text": "Solo en modo usuario", "correct": false, "explanation": "Ocurre en hardware siempre." },
+          { "option": "d", "text": "Solo en modo kernel", "correct": false, "explanation": "No depende del modo de ejecución." }
+        ]
+      },
+      {
+        "id": 31,
+        "question": "Una instrucción está compuesta por…",
+        "options": [
+          { "option": "a", "text": "Opcode", "correct": true, "explanation": null },
+          { "option": "b", "text": "Operandos", "correct": true, "explanation": null },
+          { "option": "c", "text": "Destino", "correct": true, "explanation": null },
+          { "option": "d", "text": "Prefijo", "correct": false, "explanation": "Específico de algunas ISA, no general." },
+          { "option": "e", "text": "Sufijo", "correct": false, "explanation": "No es parte estándar de la instrucción." }
+        ]
+      },
+      {
+        "id": 32,
+        "question": "Un Opcode…",
+        "options": [
+          { "option": "a", "text": "Especifica la operación", "correct": true, "explanation": null },
+          { "option": "b", "text": "Es un registro", "correct": false, "explanation": "Es parte de la instrucción, no un registro." },
+          { "option": "c", "text": "Es un puntero", "correct": false, "explanation": "No apunta a memoria." },
+          { "option": "d", "text": "Ninguno", "correct": false, "explanation": "Hay una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 33,
+        "question": "El operando de una instrucción…",
+        "options": [
+          { "option": "a", "text": "Son datos o direcciones", "correct": true, "explanation": null },
+          { "option": "b", "text": "Es la operación", "correct": false, "explanation": "Eso lo define el opcode." },
+          { "option": "c", "text": "Es el registro de estado", "correct": false, "explanation": "Es parte del PSW." },
+          { "option": "d", "text": "Ninguno", "correct": false, "explanation": "Hay una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 34,
+        "question": "El destino de una instrucción…",
+        "options": [
+          { "option": "a", "text": "Donde se guarda el resultado", "correct": true, "explanation": null },
+          { "option": "b", "text": "Es el opcode", "correct": false, "explanation": "El opcode especifica la operación." },
+          { "option": "c", "text": "Es un flag", "correct": false, "explanation": "Los flags están en el PSW." },
+          { "option": "d", "text": "Ninguno", "correct": false, "explanation": "Hay una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 35,
+        "question": "A cada instrucción le corresponde un código binario específico que el procesador puede reconocer.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "Cada instrucción tiene su código." },
+          { "option": "c", "text": "Solo en RISC", "correct": false, "explanation": "Ocurre en cualquier ISA." },
+          { "option": "d", "text": "Solo en CISC", "correct": false, "explanation": "Ocurre en cualquier ISA." }
+        ]
+      },
+      {
+        "id": 36,
+        "question": "La instrucción JUMP:",
+        "options": [
+          { "option": "a", "text": "Modifica el PC", "correct": true, "explanation": null },
+          { "option": "b", "text": "Implementa bucles", "correct": true, "explanation": null },
+          { "option": "c", "text": "Implementa condicionales", "correct": true, "explanation": null },
+          { "option": "d", "text": "Llama funciones", "correct": true, "explanation": null },
+          { "option": "e", "text": "Maneja subrutinas", "correct": true, "explanation": null },
+          { "option": "f", "text": "Todas son correctas", "correct": true, "explanation": null },
+          { "option": "g", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay varias funciones listadas." }
+        ]
+      },
+      {
+        "id": 37,
+        "question": "El Program Counter:",
+        "options": [
+          { "option": "a", "text": "Registro interno de la CPU", "correct": true, "explanation": null },
+          { "option": "b", "text": "Avanza según tamaño de instrucción", "correct": true, "explanation": null },
+          { "option": "c", "text": "Cuenta ciclos de reloj", "correct": false, "explanation": "No mide ciclos." },
+          { "option": "d", "text": "Ninguna es correcta", "correct": false, "explanation": "Existen respuestas correctas listadas." }
+        ]
+      },
+      {
+        "id": 38,
+        "question": "Elija las definiciones correctas:",
+        "options": [
+          { "option": "a", "text": "Un proceso es instancia de un programa en disco", "correct": false, "explanation": "El proceso es instancia en RAM." },
+          { "option": "b", "text": "La imagen en memoria incluye instrucciones y datos", "correct": true, "explanation": null },
+          { "option": "c", "text": "El PC señala la próxima instrucción", "correct": true, "explanation": null },
+          { "option": "d", "text": "Ninguna instrucción puede sobrescribir el PC", "correct": false, "explanation": "Existen instrucciones de salto que lo modifican." },
+          { "option": "e", "text": "La CPU coloca en el IR la instrucción", "correct": true, "explanation": null },
+          { "option": "f", "text": "El PC se incrementa al finalizar", "correct": true, "explanation": null }
+        ]
+      },
+      {
+        "id": 39,
+        "question": "Durante el uso del programa, cada acción del usuario tiene asociada una rutina cargada en memoria.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "El programa ya incluye esas rutinas." },
+          { "option": "c", "text": "Solo en GUI", "correct": false, "explanation": "Aplica a cualquier interacción." },
+          { "option": "d", "text": "Solo en consola", "correct": false, "explanation": "Aplica a cualquier interacción." }
+        ]
+      },
+      {
+        "id": 40,
+        "question": "Cada instrucción se divide en microinstrucciones internas.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "Son parte del diseño interno del CPU." },
+          { "option": "c", "text": "Solo en microprogramadas", "correct": false, "explanation": "También ocurre en hardwired." },
+          { "option": "d", "text": "Solo en hardwired", "correct": false, "explanation": "También ocurre en microprogramadas." }
+        ]
+      },
+      {
+        "id": 41,
+        "question": "La ROM de control:",
+        "options": [
+          { "option": "a", "text": "Almacena microinstrucciones", "correct": true, "explanation": null },
+          { "option": "b", "text": "Es opcional", "correct": true, "explanation": null },
+          { "option": "c", "text": "Es volátil", "correct": false, "explanation": "Es memoria no volátil." },
+          { "option": "d", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay respuestas correctas listadas." }
+        ]
+      },
+      {
+        "id": 42,
+        "question": "Cada microinstrucción requiere varios ciclos de CPU.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "Cada microinstrucción suele necesitar múltiples ciclos." },
+          { "option": "c", "text": "Exactamente uno", "correct": false, "explanation": "Requiere varios ciclos." },
+          { "option": "d", "text": "Depende del opcode", "correct": false, "explanation": "No varía según el opcode." }
+        ]
+      },
+      {
+        "id": 43,
+        "question": "La frecuencia de la CPU:",
+        "options": [
+          { "option": "a", "text": "Se mide en GHz", "correct": true, "explanation": null },
+          { "option": "b", "text": "Mide microinstrucciones/s", "correct": false, "explanation": "Mide ciclos de reloj/s." },
+          { "option": "c", "text": "A mayor pipelining, más rápido", "correct": true, "explanation": null },
+          { "option": "d", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay respuestas correctas listadas." }
+        ]
+      },
+      {
+        "id": 44,
+        "question": "Bus de Control:",
+        "options": [
+          { "option": "a", "text": "Indica Lectura/escritura", "correct": true, "explanation": null },
+          { "option": "b", "text": "Especifica la dirección de memoria", "correct": false, "explanation": "Eso lo hace el bus de direcciones." },
+          { "option": "c", "text": "Transporta datos", "correct": false, "explanation": "Eso lo hace el bus de datos." },
+          { "option": "d", "text": "Todas son correctas", "correct": false, "explanation": "Solo una función es correcta." },
+          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Existe una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 45,
+        "question": "Bus de Direcciones:",
+        "options": [
+          { "option": "a", "text": "Indica Lectura/escritura", "correct": false, "explanation": "Eso lo hace el bus de control." },
+          { "option": "b", "text": "Especifica la dirección de memoria", "correct": true, "explanation": null },
+          { "option": "c", "text": "Transporta datos", "correct": false, "explanation": "Eso lo hace el bus de datos." },
+          { "option": "d", "text": "Todas son correctas", "correct": false, "explanation": "Solo una función es correcta." },
+          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Existe una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 46,
+        "question": "Bus de Datos:",
+        "options": [
+          { "option": "a", "text": "Indica Lectura/escritura", "correct": false, "explanation": "Eso lo hace el bus de control." },
+          { "option": "b", "text": "Especifica la dirección de memoria", "correct": false, "explanation": "Eso lo hace el bus de direcciones." },
+          { "option": "c", "text": "Transporta datos", "correct": true, "explanation": null },
+          { "option": "d", "text": "Todas son correctas", "correct": false, "explanation": "Solo una función es correcta." },
+          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Existe una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 47,
+        "question": "¿Qué operaciones pertenecen al ciclo de acceso a memoria?",
+        "options": [
+          { "option": "a", "text": "Indicar al bus de control", "correct": true, "explanation": null },
+          { "option": "b", "text": "Enviar dirección", "correct": true, "explanation": null },
+          { "option": "c", "text": "Transferir datos", "correct": true, "explanation": null },
+          { "option": "d", "text": "Operar con la ALU", "correct": false, "explanation": "La ALU no interviene en el acceso a memoria." }
+        ]
+      },
+      {
+        "id": 48,
+        "question": "Registro de flags (PSW):",
+        "options": [
+          { "option": "a", "text": "Almacena indicadores de la última operación", "correct": true, "explanation": null },
+          { "option": "b", "text": "Permite saltos condicionales", "correct": true, "explanation": null },
+          { "option": "c", "text": "Almacena instrucciones", "correct": false, "explanation": "Eso lo hace el IR." },
+          { "option": "d", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay respuestas correctas listadas." }
+        ]
+      },
+      {
+        "id": 49,
+        "question": "¿Qué es el acarreo?",
+        "options": [
+          { "option": "a", "text": "Indicador de bit sobrante en suma", "correct": true, "explanation": null },
+          { "option": "b", "text": "Señal de desbordamiento", "correct": false, "explanation": "El desbordamiento lo indica el bit O." },
+          { "option": "c", "text": "Bit de signo", "correct": false, "explanation": "El bit de signo es S." },
+          { "option": "d", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay una respuesta correcta listada." },
+          { "option": "e", "text": "Todas son correctas", "correct": false, "explanation": "Solo una función es correcta." }
+        ]
+      },
+      {
+        "id": 50,
+        "question": "¿Qué es el pipelining?",
+        "options": [
+          { "option": "a", "text": "Paralelizar fases de instrucción", "correct": true, "explanation": null },
+          { "option": "b", "text": "Caché de instrucciones", "correct": false, "explanation": "Eso es memoria cache." },
+          { "option": "c", "text": "Buffer de direcciones", "correct": false, "explanation": "No es función de pipelining." },
+          { "option": "d", "text": "Control de flujo interno", "correct": false, "explanation": "No describe pipelining." },
+          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay una respuesta correcta listada." }
+        ]
+      },
+      {
+        "id": 51,
+        "question": "El pipelining tiene como desventaja un impacto negativo en la eficiencia y el rendimiento de la CPU.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "El pipelining generalmente mejora el rendimiento." },
+          { "option": "b", "text": "Falso", "correct": true, "explanation": null },
+          { "option": "c", "text": "Solo en CISC", "correct": false, "explanation": "Aplica a cualquier ISA pipelinada." },
+          { "option": "d", "text": "Solo en RISC", "correct": false, "explanation": "Aplica a cualquier ISA pipelinada." }
+        ]
+      },
+      {
+        "id": 52,
+        "question": "Una computadora que tiene más MIPS que otra es más rápida.",
+        "options": [
+          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Solo es válido entre la misma arquitectura." },
+          { "option": "b", "text": "Falso", "correct": false, "explanation": "Puede variar según la ISA y diseño." },
+          { "option": "c", "text": "Solo en la misma arquitectura", "correct": true, "explanation": null },
+          { "option": "d", "text": "Solo midiendo FLOPS", "correct": false, "explanation": "FLOPS mide punto flotante, no aplica siempre." }
+        ]
+      }
+    ]
+  }
+]
