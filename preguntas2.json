@@ -1,561 +1,469 @@
-[
-  {
-    "Topic": "Procesador e Instrucciones",
-    "questions": [
-      {
-        "id": 1,
-        "question": "Un megabyte es equivalente a un mebibyte, solo que el megabyte está en base 2 y el mebibyte en base 10.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "MB y MiB utilizan bases distintas: MB decimal, MiB binario." },
-          { "option": "b", "text": "Falso", "correct": true, "explanation": null },
-          { "option": "c", "text": "Solo en sistemas de archivos", "correct": false, "explanation": "No depende del tipo de sistema de archivos." },
-          { "option": "d", "text": "Depende del sistema operativo", "correct": false, "explanation": "Es una convención de unidades, no de software." },
-          { "option": "e", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Existe una respuesta correcta: Falso." }
-        ]
-      },
-      {
-        "id": 2,
-        "question": "Cualquier usuario puede acceder manualmente a los “Registros visibles para el usuario” (William Stallings).",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Solo a través de instrucciones en lenguaje máquina, no manualmente." },
-          { "option": "b", "text": "Falso", "correct": true, "explanation": null },
-          { "option": "c", "text": "Solo en modo supervisor", "correct": false, "explanation": "Incluso en modo usuario se usan instrucciones para acceder." },
-          { "option": "d", "text": "Solo en modo kernel", "correct": false, "explanation": "Son accesibles desde usuario por código máquina." },
-          { "option": "e", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Existe una respuesta correcta: Falso." }
-        ]
-      },
-      {
-        "id": 3,
-        "question": "Seleccione los tipos de “Registros visibles para el usuario”:",
-        "options": [
-          { "option": "a", "text": "Registros de datos", "correct": true, "explanation": null },
-          { "option": "b", "text": "Registros de dirección", "correct": true, "explanation": null },
-          { "option": "c", "text": "Registros de bandera", "correct": false, "explanation": "Pertenecen al PSW, no al grupo visible estándar." },
-          { "option": "d", "text": "Registros de control", "correct": false, "explanation": "Forman parte de otro grupo distinto." },
-          { "option": "e", "text": "Registradores de punto flotante", "correct": false, "explanation": "Son un conjunto especializado, no general." },
-          { "option": "f", "text": "Todas son correctas", "correct": false, "explanation": "Solo datos y dirección son visibles para el usuario." },
-          { "option": "g", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay respuestas correctas listadas." }
-        ]
-      },
-      {
-        "id": 4,
-        "question": "Seleccione los registros que forman parte de los “Registros de control y estado”:",
-        "options": [
-          { "option": "a", "text": "PC", "correct": true, "explanation": null },
-          { "option": "b", "text": "IR", "correct": true, "explanation": null },
-          { "option": "c", "text": "PSW", "correct": true, "explanation": null },
-          { "option": "d", "text": "AX", "correct": false, "explanation": "Es un registro de datos de propósito general." },
-          { "option": "e", "text": "SP", "correct": false, "explanation": "Es un registro de dirección." },
-          { "option": "f", "text": "FLAGS", "correct": false, "explanation": "Los flags forman parte del PSW, no un registro independiente aquí." },
-          { "option": "g", "text": "Ninguno de los anteriores", "correct": false, "explanation": "Existen registros correctos: PC, IR y PSW." }
-        ]
-      },
-      {
-        "id": 5,
-        "question": "¿Cuál de los siguientes podría considerarse un registro de datos de propósito general?",
-        "options": [
-          { "option": "a", "text": "Registro índice", "correct": false, "explanation": "Es un registro de dirección." },
-          { "option": "b", "text": "Puntero de pila", "correct": false, "explanation": "Es un registro de dirección dedicado a la pila." },
-          { "option": "c", "text": "Registro de datos", "correct": true, "explanation": null },
-          { "option": "d", "text": "Puntero de segmento", "correct": false, "explanation": "Es un registro de dirección." },
-          { "option": "e", "text": "Registro de control", "correct": false, "explanation": "Forma parte de registros de control, no de datos." }
-        ]
-      },
-      {
-        "id": 6,
-        "question": "¿Cuál es la función principal de un registro de dirección?",
-        "options": [
-          { "option": "a", "text": "Almacenar datos intermedios", "correct": false, "explanation": "Eso es de un registro de datos." },
-          { "option": "b", "text": "Contener instrucciones a ejecutar", "correct": false, "explanation": "Lo hace el IR o la memoria." },
-          { "option": "c", "text": "Guardar direcciones de memoria (completas o parciales)", "correct": true, "explanation": null },
-          { "option": "d", "text": "Señalar condiciones de salto", "correct": false, "explanation": "Eso lo hacen los flags en el PSW." },
-          { "option": "e", "text": "Gestionar flags", "correct": false, "explanation": "Los flags residen en el PSW." }
-        ]
-      },
-      {
-        "id": 7,
-        "question": "Seleccione todos los registros que pertenezcan al grupo de “registros de dirección”:",
-        "options": [
-          { "option": "a", "text": "Registro índice", "correct": true, "explanation": null },
-          { "option": "b", "text": "Puntero de pila", "correct": true, "explanation": null },
-          { "option": "c", "text": "Registro de datos", "correct": false, "explanation": "No es un registro de dirección." },
-          { "option": "d", "text": "Puntero de segmento", "correct": true, "explanation": null },
-          { "option": "e", "text": "Registro de condición", "correct": false, "explanation": "Forma parte del PSW." }
-        ]
-      },
-      {
-        "id": 8,
-        "question": "Un registro de datos de propósito general puede usarse con cualquier instrucción sobre datos, sin excepción.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Algunas instrucciones imponen restricciones según el registro." },
-          { "option": "b", "text": "Falso", "correct": true, "explanation": null }
-        ]
-      },
-      {
-        "id": 9,
-        "question": "El puntero de pila (stack pointer) forma parte de los registros de dirección.",
+{
+  "Topic": "Procesador e Instrucciones",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿Cuántos niveles de protección existen en el esquema clásico de Protection Rings?",
+      "options": [
+        { "option": "a", "text": "3", "correct": false, "explanation": "El esquema clásico define 4 niveles: 0, 1, 2 y 3." },
+        { "option": "b", "text": "1", "correct": false, "explanation": "Siempre hay 4 rings, aunque algunos SO usan solo 0 y 3." },
+        { "option": "c", "text": "4", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Depende de la arquitectura", "correct": false, "explanation": "El número de rings estándar es 4, independientemente del chipset." },
+        { "option": "e", "text": "Depende del SO", "correct": false, "explanation": "Aunque un SO solo use 2 rings, el hardware soporta 4." }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "“El nivel 3 es el de máximo privilegio, con posibilidad de ejecutar todas las instrucciones del procesador”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "El ring 3 es el de menor privilegio (usuario), no puede ejecutar instrucciones privilegiadas." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "El simulador MARS, para programar en Assembly, se ejecuta en el nivel:",
+      "options": [
+        { "option": "a", "text": "1", "correct": false, "explanation": "MARS es un programa de usuario y corre en ring 3." },
+        { "option": "b", "text": "2", "correct": false, "explanation": "Ring 2 tampoco se usa para aplicaciones de usuario." },
+        { "option": "c", "text": "3", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Todas son correctas", "correct": false, "explanation": "MARS corre únicamente en ring 3." },
+        { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "MARS corre en ring 3 como programa de usuario." }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "“Hay instrucciones que solo pueden ejecutarse por procesos en el nivel de protección 3”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "No existe instrucción que un proceso de nivel 3 pueda ejecutar y no un proceso de nivel inferior." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "“El SO define el conjunto de instrucciones privilegiadas”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "La clasificación la realiza el hardware de la CPU." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "“El SO es quien define el nivel de privilegio (CPL) de cada proceso”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": "Es el kernel quien asigna el CPL al crear cada proceso." }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "“El kernel corre por defecto en el nivel 2”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "El kernel siempre corre en ring 0 (máximo privilegio)." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Esquema de protección de memoria: ¿cuáles de estas afirmaciones describen su funcionamiento?",
+      "options": [
+        { "option": "a", "text": "Un proceso puede acceder libremente al espacio que le fue asignado", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Un proceso puede acceder al espacio asignado a otros de su mismo ring", "correct": false, "explanation": "Cada proceso queda aislado, incluso si comparten ring." },
+        { "option": "c", "text": "Ayuda a proteger la integridad del sistema", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Ayuda a evitar fallos de seguridad", "correct": true,  "explanation": null },
+        { "option": "e", "text": "Ayuda a optimizar el rendimiento", "correct": false, "explanation": "El objetivo principal es seguridad, no rendimiento." },
+        { "option": "f", "text": "Si se activa, lanza una excepción", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Las operaciones de E/S (IN/OUT) son…",
+      "options": [
+        { "option": "a", "text": "Privilegiadas", "correct": true,  "explanation": null },
+        { "option": "b", "text": "No privilegiadas", "correct": false, "explanation": "Requieren ring 0 para acceso directo a hardware." }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Si un usuario no privilegiado intenta ejecutar una instrucción privilegiada, se lanza…",
+      "options": [
+        { "option": "a", "text": "Una interrupción de hardware", "correct": false, "explanation": "Las interrupciones provienen de dispositivos externos, no de violaciones de privilegio." },
+        { "option": "b", "text": "Una excepción/fault", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Un trap/gate", "correct": false, "explanation": "Los traps son invocados intencionalmente por software." },
+        { "option": "d", "text": "Nada sucede", "correct": false, "explanation": "La CPU genera un fault de protección." }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "¿Es estrictamente necesario un sistema operativo para usar hardware?",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "En los inicios no había SO; se programaba directamente el hardware pero era extremadamente complejo." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "El sistema operativo…",
+      "options": [
+        { "option": "a", "text": "Implementa la lógica del pipeline de la CPU", "correct": false, "explanation": "El pipeline es gestionado internamente por la CPU, no por el SO." },
+        { "option": "b", "text": "Es intermediario entre usuario y hardware", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Controla la lógica de la ALU", "correct": false, "explanation": "La ALU forma parte de la CPU y no se controla desde el SO." },
+        { "option": "d", "text": "Ofrece capa de servicios y protección", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "¿Qué características describen al SO?",
+      "options": [
+        { "option": "a", "text": "Abstracción de dispositivos", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Proporciona capa de servicios", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Proporciona capa de seguridad", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "La abstracción de dispositivos en SO significa…",
+      "options": [
+        { "option": "a", "text": "Interfaces uniformes a hardware diverso", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Carga y coordinación de drivers", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Define syscall para tareas privilegiadas", "correct": false, "explanation": "Eso es capa de servicios, no abstracción de dispositivos." },
+        { "option": "d", "text": "Cada llamada implica cambio de contexto", "correct": false, "explanation": "Esto es un detalle de implementación de syscalls." },
+        { "option": "e", "text": "Gestiona privilegios de procesos", "correct": false,  "explanation": "Esto es seguridad y control de acceso" },
+        { "option": "f", "text": "Implementa protección de memoria", "correct": false,  "explanation": "Esto es seguridad y control de acceso" }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "¿Qué caracteriza a la capa de servicios del SO?",
+      "options": [
+        { "option": "a", "text": "Interfaces uniformes a hardware", "correct": false, "explanation": "Es abstracción de dispositivos, no servicio." },
+        { "option": "b", "text": "Carga y coordina drivers", "correct": false, "explanation": "Es parte de abstracción de dispositivos." },
+        { "option": "c", "text": "Define conjunto de syscalls", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Cambio de contexto controlado", "correct": true,  "explanation": null },
+        { "option": "e", "text": "Gestiona privilegios de procesos", "correct": false,  "explanation": "Esto es seguridad y control de acceso" },
+        { "option": "f", "text": "Implementa protección de memoria", "correct": false,  "explanation": "Esto es seguridad y control de acceso" }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "¿Qué afirma es cierta sobre seguridad y control de acceso en SO?",
+      "options": [
+        { "option": "a", "text": "Proporciona interfaces uniformes", "correct": false, "explanation": "Esto es abstracción de dispositivos." },
+        { "option": "b", "text": "Carga y coordina drivers", "correct": false, "explanation": "Esto es abstracción de dispositivos" },
+        { "option": "c", "text": "Define syscalls privilegiadas", "correct": false, "explanation": "Es parte de la capa de servicios." },
+        { "option": "d", "text": "Cada llamada implica cambio de contexto", "correct": false, "explanation": "Es detalle de syscalls." },
+        { "option": "e", "text": "Gestiona privilegios de procesos", "correct": true,  "explanation": null },
+        { "option": "f", "text": "Implementa protección de memoria", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "“Concurrencia es capacidad de CPU de ejecutar operaciones en paralelo”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Aquí se asume CPU unicore: Concurrencia SIMULA simultaneidad/paralelismo entre procesos." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "“Una CPU es secuencial”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": "Se asume unicore: una instrucción a la vez." }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "El planificador del SO…",
+      "options": [
+        { "option": "a", "text": "Decide a qué proceso asignar CPU", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Decide cuánto tiempo de CPU para cada proceso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "“Los procesos ocupan registros en memoria según su ring”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Cada proceso tiene su propio espacio de memoria (código, datos, pila)." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 21,
+      "question": "“El SO asigna porciones de memoria a cada proceso”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": "Es función del SO mediante paginación, segmentación, etc." }
+      ]
+    },
+    {
+      "id": 22,
+      "question": "“Si tengo 3 instancias de un MISMO programa en ejecución y en estado 'ready'",
+      "options": [
+        { "option": "a", "text": "1 instancia del programa cargada en memoria, 1 conjunto de memoria individual asignado a cada proceso", "correct": false,  "explanation": "Cada proceso se trata de manera individual e independiente" },
+        { "option": "b", "text": "3 instancias del programa cargadas en memoria, 1 conjunto de memoria compartida asignado para los 3 procesos", "correct": false,  "explanation": "Cada proceso se trata de manera individual e independiente" },
+        { "option": "c", "text": "3 instancias del programa cargadas en memoria, 1 conjunto de memoria individual asignado a cada proceso", "correct": true, "explanation": null },
+        { "option": "d", "text": "Depende de la arquitectura", "correct": false,  "explanation": "Al menos hasta ahora, en esta asignatura cada proceso se trata de manera individual e independiente indistintamente de la arquitectura" }
+      ]
+    },
+    {
+      "id": 23,
+      "question": "“Dos instancias de la misma calculadora comparten porción de memoria”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Cada instancia es proceso independiente con su propio espacio." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 24,
+      "question": "Directorio…",
+      "options": [
+        { "option": "a", "text": "Esta formado por una colección de direcciones de memoria", "correct": true, "explanation": null },
+        { "option": "b", "text": "Se almacena siempre en cache L1", "correct": false, "explanation": "Los directorios residen en el sistema de archivos del disco, no en cache L1." },
+        { "option": "c", "text": "Es generado por el planificador del SO", "correct": false, "explanation": "El planificador no crea directorios." },
+        { "option": "d", "text": "Es un archivo", "correct": true,  "explanation": null },
+        { "option": "e", "text": "Contiene la tabla de registros del CPU", "correct": false, "explanation": "Eso corresponde a la gestión de procesos, no a un directorio." }
+      ]
+    },
+    {
+      "id": 25,
+      "question": "“La interfaz superior del SO controla y comunica con el hardware”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "La interfaz superior ofrece servicios a aplicaciones, no hardware." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 26,
+      "question": "“La interfaz inferior controla y comunica con el hardware”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": "Corresponde a drivers y manejo de interrupciones." }
+      ]
+    },
+    {
+      "id": 27,
+      "question": "El kernel…",
+      "options": [
+        { "option": "a", "text": "Su tamaño y funciones dependen del hardware", "correct": false, "explanation": "Dependen del diseño del SO y sus objetivos, no del chipset." },
+        { "option": "b", "text": "Puede ejecutarse en modo usuario", "correct": false, "explanation": "Siempre corre en modo privilegiado (ring 0)." },
+        { "option": "c", "text": "Contiene todas las funciones en modo privilegiado", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Es independiente del sistema de archivos", "correct": false, "explanation": "El kernel interactúa estrechamente con el sistema de archivos para gestionar E/S." },
+        { "option": "e", "text": "Implementa el pipeline de instrucciones", "correct": false, "explanation": "El pipeline es interno a la CPU." }
+      ]
+    },
+    {
+      "id": 28,
+      "question": "Funciones del SO: (seleccione todas las correctas)",
+      "options": [
+        { "option": "a", "text": "Gestión de procesos", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Gestión de memoria interna", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Gestión de archivos y directorios", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Gestión de dispositivos E/S", "correct": true,  "explanation": null },
+        { "option": "e", "text": "Gestión de comunicaciones", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 29,
+      "question": "La gestión de procesos se encarga de:",
+      "options": [
+        { "option": "a", "text": "Transformar programas en procesos", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Controlar estados de los procesos", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Políticas de paginación y swapping", "correct": false, "explanation": "Es función de gestión de memoria interna." },
+        { "option": "d", "text": "Protección de accesos no autorizados", "correct": false,  "explanation": "Es función de gestión de memoria interna." }
+      ]
+    },
+    {
+      "id": 30,
+      "question": "La gestión de memoria interna se encarga de:",
+      "options": [
+        { "option": "a", "text": "Particiones, paginación y swapping", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Transformar programas en procesos", "correct": false,  "explanation": "Es funcion de la gestion de procesos" },
+        { "option": "c", "text": "Protección de accesos no autorizados", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Control de estados de procesos", "correct": false, "explanation": "Es función de gestión de procesos." }
+      ]
+    },
+    {
+      "id": 31,
+      "question": "La gestión de archivos y directorios se encarga de:",
+      "options": [
+        { "option": "a", "text": "Asignar espacio de memoria a procesos", "correct": false, "explanation": "Es función de gestión de memoria interna." },
+        { "option": "b", "text": "Protección de accesos no autorizados", "correct": false,  "explanation": "Es función de gestión de memoria interna." },
+        { "option": "c", "text": "Abstracción de archivos (nombre, permisos)", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Transformar programas en procesos", "correct": false,  "explanation": "Es funcion de la gestion de procesos" },
+        { "option": "e", "text": "Organización física del almacenamiento en sectores", "correct": true,  "explanation": null },
+        { "option": "f", "text": "Control de estados de procesos", "correct": false, "explanation": "Es función de gestión de procesos." }
+      ]
+    },
+    {
+      "id": 32,
+      "question": "La gestión de dispositivos de E/S se encarga de:",
+      "options": [
+        { "option": "a", "text": "Interacción con controladoras y drivers", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Paginación y swapping", "correct": false, "explanation": "Es función de gestión de memoria interna." }
+      ]
+    },
+    {
+      "id": 33,
+      "question": "La gestión de comunicaciones se encarga de:",
+      "options": [
+        { "option": "a", "text": "Sockets, protocolos y transferencia de datos", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Protección de accesos no autorizados", "correct": false,  "explanation": "Es función de gestión de memoria interna." },
+        { "option": "c", "text": "Carga de controladoras de disco", "correct": false, "explanation": "Eso es gestión de E/S de dispositivos." }
+      ]
+    },
+    {
+      "id": 34,
+      "question": "El SO mapea archivos en disco:",
+      "options": [
+        { "option": "a", "text": "En un sector específico", "correct": false, "explanation": "Muestra al usuario sectores dispersos mediante el sistema de archivos." },
+        { "option": "b", "text": "En sectores dispersos", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 35,
+      "question": "“Los lenguajes compilados son portables”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Las syscalls varían según SO." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 36,
+      "question": "“Los lenguajes interpretados y/o bytecode son portables”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": "El intérprete/VM sobre el que corren traduce las syscalls a las del SO anfitrion." }
+      ]
+    },
+    {
+      "id": 37,
+      "question": "“Los SO monolíticos solo contienen lo mínimo en modo privilegiado”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Monolíticos ejecutan muchos servicios no escenciales en modo 0, en el caso de Microsoft corre inclusive la GUI en modo privilegiado " },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 38,
+      "question": "“Los microkernels corren solo lo estrictamente necesario en modo privilegiado”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": "Esa es la definición de microkernel." }
+      ]
+    },
+    {
+      "id": 39,
+      "question": "El SO se activa por…",
+      "options": [
+        { "option": "a", "text": "Eventos que actualizan el PC (interrupciones, excepciones, traps/gates, fallos)", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Solo llamadas al sistema", "correct": false, "explanation": "También por interrupciones de hardware." }
+      ]
+    },
+    {
+      "id": 40,
+      "question": "“Cuando se activa el SO, depende del tipo de evento activar modo privilegiado”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Siempre entra en modo 0 cuando se activa el SO." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 41,
+      "question": "“Al activarse el SO, se produce siempre un salto en el PC”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": "El PC salta a la rutina de SO en cada evento." }
+      ]
+    },
+    {
+      "id": 42,
+      "question": "Un evento externo (por ejemplo periférico) produce…",
+      "options": [
+        { "option": "a", "text": "Una interrupción", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Una excepción", "correct": false, "explanation": "Las exceptions son internas a la CPU." },
+        { "option": "c", "text": "Una trap", "correct": false, "explanation": "Incorrecto" },
+        { "option": "d", "text": "Un fallo/fault", "correct": false, "explanation": "Incorrecto" }
+      ]
+    },
+    {
+      "id": 43,
+      "question": "Las interrupciones son (seleccione todas las correctas):",
+      "options": [
+        { "option": "a", "text": "Asíncronas", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Generadas por controladoras", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Síncronas con el reloj de CPU", "correct": false, "explanation": "Las interrupciones de hardware son asíncronas; el timer es solo una fuente." },
+        { "option": "d", "text": "Se encolan en un buffer FIFO", "correct": false, "explanation": "No siguen estrictamente FIFO; dependen del controlador de interrupciones." },
+        { "option": "e", "text": "Atendidas por ISR", "correct": true,  "explanation": null },
+        { "option": "f", "text": "Requieren validación por software antes de atenderse", "correct": false, "explanation": "La CPU atiende directamente la línea de interrupción." }
+      ]
+    },
+    {
+      "id": 44,
+      "question": "“La CPU interrumpe la instrucción en curso para atender una interrupción y luego la retoma”",
+      "options": [
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "La CPU termina la instrucción antes de atender la ISR." },
+        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 45,
+      "question": "Cuando se produce un error interno (división por cero, overflow) ocurre…",
+      "options": [
+        { "option": "a", "text": "Una trap", "correct": false, "explanation": "Un trap es un llamado intencional por parte del usuario, usualmente utilizado para syscalls." },
+        { "option": "b", "text": "Un fallo/fault", "correct": false, "explanation": "Un fallo se produce usualmente cuando un usuario desea realizar una accion que no tiene permitida" },
+        { "option": "c", "text": "Una excepción", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Una interrupción", "correct": false, "explanation": "Las interrupts son de llamados de hardware externo." }
+      ]
+    },
+    {
+      "id": 46,
+      "question": "Las excepciones son (seleccione todas las correctas):",
+      "options": [
+        { "option": "a", "text": "Síncronas", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Atendidas por rutinas de excepción", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Siempre generan salto en PC", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Solicitadas por el usuario", "correct": false, "explanation": "Son generadas por la CPU ante errores internos." }
+      ]
+    },
+    {
+      "id": 47,
+      "question": "Cuando un proceso accede a memoria no permitida ocurre…",
+      "options": [
+        { "option": "a", "text": "Un fallo/fault", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Una interrupción", "correct": false, "explanation": "Las interrupts son llamados de hardware externo." },
+        { "option": "c", "text": "Una excepción", "correct": false, "explanation": "Las exceptions son errores internos de la CPU, como una división por cero o un overflow" },
+        { "option": "d", "text": "Una trap", "correct": false, "explanation": "Un trap es un llamado intencional por parte del usuario, usualmente utilizado para syscalls." }
+      ]
+    },
+    {
+      "id": 48,
+      "question": "Cuando haces una llamada al sistema (syscall) se produce…",
+      "options": [
+        { "option": "a", "text": "Un fallo/fault", "correct": false, "explanation": "Un fallo se produce usualmente cuando un usuario desea realizar una accion que no tiene permitida" },
+        { "option": "b", "text": "Una interrupción", "correct": false, "explanation": "Las interrupts son llamados de hardware externo." },
+        { "option": "c", "text": "Un trap/gate", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Una excepción", "correct": false, "explanation": "Las exceptions son errores internos de la CPU, como una división por cero o un overflow" }
+      ]
+    },
+    {
+      "id": 49,
+      "question": "Un trap/gate es (seleccione todas las correctas):",
+      "options": [
+        { "option": "a", "text": "Intencional", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Síncrono", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Petición explícita de usuario", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Puede ser lectura de E/S", "correct": true,  "explanation": null },
+        { "option": "e", "text": "Puede ser escritura de E/S", "correct": true,  "explanation": null }
+      ]
+    },
+    {
+      "id": 50,
+        "question": "“La CPU interrumpe el proceso en curso para atender una interrupción y luego lo retoma”",
         "options": [
           { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "Es un registro de dirección." }
-        ]
-      },
-      {
-        "id": 10,
-        "question": "El IR contiene la instrucción leída.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "El IR guarda la instrucción actual." },
-          { "option": "c", "text": "Solo en CISC", "correct": false, "explanation": "Es independiente del ISA." },
-          { "option": "d", "text": "Solo en RISC", "correct": false, "explanation": "Es independiente del ISA." },
-          { "option": "e", "text": "Depende del pipeline", "correct": false, "explanation": "Siempre contiene la instrucción leída." }
-        ]
-      },
-      {
-        "id": 11,
-        "question": "La PSW contiene…",
-        "options": [
-          { "option": "a", "text": "Registros de condición", "correct": true, "explanation": null },
-          { "option": "b", "text": "Código de operación", "correct": false, "explanation": "Ese lo define el opcode en la instrucción." },
-          { "option": "c", "text": "Dirección de la próxima instrucción", "correct": false, "explanation": "Eso lo hace el PC." },
-          { "option": "d", "text": "Bits de estado", "correct": true, "explanation": null },
-          { "option": "e", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Hay respuestas correctas listadas." }
-        ]
-      },
-      {
-        "id": 12,
-        "question": "¿Qué describe el bit de signo (S)?",
-        "options": [
-          { "option": "a", "text": "Resultado ≥ 0 / < 0", "correct": true, "explanation": null },
-          { "option": "b", "text": "Resultado = 0", "correct": false, "explanation": "Es función del bit Z." },
-          { "option": "c", "text": "Acarreo en suma", "correct": false, "explanation": "Es función del bit C." },
-          { "option": "d", "text": "Desbordamiento aritmético", "correct": false, "explanation": "Es función del bit O." },
-          { "option": "e", "text": "Ninguna", "correct": false, "explanation": "Hay una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 13,
-        "question": "¿Qué describe el bit de cero (Z)?",
-        "options": [
-          { "option": "a", "text": "Resultado ≥ 0 / < 0", "correct": false, "explanation": "Es función del bit S." },
-          { "option": "b", "text": "Resultado = 0", "correct": true, "explanation": null },
-          { "option": "c", "text": "Acarreo en suma", "correct": false, "explanation": "Es función del bit C." },
-          { "option": "d", "text": "Desbordamiento aritmético", "correct": false, "explanation": "Es función del bit O." },
-          { "option": "e", "text": "Ninguna", "correct": false, "explanation": "Hay una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 14,
-        "question": "¿Qué describe el bit de acarreo (C)?",
-        "options": [
-          { "option": "a", "text": "Resultado ≥ 0 / < 0", "correct": false, "explanation": "Es función del bit S." },
-          { "option": "b", "text": "Resultado = 0", "correct": false, "explanation": "Es función del bit Z." },
-          { "option": "c", "text": "Acarreo en suma", "correct": true, "explanation": null },
-          { "option": "d", "text": "Desbordamiento aritmético", "correct": false, "explanation": "Es función del bit O." },
-          { "option": "e", "text": "Ninguna", "correct": false, "explanation": "Hay una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 15,
-        "question": "¿Qué describe el bit de desbordamiento (O)?",
-        "options": [
-          { "option": "a", "text": "Resultado ≥ 0 / < 0", "correct": false, "explanation": "Es función del bit S." },
-          { "option": "b", "text": "Resultado = 0", "correct": false, "explanation": "Es función del bit Z." },
-          { "option": "c", "text": "Acarreo en suma", "correct": false, "explanation": "Es función del bit C." },
-          { "option": "d", "text": "Desbordamiento aritmético", "correct": true, "explanation": null },
-          { "option": "e", "text": "Ninguna", "correct": false, "explanation": "Hay una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 16,
-        "question": "¿Qué es una instrucción?",
-        "options": [
-          { "option": "a", "text": "Orden binaria al CPU", "correct": true, "explanation": null },
-          { "option": "b", "text": "Unidad de código de máquina", "correct": true, "explanation": null },
-          { "option": "c", "text": "Línea de alto nivel traducida", "correct": false, "explanation": "Es código fuente o bytecode, no instrucción máquina." },
-          { "option": "d", "text": "Operación de E/S", "correct": false, "explanation": "Es un tipo específico de instrucción, no definición general." },
-          { "option": "e", "text": "Todas son correctas", "correct": false, "explanation": "Solo a y b definen una instrucción máquina." },
-          { "option": "f", "text": "Ninguna es correcta", "correct": false, "explanation": "Existen definiciones correctas listadas." }
-        ]
-      },
-      {
-        "id": 17,
-        "question": "Cuando se compila el código fuente de un programa, se traduce a un conjunto de instrucciones en lenguaje máquina.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "Eso ocurre al compilar." },
-          { "option": "c", "text": "Solo en lenguajes interpretados", "correct": false, "explanation": "Los interpretes no compilan a código máquina." },
-          { "option": "d", "text": "Solo en ensamblador", "correct": false, "explanation": "Los compiladores de alto nivel también traducen a máquina." }
-        ]
-      },
-      {
-        "id": 18,
-        "question": "Seleccione las instrucciones que realiza la CPU:",
-        "options": [
-          { "option": "a", "text": "Lógicas", "correct": true, "explanation": null },
-          { "option": "b", "text": "Matemáticas", "correct": true, "explanation": null },
-          { "option": "c", "text": "Transferencia de datos", "correct": true, "explanation": null },
-          { "option": "d", "text": "Saltos", "correct": true, "explanation": null },
-          { "option": "e", "text": "Gestión de memoria", "correct": false, "explanation": "Es tarea del sistema operativo y MMU." },
-          { "option": "f", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Hay varias instrucciones correctas listadas." }
-        ]
-      },
-      {
-        "id": 19,
-        "question": "Las instrucciones lógicas son:",
-        "options": [
-          { "option": "a", "text": "AND, OR, NOT, XOR", "correct": true, "explanation": null },
-          { "option": "b", "text": "ADD, SUB, MUL, DIV", "correct": false, "explanation": "Son instrucciones aritméticas." },
-          { "option": "c", "text": "LOAD, STORE, MOV", "correct": false, "explanation": "Son de transferencia de datos." },
-          { "option": "d", "text": "JMP, CALL, RET", "correct": false, "explanation": "Son de salto y control." },
-          { "option": "e", "text": "Todas las anteriores", "correct": false, "explanation": "No todas son lógicas." }
-        ]
-      },
-      {
-        "id": 20,
-        "question": "Las instrucciones matemáticas son:",
-        "options": [
-          { "option": "a", "text": "ADD, SUB, MUL, DIV", "correct": true, "explanation": null },
-          { "option": "b", "text": "AND, OR, NOT, XOR", "correct": false, "explanation": "Son lógicas." },
-          { "option": "c", "text": "LOAD, STORE, MOV", "correct": false, "explanation": "Son de transferencia de datos." },
-          { "option": "d", "text": "JMP, CALL, RET", "correct": false, "explanation": "Son de salto y control." },
-          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 21,
-        "question": "Las instrucciones de transferencia de datos son:",
-        "options": [
-          { "option": "a", "text": "LOAD, STORE, MOV, PUSH, POP", "correct": true, "explanation": null },
-          { "option": "b", "text": "ADD, SUB, INC, DEC", "correct": false, "explanation": "Son instrucciones aritméticas." },
-          { "option": "c", "text": "JMP, JNZ, JZ", "correct": false, "explanation": "Son de salto." },
-          { "option": "d", "text": "AND, OR, NOT", "correct": false, "explanation": "Son lógicas." },
-          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 22,
-        "question": "La compatibilidad de un SO (Android) depende de que el CPU soporte las instrucciones requeridas; esto depende de la arquitectura.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "Depende de la ISA soportada por el CPU." },
-          { "option": "c", "text": "Solo en x86", "correct": false, "explanation": "Ocurre en cualquier ISA." },
-          { "option": "d", "text": "Solo en ARM", "correct": false, "explanation": "Ocurre en cualquier ISA." }
-        ]
-      },
-      {
-        "id": 23,
-        "question": "Las instrucciones dependen exclusivamente del hardware.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "También dependen de la ISA implementada." },
-          { "option": "b", "text": "Falso", "correct": true, "explanation": null },
-          { "option": "c", "text": "Solo en CISC", "correct": false, "explanation": "Es independiente del estilo ISA." },
-          { "option": "d", "text": "Solo en RISC", "correct": false, "explanation": "Es independiente del estilo ISA." }
-        ]
-      },
-      {
-        "id": 24,
-        "question": "Las instrucciones y los datos se encuentran almacenados en…",
-        "options": [
-          { "option": "a", "text": "Disco", "correct": false, "explanation": "Es almacenamiento secundario." },
-          { "option": "b", "text": "RAM", "correct": true, "explanation": null },
-          { "option": "c", "text": "Caché", "correct": false, "explanation": "Es memoria intermedia, no principal." },
-          { "option": "d", "text": "Registros del CPU", "correct": false, "explanation": "Son temporales y limitados." },
-          { "option": "e", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Existe una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 25,
-        "question": "Las arquitecturas pueden dividirse en distintos grupos:",
-        "options": [
-          { "option": "a", "text": "MIPS", "correct": false, "explanation": "Es una ISA específica, no grupo general." },
-          { "option": "b", "text": "RISC", "correct": true, "explanation": null },
-          { "option": "c", "text": "CISC", "correct": true, "explanation": null },
-          { "option": "d", "text": "VLIW", "correct": false, "explanation": "Es un diseño, no categoría ISA principal." },
-          { "option": "e", "text": "EPIC", "correct": false, "explanation": "Es un estilo derivado de VLIW." }
-        ]
-      },
-      {
-        "id": 26,
-        "question": "Las arquitecturas dependen del diseño del hardware subyacente.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "No dependen de la marca ni del SO." },
-          { "option": "c", "text": "Solo de la marca", "correct": false, "explanation": "Dependen del diseño, no de la marca." },
-          { "option": "d", "text": "Solo del sistema operativo", "correct": false, "explanation": "El SO se adapta a la ISA." }
-        ]
-      },
-      {
-        "id": 27,
-        "question": "Un programa está compuesto solo por un conjunto de instrucciones binarias y datos.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "Incluye también metadatos y encabezados en un ejecutable." },
-          { "option": "c", "text": "Incluye librerías dinámicas", "correct": false, "explanation": "Son externas al ejecutable." },
-          { "option": "d", "text": "Incluye metadatos", "correct": false, "explanation": "Son parte del formato, no del programa en tiempo de ejecución." }
-        ]
-      },
-      {
-        "id": 28,
-        "question": "¿Dónde se almacenan las instrucciones y los datos?",
-        "options": [
-          { "option": "a", "text": "DRAM", "correct": true, "explanation": null },
-          { "option": "b", "text": "SRAM", "correct": false, "explanation": "Es memoria cache, no principal." },
-          { "option": "c", "text": "Flash", "correct": false, "explanation": "Es almacenamiento no volátil." },
-          { "option": "d", "text": "EEPROM", "correct": false, "explanation": "Es memoria no volátil de configuración." }
-        ]
-      },
-      {
-        "id": 29,
-        "question": "Lo que se escribe en lenguajes de alto nivel se traduce a…",
-        "options": [
-          { "option": "a", "text": "Assembly", "correct": true, "explanation": null },
-          { "option": "b", "text": "Binario", "correct": true, "explanation": null },
-          { "option": "c", "text": "Bytecode", "correct": false, "explanation": "Es intermedio para VM, no siempre." },
-          { "option": "d", "text": "Todas son correctas", "correct": false, "explanation": "Bytecode no es universal." },
-          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay respuestas correctas listadas." }
-        ]
-      },
-      {
-        "id": 30,
-        "question": "La CPU decodifica las instrucciones para identificar la operación.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "La decodificación es paso esencial." },
-          { "option": "c", "text": "Solo en modo usuario", "correct": false, "explanation": "Ocurre en hardware siempre." },
-          { "option": "d", "text": "Solo en modo kernel", "correct": false, "explanation": "No depende del modo de ejecución." }
-        ]
-      },
-      {
-        "id": 31,
-        "question": "Una instrucción está compuesta por…",
-        "options": [
-          { "option": "a", "text": "Opcode", "correct": true, "explanation": null },
-          { "option": "b", "text": "Operandos", "correct": true, "explanation": null },
-          { "option": "c", "text": "Destino", "correct": true, "explanation": null },
-          { "option": "d", "text": "Prefijo", "correct": false, "explanation": "Específico de algunas ISA, no general." },
-          { "option": "e", "text": "Sufijo", "correct": false, "explanation": "No es parte estándar de la instrucción." }
-        ]
-      },
-      {
-        "id": 32,
-        "question": "Un Opcode…",
-        "options": [
-          { "option": "a", "text": "Especifica la operación", "correct": true, "explanation": null },
-          { "option": "b", "text": "Es un registro", "correct": false, "explanation": "Es parte de la instrucción, no un registro." },
-          { "option": "c", "text": "Es un puntero", "correct": false, "explanation": "No apunta a memoria." },
-          { "option": "d", "text": "Ninguno", "correct": false, "explanation": "Hay una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 33,
-        "question": "El operando de una instrucción…",
-        "options": [
-          { "option": "a", "text": "Son datos o direcciones", "correct": true, "explanation": null },
-          { "option": "b", "text": "Es la operación", "correct": false, "explanation": "Eso lo define el opcode." },
-          { "option": "c", "text": "Es el registro de estado", "correct": false, "explanation": "Es parte del PSW." },
-          { "option": "d", "text": "Ninguno", "correct": false, "explanation": "Hay una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 34,
-        "question": "El destino de una instrucción…",
-        "options": [
-          { "option": "a", "text": "Donde se guarda el resultado", "correct": true, "explanation": null },
-          { "option": "b", "text": "Es el opcode", "correct": false, "explanation": "El opcode especifica la operación." },
-          { "option": "c", "text": "Es un flag", "correct": false, "explanation": "Los flags están en el PSW." },
-          { "option": "d", "text": "Ninguno", "correct": false, "explanation": "Hay una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 35,
-        "question": "A cada instrucción le corresponde un código binario específico que el procesador puede reconocer.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "Cada instrucción tiene su código." },
-          { "option": "c", "text": "Solo en RISC", "correct": false, "explanation": "Ocurre en cualquier ISA." },
-          { "option": "d", "text": "Solo en CISC", "correct": false, "explanation": "Ocurre en cualquier ISA." }
-        ]
-      },
-      {
-        "id": 36,
-        "question": "La instrucción JUMP:",
-        "options": [
-          { "option": "a", "text": "Modifica el PC", "correct": true, "explanation": null },
-          { "option": "b", "text": "Implementa bucles", "correct": true, "explanation": null },
-          { "option": "c", "text": "Implementa condicionales", "correct": true, "explanation": null },
-          { "option": "d", "text": "Llama funciones", "correct": true, "explanation": null },
-          { "option": "e", "text": "Maneja subrutinas", "correct": true, "explanation": null },
-          { "option": "f", "text": "Todas son correctas", "correct": true, "explanation": null },
-          { "option": "g", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay varias funciones listadas." }
-        ]
-      },
-      {
-        "id": 37,
-        "question": "El Program Counter:",
-        "options": [
-          { "option": "a", "text": "Registro interno de la CPU", "correct": true, "explanation": null },
-          { "option": "b", "text": "Avanza según tamaño de instrucción", "correct": true, "explanation": null },
-          { "option": "c", "text": "Cuenta ciclos de reloj", "correct": false, "explanation": "No mide ciclos." },
-          { "option": "d", "text": "Ninguna es correcta", "correct": false, "explanation": "Existen respuestas correctas listadas." }
-        ]
-      },
-      {
-        "id": 38,
-        "question": "Elija las definiciones correctas:",
-        "options": [
-          { "option": "a", "text": "Un proceso es instancia de un programa en disco", "correct": false, "explanation": "El proceso es instancia en RAM." },
-          { "option": "b", "text": "La imagen en memoria incluye instrucciones y datos", "correct": true, "explanation": null },
-          { "option": "c", "text": "El PC señala la próxima instrucción", "correct": true, "explanation": null },
-          { "option": "d", "text": "Ninguna instrucción puede sobrescribir el PC", "correct": false, "explanation": "Existen instrucciones de salto que lo modifican." },
-          { "option": "e", "text": "La CPU coloca en el IR la instrucción", "correct": true, "explanation": null },
-          { "option": "f", "text": "El PC se incrementa al finalizar", "correct": true, "explanation": null }
-        ]
-      },
-      {
-        "id": 39,
-        "question": "Durante el uso del programa, cada acción del usuario tiene asociada una rutina cargada en memoria.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "El programa ya incluye esas rutinas." },
-          { "option": "c", "text": "Solo en GUI", "correct": false, "explanation": "Aplica a cualquier interacción." },
-          { "option": "d", "text": "Solo en consola", "correct": false, "explanation": "Aplica a cualquier interacción." }
-        ]
-      },
-      {
-        "id": 40,
-        "question": "Cada instrucción se divide en microinstrucciones internas.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "Son parte del diseño interno del CPU." },
-          { "option": "c", "text": "Solo en microprogramadas", "correct": false, "explanation": "También ocurre en hardwired." },
-          { "option": "d", "text": "Solo en hardwired", "correct": false, "explanation": "También ocurre en microprogramadas." }
-        ]
-      },
-      {
-        "id": 41,
-        "question": "La ROM de control:",
-        "options": [
-          { "option": "a", "text": "Almacena microinstrucciones", "correct": true, "explanation": null },
-          { "option": "b", "text": "Es opcional", "correct": true, "explanation": null },
-          { "option": "c", "text": "Es volátil", "correct": false, "explanation": "Es memoria no volátil." },
-          { "option": "d", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay respuestas correctas listadas." }
-        ]
-      },
-      {
-        "id": 42,
-        "question": "Cada microinstrucción requiere varios ciclos de CPU.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "Cada microinstrucción suele necesitar múltiples ciclos." },
-          { "option": "c", "text": "Exactamente uno", "correct": false, "explanation": "Requiere varios ciclos." },
-          { "option": "d", "text": "Depende del opcode", "correct": false, "explanation": "No varía según el opcode." }
-        ]
-      },
-      {
-        "id": 43,
-        "question": "La frecuencia de la CPU:",
-        "options": [
-          { "option": "a", "text": "Se mide en GHz", "correct": true, "explanation": null },
-          { "option": "b", "text": "Mide microinstrucciones/s", "correct": false, "explanation": "Mide ciclos de reloj/s." },
-          { "option": "c", "text": "A mayor pipelining, más rápido", "correct": true, "explanation": null },
-          { "option": "d", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay respuestas correctas listadas." }
-        ]
-      },
-      {
-        "id": 44,
-        "question": "Bus de Control:",
-        "options": [
-          { "option": "a", "text": "Indica Lectura/escritura", "correct": true, "explanation": null },
-          { "option": "b", "text": "Especifica la dirección de memoria", "correct": false, "explanation": "Eso lo hace el bus de direcciones." },
-          { "option": "c", "text": "Transporta datos", "correct": false, "explanation": "Eso lo hace el bus de datos." },
-          { "option": "d", "text": "Todas son correctas", "correct": false, "explanation": "Solo una función es correcta." },
-          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Existe una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 45,
-        "question": "Bus de Direcciones:",
-        "options": [
-          { "option": "a", "text": "Indica Lectura/escritura", "correct": false, "explanation": "Eso lo hace el bus de control." },
-          { "option": "b", "text": "Especifica la dirección de memoria", "correct": true, "explanation": null },
-          { "option": "c", "text": "Transporta datos", "correct": false, "explanation": "Eso lo hace el bus de datos." },
-          { "option": "d", "text": "Todas son correctas", "correct": false, "explanation": "Solo una función es correcta." },
-          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Existe una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 46,
-        "question": "Bus de Datos:",
-        "options": [
-          { "option": "a", "text": "Indica Lectura/escritura", "correct": false, "explanation": "Eso lo hace el bus de control." },
-          { "option": "b", "text": "Especifica la dirección de memoria", "correct": false, "explanation": "Eso lo hace el bus de direcciones." },
-          { "option": "c", "text": "Transporta datos", "correct": true, "explanation": null },
-          { "option": "d", "text": "Todas son correctas", "correct": false, "explanation": "Solo una función es correcta." },
-          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Existe una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 47,
-        "question": "¿Qué operaciones pertenecen al ciclo de acceso a memoria?",
-        "options": [
-          { "option": "a", "text": "Indicar al bus de control", "correct": true, "explanation": null },
-          { "option": "b", "text": "Enviar dirección", "correct": true, "explanation": null },
-          { "option": "c", "text": "Transferir datos", "correct": true, "explanation": null },
-          { "option": "d", "text": "Operar con la ALU", "correct": false, "explanation": "La ALU no interviene en el acceso a memoria." }
-        ]
-      },
-      {
-        "id": 48,
-        "question": "Registro de flags (PSW):",
-        "options": [
-          { "option": "a", "text": "Almacena indicadores de la última operación", "correct": true, "explanation": null },
-          { "option": "b", "text": "Permite saltos condicionales", "correct": true, "explanation": null },
-          { "option": "c", "text": "Almacena instrucciones", "correct": false, "explanation": "Eso lo hace el IR." },
-          { "option": "d", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay respuestas correctas listadas." }
-        ]
-      },
-      {
-        "id": 49,
-        "question": "¿Qué es el acarreo?",
-        "options": [
-          { "option": "a", "text": "Indicador de bit sobrante en suma", "correct": true, "explanation": null },
-          { "option": "b", "text": "Señal de desbordamiento", "correct": false, "explanation": "El desbordamiento lo indica el bit O." },
-          { "option": "c", "text": "Bit de signo", "correct": false, "explanation": "El bit de signo es S." },
-          { "option": "d", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay una respuesta correcta listada." },
-          { "option": "e", "text": "Todas son correctas", "correct": false, "explanation": "Solo una función es correcta." }
-        ]
-      },
-      {
-        "id": 50,
-        "question": "¿Qué es el pipelining?",
-        "options": [
-          { "option": "a", "text": "Paralelizar fases de instrucción", "correct": true, "explanation": null },
-          { "option": "b", "text": "Caché de instrucciones", "correct": false, "explanation": "Eso es memoria cache." },
-          { "option": "c", "text": "Buffer de direcciones", "correct": false, "explanation": "No es función de pipelining." },
-          { "option": "d", "text": "Control de flujo interno", "correct": false, "explanation": "No describe pipelining." },
-          { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "Hay una respuesta correcta listada." }
-        ]
-      },
-      {
-        "id": 51,
-        "question": "El pipelining tiene como desventaja un impacto negativo en la eficiencia y el rendimiento de la CPU.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "El pipelining generalmente mejora el rendimiento." },
-          { "option": "b", "text": "Falso", "correct": true, "explanation": null },
-          { "option": "c", "text": "Solo en CISC", "correct": false, "explanation": "Aplica a cualquier ISA pipelinada." },
-          { "option": "d", "text": "Solo en RISC", "correct": false, "explanation": "Aplica a cualquier ISA pipelinada." }
-        ]
-      },
-      {
-        "id": 52,
-        "question": "Una computadora que tiene más MIPS que otra es más rápida.",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Solo es válido entre la misma arquitectura." },
-          { "option": "b", "text": "Falso", "correct": false, "explanation": "Puede variar según la ISA y diseño." },
-          { "option": "c", "text": "Solo en la misma arquitectura", "correct": true, "explanation": null },
-          { "option": "d", "text": "Solo midiendo FLOPS", "correct": false, "explanation": "FLOPS mide punto flotante, no aplica siempre." }
+          { "option": "b", "text": "Falso", "correct": false,  "explanation": "Incorrecto"}
         ]
       }
     ]
-  }
-]
+}
