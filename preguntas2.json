@@ -1,469 +1,329 @@
 {
-  "Topic": "Procesador e Instrucciones",
+  "Topic": "Controlador de Interrupciones e ISR",
   "questions": [
     {
       "id": 1,
-      "question": "¿Cuántos niveles de protección existen en el esquema clásico de Protection Rings?",
+      "question": "¿Qué es la PIC (Programmable Interrupt Controller)?",
       "options": [
-        { "option": "a", "text": "3", "correct": false, "explanation": "El esquema clásico define 4 niveles: 0, 1, 2 y 3." },
-        { "option": "b", "text": "1", "correct": false, "explanation": "Siempre hay 4 rings, aunque algunos SO usan solo 0 y 3." },
-        { "option": "c", "text": "4", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Depende de la arquitectura", "correct": false, "explanation": "El número de rings estándar es 4, independientemente del chipset." },
-        { "option": "e", "text": "Depende del SO", "correct": false, "explanation": "Aunque un SO solo use 2 rings, el hardware soporta 4." }
+        { "option": "a", "text": "Un chip de hardware", "correct": true, "explanation": null },
+        { "option": "b", "text": "Un módulo del kernel", "correct": false, "explanation": "La PIC es hardware, no software." },
+        { "option": "c", "text": "Una rutina de servicio a interrupciones", "correct": false, "explanation": "Incorrecto" }        
       ]
     },
     {
       "id": 2,
-      "question": "“El nivel 3 es el de máximo privilegio, con posibilidad de ejecutar todas las instrucciones del procesador”",
+      "question": "Cuando la PIC identifica una interrupción, ¿identifica la fuente y carga la rutina correspondiente en memoria?",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "El ring 3 es el de menor privilegio (usuario), no puede ejecutar instrucciones privilegiadas." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "La PIC notifica a la CPU mediante el bus y le pasa el número IRQ, no carga la rutina." },
+        { "option": "b", "text": "Falso", "correct": true, "explanation": null }
       ]
     },
     {
       "id": 3,
-      "question": "El simulador MARS, para programar en Assembly, se ejecuta en el nivel:",
+      "question": "¿Qué significa IRQ (Interrupt Request)?",
       "options": [
-        { "option": "a", "text": "1", "correct": false, "explanation": "MARS es un programa de usuario y corre en ring 3." },
-        { "option": "b", "text": "2", "correct": false, "explanation": "Ring 2 tampoco se usa para aplicaciones de usuario." },
-        { "option": "c", "text": "3", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Todas son correctas", "correct": false, "explanation": "MARS corre únicamente en ring 3." },
-        { "option": "e", "text": "Ninguna es correcta", "correct": false, "explanation": "MARS corre en ring 3 como programa de usuario." }
+        { "option": "a", "text": "Una instrucción privilegiada para enmascarar interrupciones", "correct": false, "explanation": "IRQ es un identificador de línea, no una instrucción." },
+        { "option": "b", "text": "Número identificativo de la línea de interrupción asociada a cada dispositivo", "correct": true, "explanation": null },
+        { "option": "c", "text": "Un registro en la CPU que almacena el estado de interrupciones pendientes", "correct": false, "explanation": "Eso correspondería más a un flag o máscara, no al IRQ." },
+        { "option": "d", "text": "Un modo especial de la CPU para atender múltiples interrupciones simultáneas", "correct": false, "explanation": "El IRQ es simplemente un número, no un modo de funcionamiento." }
       ]
     },
     {
       "id": 4,
-      "question": "“Hay instrucciones que solo pueden ejecutarse por procesos en el nivel de protección 3”",
+      "question": "CLI y STI son…",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "No existe instrucción que un proceso de nivel 3 pueda ejecutar y no un proceso de nivel inferior." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Instrucciones privilegiadas para enmascarar interrupciones a nivel de CPU", "correct": true, "explanation": null },
+        { "option": "b", "text": "Instrucciones capaces de modificar el registro de estado (IF en EFLAGS)", "correct": true, "explanation": null },
+        { "option": "c", "text": "Instrucciones de usuario para limpiar registros", "correct": false, "explanation": "CLI/STI son privilegios de CPU." },
+        { "option": "d", "text": "Instrucciones que gestionan el vector de interrupciones en memoria", "correct": false, "explanation": "Esa función la hace el hardware con la tabla de vectores, no CLI/STI." }
       ]
     },
     {
       "id": 5,
-      "question": "“El SO define el conjunto de instrucciones privilegiadas”",
+      "question": "Enmascarar una interrupción significa…",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "La clasificación la realiza el hardware de la CPU." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Bloquear temporalmente una línea de IRQ para que la CPU no la atienda", "correct": true, "explanation": null },
+        { "option": "b", "text": "Encolar la señal en un buffer FIFO", "correct": false, "explanation": "Mientras está enmascarada, la señal se ignora." },
+        { "option": "c", "text": "Deshabilitar los registros de interrupción en la PSW", "correct": false, "explanation": "Decir que “enmascarar” equivale a “deshabilitar registros en la PSW” es incorrecto porque estamos hablando de la máscara de IRQ en el controlador externo, no de la modificación del flag IF en la PSW (aunque ambos mecanismos sirvan para impedir interrupciones, actúan en capas diferentes)." }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Enmascarar una interrupción significa…",
+      "options": [
+        { "option": "a", "text": "Bloquear temporalmente una línea de IRQ para que la CPU no la atienda", "correct": true, "explanation": null },
+        { "option": "b", "text": "Encolar la señal en un buffer FIFO", "correct": false, "explanation": "Mientras está enmascarada, la señal se ignora, no se encola." },
+        { "option": "c", "text": "Reprogramar la PIC para cambiar la prioridad de esa IRQ", "correct": false, "explanation": "La prioridad se configura aparte; enmascarar solo la bloquea." },
+        { "option": "d", "text": "Deshabilitar los registros de interrupción en la PSW", "correct": false, "explanation": "Es confuso con el bit IF, pero enmascarar en PIC no modifica PSW directamente." }
       ]
     },
     {
       "id": 6,
-      "question": "“El SO es quien define el nivel de privilegio (CPL) de cada proceso”",
+      "question": "¿Existen interrupciones no enmascarables (NMI)?",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Falso", "correct": false, "explanation": "Es el kernel quien asigna el CPL al crear cada proceso." }
+        { "option": "a", "text": "Verdadero", "correct": true, "explanation": "Las NMI atienden errores críticos de hardware (como las producidas por el sensor de temperatura de la CPU) y no pueden deshabilitarse." },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": null }
       ]
     },
     {
       "id": 7,
-      "question": "“El kernel corre por defecto en el nivel 2”",
+      "question": "¿Para qué se utiliza el enmascaramiento de interrupciones?",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "El kernel siempre corre en ring 0 (máximo privilegio)." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Permitir que la CPU termine la instrucción en ejecución antes de atender la ISR", "correct": true, "explanation": null },
+        { "option": "b", "text": "Impedir que cualquier IRQ interrumpa secciones críticas del kernel", "correct": true, "explanation": null },
+        { "option": "c", "text": "Encolar las solicitudes de interrupción en el sistema operativo", "correct": false, "explanation": "No se encolan, se bloquean hasta deshabilitar el enmascaramiento." },
+        { "option": "d", "text": "Forzar el reordenamiento de la tabla de vectores de interrupción", "correct": false, "explanation": "No altera vectores, solo bloquea líneas IRQ." }
       ]
-    },
+    },  
     {
       "id": 8,
-      "question": "Esquema de protección de memoria: ¿cuáles de estas afirmaciones describen su funcionamiento?",
+      "question": "¿Qué es una ISR (Interrupt Service Routine)?",
       "options": [
-        { "option": "a", "text": "Un proceso puede acceder libremente al espacio que le fue asignado", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Un proceso puede acceder al espacio asignado a otros de su mismo ring", "correct": false, "explanation": "Cada proceso queda aislado, incluso si comparten ring." },
-        { "option": "c", "text": "Ayuda a proteger la integridad del sistema", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Ayuda a evitar fallos de seguridad", "correct": true,  "explanation": null },
-        { "option": "e", "text": "Ayuda a optimizar el rendimiento", "correct": false, "explanation": "El objetivo principal es seguridad, no rendimiento." },
-        { "option": "f", "text": "Si se activa, lanza una excepción", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Un fragmento de código privilegiado del SO que atiende una interrupción y luego devuelve el control", "correct": true, "explanation": null },
+        { "option": "b", "text": "Un proceso de usuario que gestiona eventos de E/S", "correct": false, "explanation": "Las ISR se ejecutan en modo kernel, no en usuario." },
+        { "option": "c", "text": "Un buffer donde se almacenan solicitudes de interrupción", "correct": false, "explanation": "La ISR es código, no un buffer." },
+        { "option": "d", "text": "Un hilo del kernel que se programa para atender interrupciones", "correct": false, "explanation": "No es un hilo programable; se invoca directamente en contexto de interrupción." }
       ]
     },
     {
       "id": 9,
-      "question": "Las operaciones de E/S (IN/OUT) son…",
+      "question": "¿La CPU interrumpe la instrucción en curso para atender una interrupción a mitad de ejecución?",
       "options": [
-        { "option": "a", "text": "Privilegiadas", "correct": true,  "explanation": null },
-        { "option": "b", "text": "No privilegiadas", "correct": false, "explanation": "Requieren ring 0 para acceso directo a hardware." }
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "La CPU completa la instrucción antes de saltar a la ISR." },
+        { "option": "b", "text": "Falso", "correct": true, "explanation": null }
       ]
     },
     {
       "id": 10,
-      "question": "Si un usuario no privilegiado intenta ejecutar una instrucción privilegiada, se lanza…",
+      "question": "Al atender una interrupción, la CPU guarda en la pila…",
       "options": [
-        { "option": "a", "text": "Una interrupción de hardware", "correct": false, "explanation": "Las interrupciones provienen de dispositivos externos, no de violaciones de privilegio." },
-        { "option": "b", "text": "Una excepción/fault", "correct": true,  "explanation": null },
-        { "option": "c", "text": "Un trap/gate", "correct": false, "explanation": "Los traps son invocados intencionalmente por software." },
-        { "option": "d", "text": "Nada sucede", "correct": false, "explanation": "La CPU genera un fault de protección." }
+        { "option": "a", "text": "El PC original (dirección de retorno)", "correct": true, "explanation": null },
+        { "option": "b", "text": "La PSW u otros registros necesarios", "correct": true, "explanation": null },
+        { "option": "c", "text": "Solo registros de usuario", "correct": false, "explanation": "Se guardan PC y PSW completos, no solo registros de usuario." },
+        { "option": "d", "text": "El contenido de la pila del proceso interrumpido", "correct": false, "explanation": "La ISR guarda contexto, no toda la pila del proceso." }
       ]
     },
     {
       "id": 11,
-      "question": "¿Es estrictamente necesario un sistema operativo para usar hardware?",
+      "question": "¿Qué hace la instrucción IRET al final de una ISR?",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "En los inicios no había SO; se programaba directamente el hardware pero era extremadamente complejo." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Restaura el PC original y la PSW para retomar la ejecución previa", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Enmascara todas las interrupciones antes de retornar", "correct": false, "explanation": "IRET restaura contexto, no modifica máscara." },
+        { "option": "c", "text": "Desenmascara todas las interrupciones antes de retornar", "correct": false, "explanation": "IRET restaura contexto, no modifica máscara." },
+        { "option": "d", "text": "Carga y actualiza el registro de vectores de interrupción", "correct": false, "explanation": "La tabla de vectores ya estaba cargada; IRET solo restaura contexto." },
+        { "option": "e", "text": "Restaura los registros generales guardados al entrar al ISR", "correct": false, "explanation": "Sólo restaura PC y PSW; la restauración de otros registros depende de la rutina de contexto." }
       ]
     },
     {
       "id": 12,
-      "question": "El sistema operativo…",
+      "question": "¿Cuántas ISR existen bajo el método vectorizado de interrupciones?",
       "options": [
-        { "option": "a", "text": "Implementa la lógica del pipeline de la CPU", "correct": false, "explanation": "El pipeline es gestionado internamente por la CPU, no por el SO." },
-        { "option": "b", "text": "Es intermediario entre usuario y hardware", "correct": true,  "explanation": null },
-        { "option": "c", "text": "Controla la lógica de la ALU", "correct": false, "explanation": "La ALU forma parte de la CPU y no se controla desde el SO." },
-        { "option": "d", "text": "Ofrece capa de servicios y protección", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Una sola", "correct": false, "explanation": "Cada IRQ tiene su propia ISR en la tabla." },
+        { "option": "b", "text": "Múltiples, una por cada IRQ", "correct": true, "explanation": null }
       ]
     },
     {
       "id": 13,
-      "question": "¿Qué características describen al SO?",
+      "question": "En la tabla vectorizada, las entradas reservan…",
       "options": [
-        { "option": "a", "text": "Abstracción de dispositivos", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Proporciona capa de servicios", "correct": true,  "explanation": null },
-        { "option": "c", "text": "Proporciona capa de seguridad", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Código máquina completo de cada ISR", "correct": false, "explanation": "Solo se almacenan direcciones de inicio." },
+        { "option": "b", "text": "Direcciones de memoria de inicio de cada ISR", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Metadatos de prioridad de cada IRQ", "correct": false, "explanation": "La prioridad se gestiona en la PIC/APIC, no en el vector." },
+        { "option": "d", "text": "Checksum de integridad de cada ISR", "correct": false, "explanation": "No se almacenan checksums en la tabla de vectores." }
       ]
     },
     {
       "id": 14,
-      "question": "La abstracción de dispositivos en SO significa…",
+      "question": "Cada IRQ tiene un número único que el hardware pasa a la CPU. ¿Es esto correcto?",
       "options": [
-        { "option": "a", "text": "Interfaces uniformes a hardware diverso", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Carga y coordinación de drivers", "correct": true,  "explanation": null },
-        { "option": "c", "text": "Define syscall para tareas privilegiadas", "correct": false, "explanation": "Eso es capa de servicios, no abstracción de dispositivos." },
-        { "option": "d", "text": "Cada llamada implica cambio de contexto", "correct": false, "explanation": "Esto es un detalle de implementación de syscalls." },
-        { "option": "e", "text": "Gestiona privilegios de procesos", "correct": false,  "explanation": "Esto es seguridad y control de acceso" },
-        { "option": "f", "text": "Implementa protección de memoria", "correct": false,  "explanation": "Esto es seguridad y control de acceso" }
+        { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": "Cada IRQ tiene un numero identificatorio que le indica a la CPU que IRS le corresponde"}
       ]
     },
     {
       "id": 15,
-      "question": "¿Qué caracteriza a la capa de servicios del SO?",
+      "question": "Para calcular el índice en el vector de ISR, la CPU…",
       "options": [
-        { "option": "a", "text": "Interfaces uniformes a hardware", "correct": false, "explanation": "Es abstracción de dispositivos, no servicio." },
-        { "option": "b", "text": "Carga y coordina drivers", "correct": false, "explanation": "Es parte de abstracción de dispositivos." },
-        { "option": "c", "text": "Define conjunto de syscalls", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Cambio de contexto controlado", "correct": true,  "explanation": null },
-        { "option": "e", "text": "Gestiona privilegios de procesos", "correct": false,  "explanation": "Esto es seguridad y control de acceso" },
-        { "option": "f", "text": "Implementa protección de memoria", "correct": false,  "explanation": "Esto es seguridad y control de acceso" }
+        { "option": "a", "text": "Usa el número IRQ directamente como índice", "correct": false, "explanation": "Debe multiplicarlo por el tamaño de cada entrada." },
+        { "option": "b", "text": "Multiplica el número IRQ por el tamaño de la palabra (ej. 4 bytes)", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Suma el IRQ al puntero base del vector", "correct": false, "explanation": "La suma de bytes se realiza tras la multiplicación, no solo con el IRQ." },
+        { "option": "d", "text": "Divide el número IRQ por el tamaño de la palabra", "correct": false, "explanation": "No se divide, se multiplica." }
       ]
     },
     {
       "id": 16,
-      "question": "¿Qué afirma es cierta sobre seguridad y control de acceso en SO?",
+      "question": "Tras calcular el índice, la CPU…",
       "options": [
-        { "option": "a", "text": "Proporciona interfaces uniformes", "correct": false, "explanation": "Esto es abstracción de dispositivos." },
-        { "option": "b", "text": "Carga y coordina drivers", "correct": false, "explanation": "Esto es abstracción de dispositivos" },
-        { "option": "c", "text": "Define syscalls privilegiadas", "correct": false, "explanation": "Es parte de la capa de servicios." },
-        { "option": "d", "text": "Cada llamada implica cambio de contexto", "correct": false, "explanation": "Es detalle de syscalls." },
-        { "option": "e", "text": "Gestiona privilegios de procesos", "correct": true,  "explanation": null },
-        { "option": "f", "text": "Implementa protección de memoria", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Lee desde memoria la dirección de la ISR en ese slot", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Salta incondicionalmente a la dirección leída", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Vuelve al proceso interrumpido sin ejecutar la ISR", "correct": false, "explanation": "Ejecuta la ISR antes de retornar." },
+        { "option": "d", "text": "Actualiza el Program Counter antes de leer el vector", "correct": false, "explanation": "El PC se actualiza al hacer el salto, no antes de leer la dirección." },
+        { "option": "e", "text": "Carga la dirección en un registro temporal antes de saltar", "correct": false, "explanation": "Aunque internamente use registros, el paso clave es el salto tras la lectura." }
       ]
     },
     {
       "id": 17,
-      "question": "“Concurrencia es capacidad de CPU de ejecutar operaciones en paralelo”",
+      "question": "¿La instrucción de retorno es la última en ejecutar dentro de una ISR?",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Aquí se asume CPU unicore: Concurrencia SIMULA simultaneidad/paralelismo entre procesos." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": "Incorrecto" }
       ]
     },
     {
       "id": 18,
-      "question": "“Una CPU es secuencial”",
+      "question": "La PIC… (seleccione todas las correctas)",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Falso", "correct": false, "explanation": "Se asume unicore: una instrucción a la vez." }
+        { "option": "a", "text": "Es un chip de hardware", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Es programada por el kernel del SO", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Viene con programación por defecto basado en el estandard de la IEEE", "correct": false, "explanation": "Se programa en arranque, no un estándar IEEE genérico." },
+        { "option": "d", "text": "Ejecuta las ISR directamente sin intervención del CPU", "correct": false, "explanation": "Solo notifica a la CPU; no ejecuta código de ISR." }
       ]
     },
     {
       "id": 19,
-      "question": "El planificador del SO…",
+      "question": "Si llega una nueva IRQ durante una ISR sin enmascarar, ¿qué ocurre?",
       "options": [
-        { "option": "a", "text": "Decide a qué proceso asignar CPU", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Decide cuánto tiempo de CPU para cada proceso", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Se interrumpe la ISR actual para atender la nueva", "correct": true, "explanation": null },
+        { "option": "b", "text": "Se termina la ISR actual y luego se atiende", "correct": false, "explanation": "Incorrecto" }
       ]
     },
     {
       "id": 20,
-      "question": "“Los procesos ocupan registros en memoria según su ring”",
+      "question": "El anidamiento de ISR ocurre cuando…",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Cada proceso tiene su propio espacio de memoria (código, datos, pila)." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Una ISR es interrumpida por otra de igual o mayor prioridad", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Las ISR se encolan en FIFO", "correct": false, "explanation": "No es un esquema FIFO." },
+        { "option": "c", "text": "Varias interrupciones llegan simultáneamente al buffer de la PIC", "correct": false, "explanation": "El anidamiento requiere reentrada a ISR, no simplemente llegada múltiple." },
+        { "option": "d", "text": "IRET no se ejecuta antes de atender la siguiente ISR", "correct": true, "explanation": null }
       ]
     },
     {
       "id": 21,
-      "question": "“El SO asigna porciones de memoria a cada proceso”",
+      "question": "¿Cuál es un riesgo del anidamiento ilimitado de ISR?",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Falso", "correct": false, "explanation": "Es función del SO mediante paginación, segmentación, etc." }
+        { "option": "a", "text": "Stack overflow", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Corrupción de datos", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Complejidad extrema en el flujo de ejecución", "correct": true,  "explanation": null },
+        { "option": "d", "text": "Latencia impredecible en atención de interrupciones", "correct": true,  "explanation": "El nesting excesivo puede hacer que interrupciones críticas esperen demasiado." },
+        { "option": "e", "text": "Reinicio automático de la PIC", "correct": false, "explanation": "No es un efecto del anidamiento; la PIC no se reinicia automáticamente." }
       ]
     },
     {
       "id": 22,
-      "question": "“Si tengo 3 instancias de un MISMO programa en ejecución y en estado 'ready'",
+      "question": "La corrupción de datos en anidamiento ilimitado puede ocurrir porque…",
       "options": [
-        { "option": "a", "text": "1 instancia del programa cargada en memoria, 1 conjunto de memoria individual asignado a cada proceso", "correct": false,  "explanation": "Cada proceso se trata de manera individual e independiente" },
-        { "option": "b", "text": "3 instancias del programa cargadas en memoria, 1 conjunto de memoria compartida asignado para los 3 procesos", "correct": false,  "explanation": "Cada proceso se trata de manera individual e independiente" },
-        { "option": "c", "text": "3 instancias del programa cargadas en memoria, 1 conjunto de memoria individual asignado a cada proceso", "correct": true, "explanation": null },
-        { "option": "d", "text": "Depende de la arquitectura", "correct": false,  "explanation": "Al menos hasta ahora, en esta asignatura cada proceso se trata de manera individual e independiente indistintamente de la arquitectura" }
+        { "option": "a", "text": "Dos ISR usan variables o dispositivos compartidos sin protección", "correct": true, "explanation": null },
+        { "option": "b", "text": "La CPU ejecuta varias ISR en paralelo", "correct": false, "explanation": "Se interrumpen en serie, no paralelo." }
       ]
     },
     {
       "id": 23,
-      "question": "“Dos instancias de la misma calculadora comparten porción de memoria”",
+      "question": "El stack overflow en anidamiento ilimitado ocurre porque…",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Cada instancia es proceso independiente con su propio espacio." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Cada nueva ISR reserva espacio en la pila", "correct": true, "explanation": null },
+        { "option": "b", "text": "La ISR sobrescribe la pila del usuario", "correct": false, "explanation": "Cada ISR añade marco de pila, no sobrescribe uno existente." }
       ]
     },
     {
       "id": 24,
-      "question": "Directorio…",
+      "question": "Para enmascarar interrupciones puede combinarse:",
       "options": [
-        { "option": "a", "text": "Esta formado por una colección de direcciones de memoria", "correct": true, "explanation": null },
-        { "option": "b", "text": "Se almacena siempre en cache L1", "correct": false, "explanation": "Los directorios residen en el sistema de archivos del disco, no en cache L1." },
-        { "option": "c", "text": "Es generado por el planificador del SO", "correct": false, "explanation": "El planificador no crea directorios." },
-        { "option": "d", "text": "Es un archivo", "correct": true,  "explanation": null },
-        { "option": "e", "text": "Contiene la tabla de registros del CPU", "correct": false, "explanation": "Eso corresponde a la gestión de procesos, no a un directorio." }
+        { "option": "a", "text": "Modificar IMR en la PIC", "correct": true, "explanation": null },
+        { "option": "b", "text": "Bajar el bit IF en EFLAGS/RFLAGS", "correct": true, "explanation": null },
+        { "option": "c", "text": "Combinación de A y B", "correct": true, "explanation": null },
+        { "option": "d", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Cualquiera de las anteriores opciones es valida" }
       ]
     },
     {
       "id": 25,
-      "question": "“La interfaz superior del SO controla y comunica con el hardware”",
+      "question": "El clock de interrupciones… (seleccione todas las correctas)",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "La interfaz superior ofrece servicios a aplicaciones, no hardware." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Es un dispositivo de hardware", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Es un reloj conceptual parte del SO", "correct": false, "explanation": "Es hardware, no solo conceptual." },
+        { "option": "c", "text": "Se programa a través del APIC local", "correct": false, "explanation": "La programación la controla el kernel, no es inherente al clock de interrupciones." },
+        { "option": "d", "text": "Genera interrupciones periódicas", "correct": true,  "explanation": null },
+        { "option": "e", "text": "Es lo único que garantiza que el SO se active periódicamente", "correct": true,  "explanation": null },
+        { "option": "f", "text": "Sincroniza las etapas del pipeline de la CPU", "correct": false, "explanation": "Eso corresponde al reloj interno de la CPU, no al clock de interrupciones." }
       ]
     },
     {
       "id": 26,
-      "question": "“La interfaz inferior controla y comunica con el hardware”",
+      "question": "La interrupción de reloj también se conoce como…",
       "options": [
-        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Falso", "correct": false, "explanation": "Corresponde a drivers y manejo de interrupciones." }
+        { "option": "a", "text": "IRQ0", "correct": true, "explanation": null },
+        { "option": "b", "text": "Tick", "correct": true, "explanation": null },
+        { "option": "c", "text": "Clock interrupt", "correct": true, "explanation": null },
+        { "option": "d", "text": "Timer interrupt", "correct": true, "explanation": null }
       ]
     },
     {
       "id": 27,
-      "question": "El kernel…",
+      "question": "Sin el clock de interrupciones, ¿un proceso de usuario podría apropiarse de la CPU?",
       "options": [
-        { "option": "a", "text": "Su tamaño y funciones dependen del hardware", "correct": false, "explanation": "Dependen del diseño del SO y sus objetivos, no del chipset." },
-        { "option": "b", "text": "Puede ejecutarse en modo usuario", "correct": false, "explanation": "Siempre corre en modo privilegiado (ring 0)." },
-        { "option": "c", "text": "Contiene todas las funciones en modo privilegiado", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Es independiente del sistema de archivos", "correct": false, "explanation": "El kernel interactúa estrechamente con el sistema de archivos para gestionar E/S." },
-        { "option": "e", "text": "Implementa el pipeline de instrucciones", "correct": false, "explanation": "El pipeline es interno a la CPU." }
+        { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": null }
       ]
     },
     {
       "id": 28,
-      "question": "Funciones del SO: (seleccione todas las correctas)",
+      "question": "La interrupción de clock se trata como cualquier otra interrupción",
       "options": [
-        { "option": "a", "text": "Gestión de procesos", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Gestión de memoria interna", "correct": true,  "explanation": null },
-        { "option": "c", "text": "Gestión de archivos y directorios", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Gestión de dispositivos E/S", "correct": true,  "explanation": null },
-        { "option": "e", "text": "Gestión de comunicaciones", "correct": true,  "explanation": null }
+        { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": "Incorrecto" }
       ]
     },
     {
       "id": 29,
-      "question": "La gestión de procesos se encarga de:",
+      "question": "Funciones típicas de la ISR del clock incluyen…",
       "options": [
-        { "option": "a", "text": "Transformar programas en procesos", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Controlar estados de los procesos", "correct": true,  "explanation": null },
-        { "option": "c", "text": "Políticas de paginación y swapping", "correct": false, "explanation": "Es función de gestión de memoria interna." },
-        { "option": "d", "text": "Protección de accesos no autorizados", "correct": false,  "explanation": "Es función de gestión de memoria interna." }
+        { "option": "a", "text": "Actualizar el reloj del sistema", "correct": true, "explanation": null },
+        { "option": "b", "text": "Aumentar el contador de tiempo del proceso actual", "correct": true, "explanation": null },
+        { "option": "c", "text": "Decidir si es momento de un cambio de contexto (scheduler)", "correct": true, "explanation": null }
+      ]
+    },
+    {
+      "id": 29,
+      "question": "Funciones típicas de la ISR del clock incluyen…",
+      "options": [
+        { "option": "a", "text": "Actualizar el reloj del sistema", "correct": true,  "explanation": null },
+        { "option": "b", "text": "Aumentar el contador de tiempo del proceso actual", "correct": true,  "explanation": null },
+        { "option": "c", "text": "Sincronizar la frecuencia de la CPU con el reloj de interrupciones", "correct": false, "explanation": "La frecuencia de la CPU es independiente del timer de interrupciones." },
+        { "option": "d", "text": "Decidir si es momento de un cambio de contexto (scheduler)", "correct": true,  "explanation": null },
+        { "option": "e", "text": "Registrar estadísticas de uso de memoria", "correct": false, "explanation": "Eso suele hacerlo el gestor de memoria, no la ISR del clock." }
       ]
     },
     {
       "id": 30,
-      "question": "La gestión de memoria interna se encarga de:",
+      "question": "¿El reloj de interrupciones es también llamado reloj de la CPU?",
       "options": [
-        { "option": "a", "text": "Particiones, paginación y swapping", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Transformar programas en procesos", "correct": false,  "explanation": "Es funcion de la gestion de procesos" },
-        { "option": "c", "text": "Protección de accesos no autorizados", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Control de estados de procesos", "correct": false, "explanation": "Es función de gestión de procesos." }
+        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "El reloj de la CPU es un dispositivo de hardware diferente, que indica la frecuencia del procesador determinando las MIPS" },
+        { "option": "b", "text": "Falso", "correct": true, "explanation": null }
+      ]
+    },
+    {
+      "id": 30,
+      "question": "IRET es",
+      "options": [
+        { "option": "a", "text": "Una rutina", "correct": false, "explanation": "Incorrecto" },
+        { "option": "b", "text": "Una instrucción", "correct": true, "explanation": null }
       ]
     },
     {
       "id": 31,
-      "question": "La gestión de archivos y directorios se encarga de:",
+      "question": "La PIC es responsable de",
       "options": [
-        { "option": "a", "text": "Asignar espacio de memoria a procesos", "correct": false, "explanation": "Es función de gestión de memoria interna." },
-        { "option": "b", "text": "Protección de accesos no autorizados", "correct": false,  "explanation": "Es función de gestión de memoria interna." },
-        { "option": "c", "text": "Abstracción de archivos (nombre, permisos)", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Transformar programas en procesos", "correct": false,  "explanation": "Es funcion de la gestion de procesos" },
-        { "option": "e", "text": "Organización física del almacenamiento en sectores", "correct": true,  "explanation": null },
-        { "option": "f", "text": "Control de estados de procesos", "correct": false, "explanation": "Es función de gestión de procesos." }
+        { "option": "a", "text": "Organizar llamadas al sistema", "correct": false, "explanation": "Incorrecto" },
+        { "option": "b", "text": "Gestionar interrupciones externas generadas por controladoras", "correct": true, "explanation": null },
+        { "option": "c", "text": "Gestionar interrupciones en modo no privilegiado", "correct": false, "explanation": "Incorrecto" }
       ]
     },
     {
       "id": 32,
-      "question": "La gestión de dispositivos de E/S se encarga de:",
+      "question": "Las interrupciones son generadas exclusivamente por las controladoras",
       "options": [
-        { "option": "a", "text": "Interacción con controladoras y drivers", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Paginación y swapping", "correct": false, "explanation": "Es función de gestión de memoria interna." }
+        { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+        { "option": "b", "text": "Falso", "correct": false, "explanation": "Incorrecto, la CPU tambien puede generar interrupciones a nivel interno pero estas se denominan excepciones" }
       ]
-    },
-    {
-      "id": 33,
-      "question": "La gestión de comunicaciones se encarga de:",
-      "options": [
-        { "option": "a", "text": "Sockets, protocolos y transferencia de datos", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Protección de accesos no autorizados", "correct": false,  "explanation": "Es función de gestión de memoria interna." },
-        { "option": "c", "text": "Carga de controladoras de disco", "correct": false, "explanation": "Eso es gestión de E/S de dispositivos." }
-      ]
-    },
-    {
-      "id": 34,
-      "question": "El SO mapea archivos en disco:",
-      "options": [
-        { "option": "a", "text": "En un sector específico", "correct": false, "explanation": "Muestra al usuario sectores dispersos mediante el sistema de archivos." },
-        { "option": "b", "text": "En sectores dispersos", "correct": true,  "explanation": null }
-      ]
-    },
-    {
-      "id": 35,
-      "question": "“Los lenguajes compilados son portables”",
-      "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Las syscalls varían según SO." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
-      ]
-    },
-    {
-      "id": 36,
-      "question": "“Los lenguajes interpretados y/o bytecode son portables”",
-      "options": [
-        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Falso", "correct": false, "explanation": "El intérprete/VM sobre el que corren traduce las syscalls a las del SO anfitrion." }
-      ]
-    },
-    {
-      "id": 37,
-      "question": "“Los SO monolíticos solo contienen lo mínimo en modo privilegiado”",
-      "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Monolíticos ejecutan muchos servicios no escenciales en modo 0, en el caso de Microsoft corre inclusive la GUI en modo privilegiado " },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
-      ]
-    },
-    {
-      "id": 38,
-      "question": "“Los microkernels corren solo lo estrictamente necesario en modo privilegiado”",
-      "options": [
-        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Falso", "correct": false, "explanation": "Esa es la definición de microkernel." }
-      ]
-    },
-    {
-      "id": 39,
-      "question": "El SO se activa por…",
-      "options": [
-        { "option": "a", "text": "Eventos que actualizan el PC (interrupciones, excepciones, traps/gates, fallos)", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Solo llamadas al sistema", "correct": false, "explanation": "También por interrupciones de hardware." }
-      ]
-    },
-    {
-      "id": 40,
-      "question": "“Cuando se activa el SO, depende del tipo de evento activar modo privilegiado”",
-      "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Siempre entra en modo 0 cuando se activa el SO." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
-      ]
-    },
-    {
-      "id": 41,
-      "question": "“Al activarse el SO, se produce siempre un salto en el PC”",
-      "options": [
-        { "option": "a", "text": "Verdadero", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Falso", "correct": false, "explanation": "El PC salta a la rutina de SO en cada evento." }
-      ]
-    },
-    {
-      "id": 42,
-      "question": "Un evento externo (por ejemplo periférico) produce…",
-      "options": [
-        { "option": "a", "text": "Una interrupción", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Una excepción", "correct": false, "explanation": "Las exceptions son internas a la CPU." },
-        { "option": "c", "text": "Una trap", "correct": false, "explanation": "Incorrecto" },
-        { "option": "d", "text": "Un fallo/fault", "correct": false, "explanation": "Incorrecto" }
-      ]
-    },
-    {
-      "id": 43,
-      "question": "Las interrupciones son (seleccione todas las correctas):",
-      "options": [
-        { "option": "a", "text": "Asíncronas", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Generadas por controladoras", "correct": true,  "explanation": null },
-        { "option": "c", "text": "Síncronas con el reloj de CPU", "correct": false, "explanation": "Las interrupciones de hardware son asíncronas; el timer es solo una fuente." },
-        { "option": "d", "text": "Se encolan en un buffer FIFO", "correct": false, "explanation": "No siguen estrictamente FIFO; dependen del controlador de interrupciones." },
-        { "option": "e", "text": "Atendidas por ISR", "correct": true,  "explanation": null },
-        { "option": "f", "text": "Requieren validación por software antes de atenderse", "correct": false, "explanation": "La CPU atiende directamente la línea de interrupción." }
-      ]
-    },
-    {
-      "id": 44,
-      "question": "“La CPU interrumpe la instrucción en curso para atender una interrupción y luego la retoma”",
-      "options": [
-        { "option": "a", "text": "Verdadero", "correct": false, "explanation": "La CPU termina la instrucción antes de atender la ISR." },
-        { "option": "b", "text": "Falso", "correct": true,  "explanation": null }
-      ]
-    },
-    {
-      "id": 45,
-      "question": "Cuando se produce un error interno (división por cero, overflow) ocurre…",
-      "options": [
-        { "option": "a", "text": "Una trap", "correct": false, "explanation": "Un trap es un llamado intencional por parte del usuario, usualmente utilizado para syscalls." },
-        { "option": "b", "text": "Un fallo/fault", "correct": false, "explanation": "Un fallo se produce usualmente cuando un usuario desea realizar una accion que no tiene permitida" },
-        { "option": "c", "text": "Una excepción", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Una interrupción", "correct": false, "explanation": "Las interrupts son de llamados de hardware externo." }
-      ]
-    },
-    {
-      "id": 46,
-      "question": "Las excepciones son (seleccione todas las correctas):",
-      "options": [
-        { "option": "a", "text": "Síncronas", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Atendidas por rutinas de excepción", "correct": true,  "explanation": null },
-        { "option": "c", "text": "Siempre generan salto en PC", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Solicitadas por el usuario", "correct": false, "explanation": "Son generadas por la CPU ante errores internos." }
-      ]
-    },
-    {
-      "id": 47,
-      "question": "Cuando un proceso accede a memoria no permitida ocurre…",
-      "options": [
-        { "option": "a", "text": "Un fallo/fault", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Una interrupción", "correct": false, "explanation": "Las interrupts son llamados de hardware externo." },
-        { "option": "c", "text": "Una excepción", "correct": false, "explanation": "Las exceptions son errores internos de la CPU, como una división por cero o un overflow" },
-        { "option": "d", "text": "Una trap", "correct": false, "explanation": "Un trap es un llamado intencional por parte del usuario, usualmente utilizado para syscalls." }
-      ]
-    },
-    {
-      "id": 48,
-      "question": "Cuando haces una llamada al sistema (syscall) se produce…",
-      "options": [
-        { "option": "a", "text": "Un fallo/fault", "correct": false, "explanation": "Un fallo se produce usualmente cuando un usuario desea realizar una accion que no tiene permitida" },
-        { "option": "b", "text": "Una interrupción", "correct": false, "explanation": "Las interrupts son llamados de hardware externo." },
-        { "option": "c", "text": "Un trap/gate", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Una excepción", "correct": false, "explanation": "Las exceptions son errores internos de la CPU, como una división por cero o un overflow" }
-      ]
-    },
-    {
-      "id": 49,
-      "question": "Un trap/gate es (seleccione todas las correctas):",
-      "options": [
-        { "option": "a", "text": "Intencional", "correct": true,  "explanation": null },
-        { "option": "b", "text": "Síncrono", "correct": true,  "explanation": null },
-        { "option": "c", "text": "Petición explícita de usuario", "correct": true,  "explanation": null },
-        { "option": "d", "text": "Puede ser lectura de E/S", "correct": true,  "explanation": null },
-        { "option": "e", "text": "Puede ser escritura de E/S", "correct": true,  "explanation": null }
-      ]
-    },
-    {
-      "id": 50,
-        "question": "“La CPU interrumpe el proceso en curso para atender una interrupción y luego lo retoma”",
-        "options": [
-          { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
-          { "option": "b", "text": "Falso", "correct": false,  "explanation": "Incorrecto"}
-        ]
-      }
-    ]
+    }
+  ]
 }
