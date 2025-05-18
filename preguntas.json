@@ -2403,5 +2403,384 @@
             ]
           }
         ]
-      }          
+      },
+      {
+        "Topic": "5 - Memoria RAM, Syscalls y Traps",
+        "questions": [
+          {
+            "id": 1,
+            "question": "En un sistema microkernel, ¿todos los servicios pasan por el kernel?",
+            "options": [
+              { "option": "A", "text": "Depende del kernel", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Solo drivers", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Falso", "correct": true, "explanation": null },
+              { "option": "D", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Verdadero", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 2,
+            "question": "¿Cómo se denomina al conjunto de servicios que el SO ofrece a los programas de usuario?",
+            "options": [
+              { "option": "A", "text": "Trap", "correct": false, "explanation": "“trap” es el mecanismo que implementa la syscall, no el nombre del servicio." },
+              { "option": "B", "text": "Kernel Call", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Syscall", "correct": true, "explanation": null },
+              { "option": "D", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Llamada al sistema", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 3,
+            "question": "En un SO monolítico, las llamadas al sistema son…",
+            "options": [
+              { "option": "A", "text": "Todas las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Asíncronas", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Voluntarias", "correct": true, "explanation": null },
+              { "option": "D", "text": "Síncronas", "correct": true, "explanation": null },
+              { "option": "E", "text": "Involuntarias", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 4,
+            "question": "Ejemplos de llamadas al sistema:",
+            "options": [
+              { "option": "A", "text": "malloc", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "fork", "correct": true, "explanation": null },
+              { "option": "C", "text": "exec", "correct": true, "explanation": null },
+              { "option": "D", "text": "read", "correct": true, "explanation": null },
+              { "option": "E", "text": "write", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 5,
+            "question": "Segmentos de la memoria RAM virtual de un proceso incluyen:",
+            "options": [
+              { "option": "A", "text": "Data", "correct": true, "explanation": null },
+              { "option": "B", "text": "Stack", "correct": true, "explanation": null },
+              { "option": "C", "text": "Text", "correct": true, "explanation": null },
+              { "option": "D", "text": "BSS", "correct": true, "explanation": null },
+              { "option": "E", "text": "Heap", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 6,
+            "question": "En el segmento Stack residen:",
+            "options": [
+              { "option": "A", "text": "Registros guardados", "correct": true, "explanation": null },
+              { "option": "B", "text": "Variables globales", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Parámetros de función", "correct": true, "explanation": null },
+              { "option": "D", "text": "Direcciones de retorno", "correct": true, "explanation": null },
+              { "option": "E", "text": "Variables locales", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 7,
+            "question": "En el segmento Heap residen:",
+            "options": [
+              { "option": "A", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Variables estáticas", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Memoria dinámica", "correct": true, "explanation": null },
+              { "option": "D", "text": "Parámetros", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Variables locales", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 8,
+            "question": "En la región Data residen:",
+            "options": [
+              { "option": "A", "text": "Stack frames", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Variables globales inicializadas", "correct": true, "explanation": null },
+              { "option": "C", "text": "Variables globales no inicializadas", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Memoria dinámica", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 9,
+            "question": "En el gap (región libre) residen:",
+            "options": [
+              { "option": "A", "text": "Región libre para expansión", "correct": true, "explanation": null },
+              { "option": "B", "text": "Memoria dinámica", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Variables locales", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Punteros de pila", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 10,
+            "question": "El stack crece hacia direcciones de memoria más grandes.",
+            "options": [
+              { "option": "A", "text": "Solo en 32 bits", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Depende de la arquitectura", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Verdadero", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Falso", "correct": true, "explanation": null },
+              { "option": "E", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 11,
+            "question": "El heap crece hacia direcciones de memoria más grandes.",
+            "options": [
+              { "option": "A", "text": "Solo tras malloc", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Depende del SO", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Verdadero", "correct": true, "explanation": null },
+              { "option": "D", "text": "Falso", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 12,
+            "question": "El segmento Text (code segment):",
+            "options": [
+              { "option": "A", "text": "Se denomina también code segment", "correct": true, "explanation": null },
+              { "option": "B", "text": "Contiene constantes de solo lectura", "correct": true, "explanation": null },
+              { "option": "C", "text": "Contiene instrucciones", "correct": true, "explanation": null },
+              { "option": "D", "text": "Contiene variables globales", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 13,
+            "question": "LIFO es una estructura donde “el primer elemento en entrar es el primero en salir”.",
+            "options": [
+              { "option": "A", "text": "Solo en queues", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Verdadero", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Solo en stacks", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Falso", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 14,
+            "question": "El stack es:",
+            "options": [
+              { "option": "A", "text": "Región libre", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Una estructura LIFO", "correct": true, "explanation": null },
+              { "option": "D", "text": "Parte del heap", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Una estructura FIFO", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 15,
+            "question": "La CPU usa el stack para:",
+            "options": [
+              { "option": "A", "text": "Buffer de red", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Memoria dinámica", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Almacenamiento I/O", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Gestión de llamadas y contexto", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 16,
+            "question": "Stack overflow es:",
+            "options": [
+              { "option": "A", "text": "IRQ de stack", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Fault de página", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Excepción por desbordamiento de pila", "correct": true, "explanation": null },
+              { "option": "E", "text": "Overflow de heap", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 17,
+            "question": "Puede causar un stack overflow:",
+            "options": [
+              { "option": "A", "text": "Interrupciones anidadas", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Recursión infinita", "correct": true, "explanation": null },
+              { "option": "D", "text": "Heap corruption", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Stack frames muy grandes", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 18,
+            "question": "¿Qué se almacena en la pila (stack)?",
+            "options": [
+              { "option": "A", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Dirección de retorno", "correct": true, "explanation": null },
+              { "option": "C", "text": "Registros temporales", "correct": true, "explanation": null },
+              { "option": "D", "text": "Variables locales", "correct": true, "explanation": null },
+              { "option": "E", "text": "Parámetros", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 19,
+            "question": "¿Qué se almacena en cada stack frame?",
+            "options": [
+              { "option": "A", "text": "Registros guardados", "correct": true, "explanation": null },
+              { "option": "B", "text": "Dirección de retorno", "correct": true, "explanation": null },
+              { "option": "C", "text": "Variables locales", "correct": true, "explanation": null },
+              { "option": "D", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Parámetros", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 20,
+            "question": "Al terminar una función, la pila:",
+            "options": [
+              { "option": "A", "text": "Mueve datos al heap", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Reinicia el stack pointer", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Conserva todo el frame", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Libera el espacio reservado", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 21,
+            "question": "¿Qué determina los límites de los segmentos de memoria?",
+            "options": [
+              { "option": "A", "text": "Argumentos de línea de comandos", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Variables de entorno", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Tabla de páginas", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Punteros (SP, BP)", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 22,
+            "question": "El tamaño de un stack frame es:",
+            "options": [
+              { "option": "A", "text": "Siempre 4 KB", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Depende del SO", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Fijo", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Variable", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 23,
+            "question": "Secuencia de la llamada `write` en un kernel monolítico:",
+            "options": [
+              { "option": "A", "text": "syscall → handler → IRET", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "`write()` → trap → `write_handler` → IRET", "correct": true, "explanation": null },
+              { "option": "D", "text": "trap → `write()` → IRET", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "`write()` → IRQ → handler → retorno", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 24,
+            "question": "El handler de la syscall se ejecuta en:",
+            "options": [
+              { "option": "A", "text": "Ring 3", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Ring 0", "correct": true, "explanation": null },
+              { "option": "D", "text": "Ring 1", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Ring 2", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 25,
+            "question": "Las syscalls son más costosas porque:",
+            "options": [
+              { "option": "A", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Implican un cambio de modo y vaciado de pipeline", "correct": true, "explanation": null },
+              { "option": "C", "text": "Reprograman la PIC", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Actualizan la TLB", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Acceden a I/O privilegiado", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 26,
+            "question": "Si un proceso hace I/O directo sin syscall, se produce:",
+            "options": [
+              { "option": "A", "text": "Elevación de privilegio", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Ignorar la instrucción", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Fault", "correct": true, "explanation": null },
+              { "option": "E", "text": "Encolado en la PIC", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 27,
+            "question": "Cada proceso tiene cuántas pilas?",
+            "options": [
+              { "option": "A", "text": "Dos", "correct": true, "explanation": null },
+              { "option": "B", "text": "Tres", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Una", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Cuatro", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 28,
+            "question": "Los procesos tienen una pila de kernel para:",
+            "options": [
+              { "option": "A", "text": "Comunicación userland", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Protección", "correct": true, "explanation": null },
+              { "option": "C", "text": "Depuración", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Rendimiento", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 29,
+            "question": "Un trap es:",
+            "options": [
+              { "option": "A", "text": "Interfaz de syscalls", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Programa en userland", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Mecanismo asíncrono", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Mecanismo síncrono", "correct": true, "explanation": null }
+            ]
+          },
+          {
+            "id": 30,
+            "question": "Un trap siempre provoca un cambio de modo.",
+            "options": [
+              { "option": "A", "text": "Solo en excepciones", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "A veces", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Falso", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Verdadero", "correct": true, "explanation": null },
+              { "option": "E", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 31,
+            "question": "Las excepciones (división por cero, page-fault…) utilizan traps.",
+            "options": [
+              { "option": "A", "text": "Solo software", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Verdadero", "correct": true, "explanation": null },
+              { "option": "C", "text": "Solo hardware", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Falso", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 32,
+            "question": "¿Qué diferencia hay entre las secciones `.data` y `.bss`?",
+            "options": [
+              { "option": "A", "text": "Código vs datos", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Read-only vs RW", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "D", "text": "Inicializadas vs no inicializadas", "correct": true, "explanation": null },
+              { "option": "E", "text": "Heap vs stack", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 33,
+            "question": "¿Para qué sirve la instrucción `IRET` tras un trap/syscall?",
+            "options": [
+              { "option": "A", "text": "Iniciar un trap", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Cambiar página", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Restaurar contexto y volver a userland", "correct": true, "explanation": null },
+              { "option": "D", "text": "Reiniciar la pila", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" }
+            ]
+          },
+          {
+            "id": 34,
+            "question": "Interrupciones de hardware (IRQ) vs excepciones síncronas (traps):",
+            "options": [
+              { "option": "A", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Incorrecta" },
+              { "option": "B", "text": "Sin cambio de modo vs con cambio", "correct": false, "explanation": "Incorrecta" },
+              { "option": "C", "text": "Hardware vs software", "correct": true, "explanation": null },
+              { "option": "D", "text": "Vectores vs llamadas", "correct": false, "explanation": "Incorrecta" },
+              { "option": "E", "text": "Asíncronas vs síncronas", "correct": true, "explanation": null }
+            ]
+          }
+        ]
+      }                      
 ]
