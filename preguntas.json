@@ -2782,5 +2782,355 @@
             ]
           }
         ]
-      }                      
+      },
+      {
+        "Topic": "6 - Clasificación de procesos - Modos de Procesamiento",
+        "questions": [
+          { "id": 1,  "question": "¿Cuál(es) describen monoprogramación?",  "options": [
+              { "option": "C", "text": "Concurrencia simulada",     "correct": false, "explanation": null },
+              { "option": "A", "text": "Un solo proceso",            "correct": true,  "explanation": null },
+              { "option": "E", "text": "Alta interactividad",        "correct": false, "explanation": null },
+              { "option": "B", "text": "CPU inactiva en bloqueos",   "correct": true,  "explanation": null },
+              { "option": "D", "text": "Scheduler complejo",         "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 2,  "question": "¿Qué caracteriza multiprogramación?",  "options": [
+              { "option": "D", "text": "CPU ociosa en bloqueos",         "correct": false, "explanation": null },
+              { "option": "A", "text": "Simula simultaneidad",            "correct": true,  "explanation": null },
+              { "option": "E", "text": "Sin scheduler",                  "correct": false, "explanation": null },
+              { "option": "B", "text": "Múltiples procesos en memoria",  "correct": true,  "explanation": null },
+              { "option": "C", "text": "Despacha otro proceso al bloquearse uno",    "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 3,  "question": "Ventajas de multiprogramación vs monoprogramación:",  "options": [
+              { "option": "C", "text": "Menor latencia individual",    "correct": false, "explanation": null },
+              { "option": "B", "text": "Respuesta más rápida al usuario","correct": true,  "explanation": null },
+              { "option": "E", "text": "Sin múltiple gestión",         "correct": false, "explanation": null },
+              { "option": "D", "text": "Menos complejidad",            "correct": false, "explanation": null },
+              { "option": "A", "text": "CPU aprovechada al máximo",    "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 4,  "question": "Desventajas de multiprogramación:",  "options": [
+              { "option": "D", "text": "Menor throughput global",   "correct": false, "explanation": null },
+              { "option": "B", "text": "Más latencia por proceso",  "correct": true,  "explanation": null },
+              { "option": "A", "text": "Scheduler más complejo",    "correct": true,  "explanation": null },
+              { "option": "E", "text": "Implementación simple",     "correct": false, "explanation": null },
+              { "option": "C", "text": "CPU ociosa en bloqueos",     "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 5,  "question": "Rol del scheduler en multiprogramación:",  "options": [
+              { "option": "B", "text": "Asignar memoria dinámica",  "correct": false, "explanation": null },
+              { "option": "A", "text": "Elegir proceso al que asignarle la CPU","correct": true,  "explanation": null },
+              { "option": "E", "text": "Controlar permisos",         "correct": false, "explanation": null },
+              { "option": "D", "text": "Mantener un proceso activo", "correct": false, "explanation": null },
+              { "option": "C", "text": "Compilar en memoria",       "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 6,  "question": "¿Cómo describe el flujo de ejecución la monoprogramación?",  "options": [
+              { "option": "C", "text": "Ejecuta en paralelo según CPUs", "correct": false, "explanation": null },
+              { "option": "E", "text": "Usa scheduler round-robin",    "correct": false, "explanation": null },
+              { "option": "A", "text": "Carga y ejecuta hasta bloqueo/fin","correct": true,  "explanation": null },
+              { "option": "B", "text": "Alterna procesos listos",      "correct": false, "explanation": null },
+              { "option": "D", "text": "Simula concurrencia sin bloqueo","correct": false, "explanation": null }
+            ]
+          },
+          { "id": 7,  "question": "En multiprogramación, si un proceso de I/O se bloquea, la CPU…",  "options": [
+              { "option": "B", "text": "Despacha otro listo",           "correct": true,  "explanation": null },
+              { "option": "D", "text": "Finaliza el bloqueado",         "correct": false, "explanation": null },
+              { "option": "C", "text": "Reinicia el SO",               "correct": false, "explanation": null },
+              { "option": "A", "text": "Permanece inactiva hasta I/O", "correct": false, "explanation": null },
+              { "option": "E", "text": "Libera su memoria",            "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 8,  "question": "¿Qué ocurre con la latencia de un proceso en multiprogramación?",  "options": [
+              { "option": "B", "text": "Permanece igual",                    "correct": false, "explanation": null },
+              { "option": "D", "text": "Se vuelve determinista",             "correct": false, "explanation": null },
+              { "option": "E", "text": "Desaparece",                        "correct": false, "explanation": null },
+              { "option": "A", "text": "Se reduce por más CPUs",             "correct": false, "explanation": null },
+              { "option": "C", "text": "Aumenta por alternancia",            "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 9,  "question": "Ventajas de monoprogramación:",  "options": [
+              { "option": "D", "text": "Fácil de escalar a múltiples CPUs", "correct": false, "explanation": null },
+              { "option": "B", "text": "No desperdicia ciclos en bloqueos",   "correct": false, "explanation": null },
+              { "option": "E", "text": "Muy bajo overhead de gestión",       "correct": true,  "explanation": null },
+              { "option": "A", "text": "Sin scheduler complejo",             "correct": true,  "explanation": null },
+              { "option": "C", "text": "Alta interactividad",                "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 10, "question": "¿Por qué multiprogramación necesita scheduler?",  "options": [
+              { "option": "D", "text": "Sincronizar threads IPC",            "correct": false, "explanation": null },
+              { "option": "B", "text": "Equidad en asignación CPU",          "correct": true,  "explanation": null },
+              { "option": "A", "text": "Alternar procesos listos",           "correct": true,  "explanation": null },
+              { "option": "E", "text": "Maximizar uso evitando inactividad", "correct": true,  "explanation": null },
+              { "option": "C", "text": "Compilar en memoria",                "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 11, "question": "¿Cuál(es) describen un trabajo batch?",  "options": [
+              { "option": "C", "text": "Prioridad de respuesta alta",             "correct": false, "explanation": null },
+              { "option": "A", "text": "Sin intervención humana",                 "correct": true,  "explanation": null },
+              { "option": "D", "text": "Registra resultados en log",             "correct": true,  "explanation": null },
+              { "option": "E", "text": "Scheduler de tiempo real",                "correct": false, "explanation": null },
+              { "option": "B", "text": "Consume intensivamente la CPU",           "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 12, "question": "¿Cuál es un ejemplo típico de proceso batch?",  "options": [
+              { "option": "D", "text": "Controlador ABS",                       "correct": false, "explanation": null },
+              { "option": "B", "text": "Editor de texto interactivo",          "correct": false, "explanation": null },
+              { "option": "A", "text": "Script cron que hace backup y envía log","correct": true,  "explanation": null },
+              { "option": "C", "text": "Demonio sshd",                         "correct": false, "explanation": null },
+              { "option": "E", "text": "Proceso en bucle infinito de usuario",  "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 13, "question": "¿Qué caracteriza a un proceso interactivo?",  "options": [
+              { "option": "C", "text": "Pasa tiempo esperando entrada",        "correct": true,  "explanation": null },
+              { "option": "E", "text": "Baja prioridad del scheduler",        "correct": false, "explanation": null },
+              { "option": "A", "text": "Minimiza latencia de respuesta",      "correct": true,  "explanation": null },
+              { "option": "D", "text": "Arranca con el sistema y no termina", "correct": false, "explanation": null },
+              { "option": "B", "text": "Consume CPU sin pausas",              "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 14, "question": "¿Cuál(es) son ejemplos de procesos interactivos?",  "options": [
+              { "option": "D", "text": "Servidor HTTP de fondo",          "correct": false, "explanation": null },
+              { "option": "A", "text": "Editor nano",                     "correct": true,  "explanation": null },
+              { "option": "E", "text": "Controlador de frenos ABS",      "correct": false, "explanation": null },
+              { "option": "C", "text": "Backup nocturno via cron",        "correct": false, "explanation": null },
+              { "option": "B", "text": "Shell bash",                     "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 15, "question": "¿Qué caracteriza a un demonio/server?",  "options": [
+              { "option": "B", "text": "Se bloquea indefinidamente",    "correct": false, "explanation": null },
+              { "option": "E", "text": "Scheduler de tiempo real",       "correct": false, "explanation": null },
+              { "option": "C", "text": "Duerme esperando eventos",       "correct": true,  "explanation": null },
+              { "option": "A", "text": "Arranca con el SO",              "correct": true,  "explanation": null },
+              { "option": "D", "text": "Termina tras un único evento",   "correct": false, "explanation": null },
+              { "option": "F", "text": "Alta latencia en atención",      "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 16, "question": "El servicio SSH (sshd) es un ejemplo de:",  "options": [
+              { "option": "B", "text": "Proceso interactivo",  "correct": false, "explanation": null },
+              { "option": "C", "text": "Demonio/server",      "correct": true,  "explanation": null },
+              { "option": "A", "text": "Proceso batch",        "correct": false, "explanation": null },
+              { "option": "E", "text": "Tarea cron",          "correct": false, "explanation": null },
+              { "option": "D", "text": "Sistema real",        "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 17, "question": "En un sistema de tiempo real, es crítico…",  "options": [
+              { "option": "E", "text": "No usar logs",              "correct": false, "explanation": null },
+              { "option": "B", "text": "Devolver resultado correcto", "correct": true,  "explanation": null },
+              { "option": "D", "text": "Scheduler FIFO sin prioridades","correct": false, "explanation": null },
+              { "option": "C", "text": "Consumo intenso de CPU",     "correct": false, "explanation": null },
+              { "option": "A", "text": "Mínima latencia absoluta",   "correct": false, "explanation": null },
+              { "option": "F", "text": "Cumplir deadline temporal",  "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 18, "question": "¿Cuál(es) ámbitos usan tiempo real?",  "options": [
+              { "option": "C", "text": "Videojuegos",               "correct": false, "explanation": null },
+              { "option": "E", "text": "Demonios de correo",        "correct": false, "explanation": null },
+              { "option": "A", "text": "Control industrial y aviación","correct": true,  "explanation": null },
+              { "option": "D", "text": "Control de frenos ABS",     "correct": true,  "explanation": null },
+              { "option": "B", "text": "Backups nocturnos",          "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 19, "question": "El scheduler rate-monotonic se asocia a…",  "options": [
+              { "option": "A", "text": "Monoprogramación",      "correct": false, "explanation": null },
+              { "option": "C", "text": "Sistemas interactivos", "correct": false, "explanation": null },
+              { "option": "D", "text": "Procesos batch",         "correct": false, "explanation": null },
+              { "option": "B", "text": "Sistemas multiproceso", "correct": false, "explanation": null },
+              { "option": "E", "text": "Tiempo real",           "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 20, "question": "¿Por qué interactivos reciben alta prioridad?",  "options": [
+              { "option": "A", "text": "Maximizar throughput",          "correct": false, "explanation": null },
+              { "option": "C", "text": "Para deadlines críticos",       "correct": false, "explanation": null },
+              { "option": "B", "text": "Minimizar latencia usuario",    "correct": true,  "explanation": null },
+              { "option": "D", "text": "Para CPU intensivo sin pausas", "correct": false, "explanation": null },
+              { "option": "E", "text": "Agrupar en batch",              "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 21, "question": "¿Qué es un proceso batch?",  "options": [
+              { "option": "B", "text": "Consume intensivo CPU",            "correct": true,  "explanation": null },
+              { "option": "C", "text": "Alta prioridad respuesta",      "correct": false, "explanation": null },
+              { "option": "A", "text": "Sin intervención humana",        "correct": true,  "explanation": null },
+              { "option": "D", "text": "Registra resultados en log",    "correct": true,  "explanation": null },
+              { "option": "E", "text": "Scheduler tiempo real",         "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 22, "question": "Proceso demonio/server…",  "options": [
+              { "option": "B", "text": "Arranca por evento usuario",     "correct": false, "explanation": null },
+              { "option": "A", "text": "Es interactivo",               "correct": false, "explanation": null },
+              { "option": "D", "text": "Termina tras un evento",       "correct": false, "explanation": null },
+              { "option": "C", "text": "Duerme esperando eventos",      "correct": true,  "explanation": null },
+              { "option": "E", "text": "Consume CPU sin pausa",         "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 23, "question": "Proceso interactivo…",  "options": [
+              { "option": "B", "text": "Batch automático",            "correct": false, "explanation": null },
+              { "option": "C", "text": "Reactivo a pulsaciones",     "correct": true,  "explanation": null },
+              { "option": "A", "text": "Requiere logs detallados",    "correct": false, "explanation": null },
+              { "option": "D", "text": "Deadline crítico",           "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 24, "question": "Sistema de tiempo real…",  "options": [
+              { "option": "C", "text": "Solo corre batch",            "correct": false, "explanation": null },
+              { "option": "D", "text": "Deadline crucial",  "correct": true,  "explanation": null },
+              { "option": "A", "text": "Monoprogramación pura",       "correct": false, "explanation": null },
+              { "option": "B", "text": "Interactividad máxima",      "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 25, "question": "¿Qué describe un SO multiusuario?",  "options": [
+              { "option": "B", "text": "Un solo usuario conectado",      "correct": false, "explanation": null },
+              { "option": "A", "text": "Control de permisos aislados",  "correct": true,  "explanation": null },
+              { "option": "D", "text": "No requiere scheduler",        "correct": false, "explanation": null },
+              { "option": "E", "text": "Ilusión de máquina dedicada",   "correct": true,  "explanation": null },
+              { "option": "C", "text": "Time-sharing con cuentas",      "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 26, "question": "Componentes clave en SO multiusuario:",  "options": [
+              { "option": "A", "text": "Gestión de usuarios",         "correct": true,  "explanation": null },
+              { "option": "C", "text": "Control de concurrencia",     "correct": true,  "explanation": null },
+              { "option": "E", "text": "Motor 3D",                   "correct": false, "explanation": null },
+              { "option": "B", "text": "Scheduler con equidad",      "correct": true,  "explanation": null },
+              { "option": "D", "text": "Backup automático batch",     "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 27, "question": "Varios usuarios SSH… corresponde a…",  "options": [
+              { "option": "C", "text": "Multiusuario",             "correct": true,  "explanation": null },
+              { "option": "B", "text": "Monousuario",             "correct": false, "explanation": null },
+              { "option": "A", "text": "Monoprogramación",         "correct": false, "explanation": null },
+              { "option": "D", "text": "Tiempo real",             "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 28, "question": "Para servir a varios usuarios, SO debe ser…",  "options": [
+              { "option": "A", "text": "Multiusuario",            "correct": true,  "explanation": null },
+              { "option": "D", "text": "Tiempo real",             "correct": false, "explanation": null },
+              { "option": "C", "text": "Multiprogramación",       "correct": true,  "explanation": null },
+              { "option": "B", "text": "Monoprogramación",        "correct": false, "explanation": null },
+              { "option": "E", "text": "Clúster distribuido",     "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 29, "question": "Time-sharing en SO multiusuario…",  "options": [
+              { "option": "C", "text": "Demonios supervisan CPU", "correct": false, "explanation": null },
+              { "option": "D", "text": "Batch nocturno",         "correct": false, "explanation": null },
+              { "option": "B", "text": "Un proceso monopoliza CPU","correct": false, "explanation": null },
+              { "option": "A", "text": "CPU alterna rebanadas",  "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 30, "question": "Ejemplo de entorno multiusuario:",  "options": [
+              { "option": "B", "text": "Cron job nocturno",                          "correct": false, "explanation": null },
+              { "option": "D", "text": "Controlador ABS",                             "correct": false, "explanation": null },
+              { "option": "A", "text": "Windows Server con múltiples RDP",            "correct": true,  "explanation": null },
+              { "option": "C", "text": "Editor que responde a teclas",                "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 31, "question": "Usuario A sobrescribe archivo B sin permiso…",  "options": [
+              { "option": "C", "text": "SO deniega acceso",                              "correct": true,  "explanation": null },
+              { "option": "A", "text": "Scheduler detiene A",                           "correct": false, "explanation": null },
+              { "option": "D", "text": "Conflicto insoluble",                           "correct": false, "explanation": null },
+              { "option": "B", "text": "Se convierte en batch",                         "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 32, "question": "Diferencia multiusuario vs monoprogramación:",  "options": [
+              { "option": "B", "text": "Multiusuario no usa scheduler",              "correct": false, "explanation": null },
+              { "option": "C", "text": "Monoprogramación gestiona usuarios",         "correct": false, "explanation": null },
+              { "option": "D", "text": "Son idénticos",                             "correct": false, "explanation": null },
+              { "option": "A", "text": "Multiusuario gestiona cuentas; monoprogramación un programa","correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 33, "question": "Elemento que garantiza aislamiento de usuarios:",  "options": [
+              { "option": "A", "text": "Scheduler tiempo real",                        "correct": false, "explanation": null },
+              { "option": "D", "text": "Demonio de backups",                          "correct": false, "explanation": null },
+              { "option": "B", "text": "Tablas de permisos y UID/GID",                  "correct": true,  "explanation": null },
+              { "option": "C", "text": "Gap en memoria virtual",                       "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 34, "question": "Por qué SO multiusuario necesita auditoría…",  "options": [
+              { "option": "A", "text": "Acelerar batch",                               "correct": false, "explanation": null },
+              { "option": "D", "text": "Sincronizar deadlines",                        "correct": false, "explanation": null },
+              { "option": "C", "text": "Minimizar latencia interactiva",                "correct": false, "explanation": null },
+              { "option": "B", "text": "Rastrear quién hizo qué",                      "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 35, "question": "¿Qué describe SMP?",  "options": [
+              { "option": "B", "text": "Memoria privada por CPU",                       "correct": false, "explanation": null },
+              { "option": "E", "text": "Scheduler balancea carga dinámicamente",        "correct": true,  "explanation": null },
+              { "option": "D", "text": "Comunicación solo por mensajes",               "correct": false, "explanation": null },
+              { "option": "C", "text": "Un único SO para todas CPUs",                  "correct": true,  "explanation": null },
+              { "option": "A", "text": "Todas CPUs equivalentes",                      "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 36, "question": "¿Qué describe multiprocesador asimétrico?",  "options": [
+              { "option": "E", "text": "CPUs idénticas y simétricas",                  "correct": false, "explanation": null },
+              { "option": "A", "text": "Carga balanceada automática",                   "correct": false, "explanation": null },
+              { "option": "D", "text": "Hardware sin roles diferenciados",             "correct": false, "explanation": null },
+              { "option": "C", "text": "CPUs esclavas solo usuario",                    "correct": true,  "explanation": null },
+              { "option": "B", "text": "CPU maestra maneja tareas críticas SO",         "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 37, "question": "Ventajas SMP vs CPU única:",  "options": [
+              { "option": "E", "text": "Determinismo temporal absoluto",             "correct": false, "explanation": null },
+              { "option": "C", "text": "Paralelismo de procesos",                   "correct": true,  "explanation": null },
+              { "option": "B", "text": "Escalabilidad ilimitada",                   "correct": false, "explanation": null },
+              { "option": "D", "text": "Sin scheduler necesario",                   "correct": false, "explanation": null },
+              { "option": "A", "text": "Programación simplificada",                 "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 38, "question": "Desventaja multiprocesador asimétrico:",  "options": [
+              { "option": "E", "text": "Memoria compartida obligatoria",             "correct": false, "explanation": null },
+              { "option": "B", "text": "CPU maestra puede ser cuello de botella",    "correct": true,  "explanation": null },
+              { "option": "C", "text": "Tareas ejecutadas indistintamente",          "correct": false, "explanation": null },
+              { "option": "A", "text": "Mayor flexibilidad de roles",               "correct": false, "explanation": null },
+              { "option": "D", "text": "Scheduler con fairness automático",         "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 39, "question": "Ejemplos de SMP:",  "options": [
+              { "option": "E", "text": "DSP esclavas con CPU principal",            "correct": false, "explanation": null },
+              { "option": "C", "text": "Núcleo maestro y dos esclavos",             "correct": false, "explanation": null },
+              { "option": "D", "text": "Servidores Linux en nube",                   "correct": true,  "explanation": null },
+              { "option": "A", "text": "PC moderno con varios núcleos",             "correct": true,  "explanation": null },
+              { "option": "B", "text": "Microcontrolador con DSP esclavos",         "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 40, "question": "Ejemplos de multiprocesador asimétrico:",  "options": [
+              { "option": "D", "text": "Servidor SMP balanceado",                       "correct": false, "explanation": null },
+              { "option": "E", "text": "Cluster de servidores independientes",         "correct": false, "explanation": null },
+              { "option": "C", "text": "Tarjeta de sonido con CPU dedicada",            "correct": true,  "explanation": null },
+              { "option": "A", "text": "Router embebido con núcleo I/O y otro de forwarding","correct": true,  "explanation": null },
+              { "option": "B", "text": "PC de escritorio con 8 núcleos homógenos",     "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 41, "question": "Al diseñar SO para SMP, componente esencial:",  "options": [
+              { "option": "D", "text": "Scheduler único para un CPU",                   "correct": false, "explanation": null },
+              { "option": "C", "text": "Comunicación explícita obligatoria",           "correct": false, "explanation": null },
+              { "option": "E", "text": "Soporte para deadlines críticos",             "correct": false, "explanation": null },
+              { "option": "B", "text": "Memoria aislada por núcleo",                   "correct": false, "explanation": null },
+              { "option": "A", "text": "Scheduler que reparta procesos entre CPUs",     "correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 42, "question": "En SMP, 'memoria compartida' implica que…",  "options": [
+              { "option": "C", "text": "Variables globales replicadas por CPU",       "correct": false, "explanation": null },
+              { "option": "D", "text": "Requiere IPC para comunicación",               "correct": false, "explanation": null },
+              { "option": "A", "text": "Cada núcleo copia RAM física",               "correct": false, "explanation": null },
+              { "option": "E", "text": "Procesos ven direcciones distintas",           "correct": false, "explanation": null },
+              { "option": "B", "text": "Todos núcleos acceden al mismo espacio físico","correct": true,  "explanation": null }
+            ]
+          },
+          { "id": 43, "question": "Diferencia fundamental entre SMP y multiprocesador asimétrico:",  "options": [
+              { "option": "A", "text": "SMP usa un núcleo; asimétrico varios",     "correct": false, "explanation": null },
+              { "option": "C", "text": "Asimétrico no permite memoria compartida",  "correct": false, "explanation": null },
+              { "option": "B", "text": "SMP CPUs equivalentes; asimétrico roles distintos","correct": true,  "explanation": null },
+              { "option": "E", "text": "Solo asimétrico ejecuta usuario",           "correct": false, "explanation": null },
+              { "option": "D", "text": "SMP sin scheduler; asimétrico sí",            "correct": false, "explanation": null }
+            ]
+          },
+          { "id": 44, "question": "¿Desventaja al escalar SMP a muchos núcleos?",  "options": [
+              { "option": "A", "text": "Mejor balance memoria",                "correct": false, "explanation": null },
+              { "option": "C", "text": "Comunicación sin latencia",            "correct": false, "explanation": null },
+              { "option": "B", "text": "Contención en acceso a memoria",      "correct": true,  "explanation": null },
+              { "option": "E", "text": "Determinismo con deadlines",          "correct": false, "explanation": null },
+              { "option": "D", "text": "Sin necesidad de sincronización",     "correct": false, "explanation": null }
+            ]
+          }
+        ]
+      }                     
 ]
