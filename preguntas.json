@@ -188,7 +188,7 @@
                 "options": [
                     {
                     "option": "a",
-                    "text": "Instrucciones en ejecución",
+                    "text": "El proceso en ejecución",
                     "correct": true,
                     "explanation": "La RAM guarda el código binario de las instrucciones que el CPU está ejecutando."
                     },
@@ -3132,5 +3132,1041 @@
             ]
           }
         ]
-      }                     
+      },
+      {
+        "Topic": "7 - Maquinas Virtuales",
+        "questions": [
+          {
+            "id": 1,
+            "question": "¿Cuál describe mejor una VM de sistema?",
+            "options": [
+              { "option": "A", "text": "Traduce bytecode a llamadas nativas",           "correct": false, "explanation": null },
+              { "option": "B", "text": "Requiere un hipervisor tipo 2",               "correct": false, "explanation": null },
+              { "option": "C", "text": "Comparte kernel con el host",                 "correct": false, "explanation": null },
+              { "option": "D", "text": "Emula CPU, memoria y dispositivos completos",  "correct": true,  "explanation": null },
+              { "option": "E", "text": "Solo aísla procesos, no hardware",            "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 2,
+            "question": "Principal ventaja de una VM de proceso:",
+            "options": [
+              { "option": "A", "text": "Arranque instantáneo",                        "correct": false, "explanation": null },
+              { "option": "B", "text": "Acceso directo al hardware",                   "correct": false, "explanation": null },
+              { "option": "C", "text": "Rendimiento idéntico al nativo",               "correct": false, "explanation": null },
+              { "option": "D", "text": "Permite migración en caliente",                "correct": false, "explanation": null },
+              { "option": "E", "text": "Portabilidad de bytecode entre plataformas",    "correct": true,  "explanation": null },
+              { "option": "F", "text": "Sandbox controlado de instrucciones",           "correct": true,  "explanation": null }
+            ]
+          },
+          {
+            "id": 3,
+            "question": "En hipervisor bare-metal, su característica es:",
+            "options": [
+              { "option": "A", "text": "Corre dentro de un SO anfitrión",             "correct": false, "explanation": null },
+              { "option": "B", "text": "Funciona como contenedor Docker",              "correct": false, "explanation": null },
+              { "option": "C", "text": "Se instala directamente en hardware",           "correct": true,  "explanation": null },
+              { "option": "D", "text": "Solo gestiona VMs de proceso",                 "correct": false, "explanation": null },
+              { "option": "E", "text": "Requiere un SO invitado previo",               "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 4,
+            "question": "¿Qué distingue a un hipervisor tipo 2?",
+            "options": [
+              { "option": "A", "text": "Máxima eficiencia en producción",              "correct": false, "explanation": null },
+              { "option": "B", "text": "Ideal para desarrollo y pruebas",               "correct": true,  "explanation": null },
+              { "option": "C", "text": "Emula cada instrucción en software",            "correct": false, "explanation": null },
+              { "option": "D", "text": "Corre como aplicación sobre un SO anfitrión",   "correct": true,  "explanation": null },
+              { "option": "E", "text": "Nunca usa SO anfitrión",                        "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 5,
+            "question": "Arquitectura típica de hipervisor hosted:",
+            "options": [
+              { "option": "A", "text": "Hipervisor → VM → Aplicaciones → Hardware",     "correct": false, "explanation": null },
+              { "option": "B", "text": "Hardware → SO Anfitrión → Hipervisor → VM",     "correct": true,  "explanation": null },
+              { "option": "C", "text": "Hardware → Hipervisor → SO Invitado",           "correct": false, "explanation": null },
+              { "option": "D", "text": "SO Invitado → Hipervisor → Hardware",           "correct": false, "explanation": null },
+              { "option": "E", "text": "So Anfitrión → VM → Hipervisor",                "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 6,
+            "question": "¿Qué significa aislamiento en VMs?",
+            "options": [
+              { "option": "A", "text": "Compartir RAM entre instancias",               "correct": false, "explanation": null },
+              { "option": "B", "text": "Un fallo no se propaga a otras VMs",            "correct": true,  "explanation": null },
+              { "option": "C", "text": "Solo una VM corre a la vez",                    "correct": false, "explanation": null },
+              { "option": "D", "text": "Bloqueo de red completo",                      "correct": false, "explanation": null },
+              { "option": "E", "text": "Kernel compartido con host",                    "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 7,
+            "question": "Comparativa Tipo 1 vs Tipo 2, cuál es cierto:",
+            "options": [
+              { "option": "A", "text": "Tipo 1: configuración ligera, bajo rendimiento", "correct": false, "explanation": null },
+              { "option": "B", "text": "Ambos igual de seguros y eficientes",           "correct": false, "explanation": null },
+              { "option": "C", "text": "Tipo 1: alta eficiencia, más complejidad",     "correct": true,  "explanation": null },
+              { "option": "D", "text": "Tipo 2 no usa sistema anfitrión",              "correct": false, "explanation": null },
+              { "option": "E", "text": "Tipo 2: rendimiento cercano al nativo",         "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 8,
+            "question": "Diferencia clave SO anfitrión vs SO invitado:",
+            "options": [
+              { "option": "A", "text": "Invitado corre directamente en hardware",       "correct": false, "explanation": null },
+              { "option": "B", "text": "Anfitrión no participa en la virtualización",   "correct": false, "explanation": null },
+              { "option": "C", "text": "Invitado gestiona otras VMs",                "correct": false, "explanation": null },
+              { "option": "D", "text": "Anfitrión soporta el hipervisor hosted",       "correct": true,  "explanation": null },
+              { "option": "E", "text": "Ambos son idénticos",                        "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 9,
+            "question": "¿Cuándo es mejor un hipervisor bare-metal?",
+            "options": [
+              { "option": "A", "text": "En pruebas de escritorio",                    "correct": false, "explanation": null },
+              { "option": "B", "text": "En producción crítica en datacenter",         "correct": true,  "explanation": null },
+              { "option": "C", "text": "Para correr solo bytecode",                  "correct": false, "explanation": null },
+              { "option": "D", "text": "Si no se requiere rendimiento",              "correct": false, "explanation": null },
+              { "option": "E", "text": "Cuando no hay SO anfitrión",                 "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 10,
+            "question": "Diferencia esencial VM proceso vs VM sistema:",
+            "options": [
+              { "option": "A", "text": "Proceso emula hardware completo",             "correct": false, "explanation": null },
+              { "option": "B", "text": "Sistema no hospeda SO invitado",              "correct": false, "explanation": null },
+              { "option": "C", "text": "Proceso ejecuta bytecode en sandbox",         "correct": true,  "explanation": null },
+              { "option": "D", "text": "Sistema solo corre contenedores",             "correct": false, "explanation": null },
+              { "option": "E", "text": "Ambos son equivalentes",                     "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 11,
+            "question": "Ventaja clave de aislar apps en VMs:",
+            "options": [
+              { "option": "A", "text": "Overhead cero de CPU",                      "correct": false, "explanation": null },
+              { "option": "B", "text": "Un fallo no impacta a otras VMs",            "correct": true,  "explanation": null },
+              { "option": "C", "text": "Arranque ultrarrápido",                      "correct": false, "explanation": null },
+              { "option": "D", "text": "Uso mínimo de memoria",                     "correct": false, "explanation": null },
+              { "option": "E", "text": "Obliga a cada VM a su propio kernel",         "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 12,
+            "question": "¿Qué es overhead en virtualización?",
+            "options": [
+              { "option": "A", "text": "Penalización en CPU e I/O",                  "correct": true,  "explanation": null },
+              { "option": "B", "text": "Máximo de VMs por host",                     "correct": false, "explanation": null },
+              { "option": "C", "text": "RAM reservada por SO invitado",              "correct": false, "explanation": null },
+              { "option": "D", "text": "Latencia de red interna",                    "correct": false, "explanation": null },
+              { "option": "E", "text": "Número de snapshots activos",                "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 13,
+            "question": "Emulación completa: cada instrucción…",
+            "options": [
+              { "option": "A", "text": "Se ejecuta nativa en el CPU",               "correct": false, "explanation": null },
+              { "option": "B", "text": "Requiere parches al SO invitado",           "correct": false, "explanation": null },
+              { "option": "C", "text": "Pasa por emulador instrucción a instrucción", "correct": true,  "explanation": null },
+              { "option": "D", "text": "Usa virtio para I/O",                       "correct": false, "explanation": null },
+              { "option": "E", "text": "Solo en hipervisores tipo 1",               "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 14,
+            "question": "Ventaja de emulación vs paravirtualización:",
+            "options": [
+              { "option": "A", "text": "Rendimiento casi nativo",                  "correct": false, "explanation": null },
+              { "option": "B", "text": "No requiere modificar SO invitado",         "correct": true,  "explanation": null },
+              { "option": "C", "text": "Arranque al instante",                     "correct": false, "explanation": null },
+              { "option": "D", "text": "Menos overhead que contenedores",           "correct": false, "explanation": null },
+              { "option": "E", "text": "Base de Docker",                           "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 15,
+            "question": "Paravirtualización mejora rendimiento porque…",
+            "options": [
+              { "option": "A", "text": "El hipervisor emula cada instrucción",      "correct": false, "explanation": null },
+              { "option": "B", "text": "SO invitado coopera con drivers especiales",  "correct": true,  "explanation": null },
+              { "option": "C", "text": "Elimina la capa de virtualización",          "correct": false, "explanation": null },
+              { "option": "D", "text": "Comparte kernel host-invitado",             "correct": false, "explanation": null },
+              { "option": "E", "text": "Solo para contenedores",                    "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 16,
+            "question": "Desventaja de paravirtualización:",
+            "options": [
+              { "option": "A", "text": "Requiere parches al SO invitado",           "correct": true,  "explanation": null },
+              { "option": "B", "text": "No permite snapshots",                      "correct": false, "explanation": null },
+              { "option": "C", "text": "Siempre lento en I/O",                      "correct": false, "explanation": null },
+              { "option": "D", "text": "No funciona en bare-metal",                 "correct": false, "explanation": null },
+              { "option": "E", "text": "Depende de Docker",                         "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 17,
+            "question": "En comparación con VMs, los contenedores…",
+            "options": [
+              { "option": "A", "text": "Emulan hardware completo",                  "correct": false, "explanation": null },
+              { "option": "B", "text": "Necesitan un hipervisor",                   "correct": false, "explanation": null },
+              { "option": "C", "text": "Arranque más lento",                         "correct": false, "explanation": null },
+              { "option": "D", "text": "Comparten kernel y aíslan procesos",          "correct": true,  "explanation": null },
+              { "option": "E", "text": "Menos portables que VMs",                    "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 18,
+            "question": "Característica clave de un contenedor:",
+            "options": [
+              { "option": "A", "text": "Kernel independiente",                     "correct": false, "explanation": null },
+              { "option": "B", "text": "Requiere SO invitado completo",              "correct": false, "explanation": null },
+              { "option": "C", "text": "Lento arranque por virtualización",          "correct": false, "explanation": null },
+              { "option": "D", "text": "Ligeros y portables con dependencias embebidas", "correct": true, "explanation": null },
+              { "option": "E", "text": "Emulan hardware completo",                   "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 19,
+            "question": "Arranque VM vs contenedor:",
+            "options": [
+              { "option": "A", "text": "VM rápido · contenedor lento",              "correct": false, "explanation": null },
+              { "option": "B", "text": "Equivalente · Igual",                       "correct": false, "explanation": null },
+              { "option": "C", "text": "Indeterminado · Variable",                  "correct": false, "explanation": null },
+              { "option": "D", "text": "Imposible · Instantáneo",                   "correct": false, "explanation": null },
+              { "option": "E", "text": "VM lento · contenedor rápido",               "correct": true,  "explanation": null }
+            ]
+          },
+          {
+            "id": 20,
+            "question": "¿Qué permite la migración en caliente?",
+            "options": [
+              { "option": "A", "text": "Convertir VM en contenedor",                "correct": false, "explanation": null },
+              { "option": "B", "text": "Garantizar rendimiento 100%",                "correct": false, "explanation": null },
+              { "option": "C", "text": "Reducir disco a cero",                       "correct": false, "explanation": null },
+              { "option": "D", "text": "Mover VM/cont. sin interrumpir servicio",      "correct": true,  "explanation": null },
+              { "option": "E", "text": "Eliminar necesidad de SO anfitrión",          "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 21,
+            "question": "Repetibilidad con snapshots/Dockerfiles:",
+            "options": [
+              { "option": "A", "text": "Aisla hardware subyacente",                 "correct": false, "explanation": null },
+              { "option": "B", "text": "Reproduce idéntico entorno dev→prod",         "correct": true,  "explanation": null },
+              { "option": "C", "text": "Reduce overhead en I/O",                     "correct": false, "explanation": null },
+              { "option": "D", "text": "Elimina SO anfitrión",                       "correct": false, "explanation": null },
+              { "option": "E", "text": "Consume cero CPU",                           "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 22,
+            "question": "Virtualización y eficiencia energética:",
+            "options": [
+              { "option": "A", "text": "Más servidores físicos",                    "correct": false, "explanation": null },
+              { "option": "B", "text": "Menos servidores y menor consumo",            "correct": true,  "explanation": null },
+              { "option": "C", "text": "Eliminar refrigeración",                     "correct": false, "explanation": null },
+              { "option": "D", "text": "Solo bare-metal reduce gastos",             "correct": false, "explanation": null },
+              { "option": "E", "text": "Genera más consumo eléctrico",                "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 23,
+            "question": "¿Qué es un snapshot?",
+            "options": [
+              { "option": "A", "text": "Copia solo del disco",                       "correct": false, "explanation": null },
+              { "option": "B", "text": "Logs del hipervisor",                       "correct": false, "explanation": null },
+              { "option": "C", "text": "Archivo de configuración",                  "correct": false, "explanation": null },
+              { "option": "D", "text": "Estado completo de VM (RAM, CPU, disco)",     "correct": true,  "explanation": null },
+              { "option": "E", "text": "Clon en ejecución",                         "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 24,
+            "question": "Ventaja de live migration:",
+            "options": [
+              { "option": "A", "text": "Reduce disco a cero",                       "correct": false, "explanation": null },
+              { "option": "B", "text": "Mueve VM sin interrumpir el servicio",       "correct": true,  "explanation": null },
+              { "option": "C", "text": "Convierte VM a contenedor",                 "correct": false, "explanation": null },
+              { "option": "D", "text": "Elimina la capa de virtualización",           "correct": false, "explanation": null },
+              { "option": "E", "text": "Requiere SO invitado modificado",             "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 25,
+            "question": "Intel VT-x / AMD-V aportan:",
+            "options": [
+              { "option": "A", "text": "Hipervisor tipo 2 integrado",                "correct": false, "explanation": null },
+              { "option": "B", "text": "Emulación completa optimizada",               "correct": false, "explanation": null },
+              { "option": "C", "text": "Soporte hardware para traps reducidos",      "correct": true,  "explanation": null },
+              { "option": "D", "text": "Driver virtio por defecto",                  "correct": false, "explanation": null },
+              { "option": "E", "text": "Solo para contenedores",                     "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 26,
+            "question": "Aislamiento de contenedores en Linux:",
+            "options": [
+              { "option": "A", "text": "Hipervisor KVM/Xen",                        "correct": false, "explanation": null },
+              { "option": "B", "text": "LVM snapshots",                              "correct": false, "explanation": null },
+              { "option": "C", "text": "QEMU userspace",                             "correct": false, "explanation": null },
+              { "option": "D", "text": "Namespaces y cgroups",                       "correct": true,  "explanation": null },
+              { "option": "E", "text": "Virtio drivers",                             "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 27,
+            "question": "Limitación de seguridad de contenedores vs VMs:",
+            "options": [
+              { "option": "A", "text": "No aíslan procesos",                       "correct": false, "explanation": null },
+              { "option": "B", "text": "Compartir kernel expone vulnerabilidades",  "correct": true,  "explanation": null },
+              { "option": "C", "text": "Require hipervisor bare-metal",            "correct": false, "explanation": null },
+              { "option": "D", "text": "No soportan snapshots",                    "correct": false, "explanation": null },
+              { "option": "E", "text": "Imponen overhead elevado en disco",         "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 28,
+            "question": "Nested virtualization es:",
+            "options": [
+              { "option": "A", "text": "Migrar VM sin downtime",                    "correct": false, "explanation": null },
+              { "option": "B", "text": "Ejecutar Docker dentro de VM",                "correct": false, "explanation": null },
+              { "option": "C", "text": "Correr una VM dentro de otra VM",            "correct": true,  "explanation": null },
+              { "option": "D", "text": "Un snapshot de snapshot",                    "correct": false, "explanation": null },
+              { "option": "E", "text": "Clonar una VM en ejecución",                 "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 29,
+            "question": "Overcommit de memoria en hipervisor significa:",
+            "options": [
+              { "option": "A", "text": "Reservar toda la RAM para host",           "correct": false, "explanation": null },
+              { "option": "B", "text": "Limitar VM a RAM fija",                    "correct": false, "explanation": null },
+              { "option": "C", "text": "Deshabilitar swap",                        "correct": false, "explanation": null },
+              { "option": "D", "text": "Crear snapshot de RAM siempre",             "correct": false, "explanation": null },
+              { "option": "E", "text": "Asignar más RAM virtual de la física disponible", "correct": true,  "explanation": null }
+            ]
+          },
+          {
+            "id": 30,
+            "question": "Virtio en KVM/QEMU sirve para:",
+            "options": [
+              { "option": "A", "text": "Emular CPU en software",                  "correct": false, "explanation": null },
+              { "option": "B", "text": "Gestión de snapshots",                    "correct": false, "explanation": null },
+              { "option": "C", "text": "Drivers paravirtualizados I/O",           "correct": true,  "explanation": null },
+              { "option": "D", "text": "Control de redes en contenedores",        "correct": false, "explanation": null },
+              { "option": "E", "text": "Nested virtualization",                   "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 31,
+            "question": "Diferencia Docker vs chroot:",
+            "options": [
+              { "option": "A", "text": "Docker no aísla redes",                   "correct": false, "explanation": null },
+              { "option": "B", "text": "Ambos requieren SO invitado",               "correct": false, "explanation": null },
+              { "option": "C", "text": "Docker emula hardware",                    "correct": false, "explanation": null },
+              { "option": "D", "text": "Chroot no restringe cgroups ni namespaces", "correct": true,  "explanation": null },
+              { "option": "E", "text": "No hay diferencia técnica",               "correct": false, "explanation": null }
+            ]
+          },
+          {
+            "id": 32,
+            "question": "Virtualización asistida vs emulación completa:",
+            "options": [
+              { "option": "A", "text": "Emulación usa VT-x/AMD-V",                 "correct": false, "explanation": null },
+              { "option": "B", "text": "No hay distinción real",                   "correct": false, "explanation": null },
+              { "option": "C", "text": "Asistida aprovecha extensiones de CPU",    "correct": true,  "explanation": null },
+              { "option": "D", "text": "Emulación no necesita SO anfitrión",        "correct": false, "explanation": null },
+              { "option": "E", "text": "Asistida traduce instrucción a instrucción", "correct": false, "explanation": null }
+            ]
+          }
+        ]
+      },
+      {
+        "Topic": "Comandos Bash",
+        "questions": [
+          {
+            "id": 1,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando who?",
+            "options": [
+              { "option": "A", "text": "Lista todos los usuarios registrados en el sistema (estén o no conectados)", "correct": false, "explanation": "Para ver todos los usuarios registrados se consultaría /etc/passwd u otro comando; who solo muestra usuarios conectados" },
+              { "option": "B", "text": "Muestra los últimos usuarios que iniciaron sesión recientemente", "correct": false, "explanation": "Para ver historiales de inicios de sesión se usa el comando last" },
+              { "option": "C", "text": "Muestra todos los usuarios conectados actualmente al sistema", "correct": true,  "explanation": null },
+              { "option": "D", "text": "Muestra información detallada de cada usuario (UID, grupos, etc.)",              "correct": false, "explanation": "who no muestra UID ni grupos; solo los usuarios conectados y su terminal" },
+              { "option": "E", "text": "Muestra solo al usuario que inició la sesión activa en la terminal",      "correct": false, "explanation": "whoami muestra el usuario actual; who lista todos los usuarios conectados" }
+            ]
+          },
+          {
+            "id": 2,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando whoami?",
+            "options": [
+              { "option": "A", "text": "Muestra una lista de todos los usuarios conectados al sistema", "correct": false, "explanation": "Eso lo hace who" },
+              { "option": "B", "text": "Muestra la identificación numérica (UID) del usuario actual",      "correct": false, "explanation": "whoami muestra el nombre de usuario, no el UID" },
+              { "option": "C", "text": "Muestra información detallada del usuario actual (grupos, UID)",     "correct": false, "explanation": "Para información detallada se usa id" },
+              { "option": "D", "text": "Muestra el nombre del usuario con el que se inició la sesión actual",  "correct": true,  "explanation": null },
+              { "option": "E", "text": "Lista todos los usuarios del sistema con sus respectivos home",        "correct": false, "explanation": "whoami solo muestra el usuario actual" }
+            ]
+          },
+          {
+            "id": 3,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando ls?",
+            "options": [
+              { "option": "A", "text": "Ordena los archivos por tamaño de forma predeterminada",      "correct": false, "explanation": "Por defecto ls ordena alfabéticamente, no por tamaño" },
+              { "option": "B", "text": "Muestra detalles como permisos y propietario de archivos de forma predeterminada", "correct": false, "explanation": "Para ver detalles se necesita la opción -l" },
+              { "option": "C", "text": "Lista los archivos y subdirectorios del directorio actual por defecto", "correct": true,  "explanation": null },
+              { "option": "D", "text": "Permite ver archivos ocultos usando la opción -a",             "correct": true,  "explanation": null },
+              { "option": "E", "text": "Copiar archivos de un directorio a otro",                      "correct": false, "explanation": "cp sirve para copiar; ls solo lista" }
+            ]
+          },
+          {
+            "id": 4,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando alias?",
+            "options": [
+              { "option": "A", "text": "Define un apodo para un comando existente",  "correct": true,  "explanation": null },
+              { "option": "B", "text": "Sin argumentos, muestra todos los alias definidos en la sesión", "correct": true,  "explanation": null },
+              { "option": "C", "text": "Los alias creados duran para sesiones futuras automáticamente", "correct": false, "explanation": "Duran solo en la sesión actual a menos que se añadan a .bashrc" },
+              { "option": "D", "text": "Renombra archivos del sistema",             "correct": false, "explanation": "mv renombra archivos; alias solo define apodos de comandos" },
+              { "option": "E", "text": "Ejecuta comandos en segundo plano",         "correct": false, "explanation": "Para ejecutar en background se usa & al final del comando" }
+            ]
+          },
+          {
+            "id": 5,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando cd?",
+            "options": [
+              { "option": "A", "text": "Cambia el directorio de trabajo actual al argumento indicado", "correct": true,  "explanation": null },
+              { "option": "B", "text": "Sin argumentos, lleva al usuario a su directorio home",           "correct": true,  "explanation": null },
+              { "option": "C", "text": "Copia archivos entre directorios",                                "correct": false, "explanation": "cp sirve para copiar; cd solo cambia de directorio" },
+              { "option": "D", "text": "Muestra la ruta completa del directorio actual",                  "correct": false, "explanation": "pwd muestra la ruta completa; cd no" },
+              { "option": "E", "text": "Borra el directorio actual",                                      "correct": false, "explanation": "rmdir sirve para eliminar directorios vacíos" }
+            ]
+          },
+          {
+            "id": 6,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando pwd?",
+            "options": [
+              { "option": "A", "text": "Muestra la ruta completa del directorio de trabajo actual", "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite cambiar al directorio padre",                   "correct": false, "explanation": "cd .. lleva al padre; pwd solo muestra la ruta" },
+              { "option": "C", "text": "Lista archivos en el directorio actual",                  "correct": false, "explanation": "ls lista archivos; pwd solo muestra la ruta" },
+              { "option": "D", "text": "Muestra únicamente el nombre del directorio actual",      "correct": false, "explanation": "pwd muestra la ruta completa" },
+              { "option": "E", "text": "Abre un explorador de archivos gráfico",                 "correct": false, "explanation": "pwd no abre exploradores" }
+            ]
+          },
+          {
+            "id": 7,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando mkdir?",
+            "options": [
+              { "option": "A", "text": "Crea un directorio nuevo con el nombre especificado",  "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -p crea directorios intermedios si no existen",  "correct": true,  "explanation": null },
+              { "option": "C", "text": "Elimina directorios junto con su contenido",          "correct": false, "explanation": "rm -r elimina directorios con contenido; mkdir crea" },
+              { "option": "D", "text": "Después de crear el directorio, cambia a él automáticamente", "correct": false, "explanation": "cd sirve para cambiar; mkdir solo crea" },
+              { "option": "E", "text": "Solo funciona con permisos de administrador",        "correct": false, "explanation": "Un usuario puede crear directorios donde tenga permiso" }
+            ]
+          },
+          {
+            "id": 8,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando mv?",
+            "options": [
+              { "option": "A", "text": "Mueve un archivo o directorio a una nueva ubicación",  "correct": true,  "explanation": null },
+              { "option": "B", "text": "Renombra archivos o directorios dentro de la misma carpeta", "correct": true,  "explanation": null },
+              { "option": "C", "text": "Copia un archivo dejando el original intacto",         "correct": false, "explanation": "cp copia; mv mueve o renombra" },
+              { "option": "D", "text": "Por defecto solicita confirmación para sobrescribir",  "correct": false, "explanation": "mv sobrescribe sin preguntar a menos que se use -i" },
+              { "option": "E", "text": "Muestra el contenido del archivo después de moverlo",    "correct": false, "explanation": "cat o less muestran contenido; mv mueve" }
+            ]
+          },
+          {
+            "id": 9,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando touch?",
+            "options": [
+              { "option": "A", "text": "Crea un archivo vacío si no existe",              "correct": true,  "explanation": null },
+              { "option": "B", "text": "Actualiza la marca de tiempo de acceso o modificación", "correct": true,  "explanation": null },
+              { "option": "C", "text": "Abre un archivo en el editor predeterminado",      "correct": false, "explanation": "Para editar se usan editores como nano o vim" },
+              { "option": "D", "text": "Borra el contenido de un archivo existente",        "correct": false, "explanation": "Para vaciar un archivo se redirecciona nada (> archivo)" },
+              { "option": "E", "text": "Cambia los permisos del archivo",                  "correct": false, "explanation": "chmod cambia permisos" }
+            ]
+          },
+          {
+            "id": 10,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando file?",
+            "options": [
+              { "option": "A", "text": "Determina el tipo de un archivo examinando su contenido", "correct": true,  "explanation": null },
+              { "option": "B", "text": "Puede reconocer binarios, texto, imágenes, etc.",        "correct": true,  "explanation": null },
+              { "option": "C", "text": "Muestra el contenido en hexadecimal",                  "correct": false, "explanation": "hexdump u otra herramienta muestra hexadecimal" },
+              { "option": "D", "text": "Renombra el archivo según su tipo",                   "correct": false, "explanation": "file no modifica ni renombra archivos" },
+              { "option": "E", "text": "Comprime archivos basándose en su tipo",              "correct": false, "explanation": "Para comprimir se usan gzip, tar, etc." }
+            ]
+          },
+          {
+            "id": 11,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando cp?",
+            "options": [
+              { "option": "A", "text": "Copia archivos de origen a destino",            "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -r copia directorios de forma recursiva", "correct": true,  "explanation": null },
+              { "option": "C", "text": "Mueve archivos eliminando el original",       "correct": false, "explanation": "mv mueve; cp copia dejando el original" },
+              { "option": "D", "text": "Solicita confirmación al sobrescribir",       "correct": false, "explanation": "cp sobrescribe sin preguntar a menos que se use -i" },
+              { "option": "E", "text": "Muestra el progreso de la copia por defecto",  "correct": false, "explanation": "Usa --progress para mostrar progreso" }
+            ]
+          },
+          {
+            "id": 12,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando rm?",
+            "options": [
+              { "option": "A", "text": "Elimina archivos especificados",               "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -r elimina directorios y su contenido",     "correct": true,  "explanation": null },
+              { "option": "C", "text": "Mueve archivos a la papelera",                "correct": false, "explanation": "rm borra sin pasar por papelera" },
+              { "option": "D", "text": "Solicita confirmación por defecto",            "correct": false, "explanation": "rm no pregunta sin -i" },
+              { "option": "E", "text": "No funciona en modo root",                    "correct": false, "explanation": "Funciona con permisos suficientes" }
+            ]
+          },
+          {
+            "id": 13,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando rmdir?",
+            "options": [
+              { "option": "A", "text": "Elimina solo directorios vacíos",               "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -r elimina directorios con contenido",     "correct": false, "explanation": "rmdir no tiene modo recursivo; rm -r se usa para eso" },
+              { "option": "C", "text": "Elimina archivos además de directorios",       "correct": false, "explanation": "rmdir solo elimina directorios" },
+              { "option": "D", "text": "Es equivalente a rm -r",                      "correct": false, "explanation": "rmdir elimina solo vacíos" },
+              { "option": "E", "text": "Crea un directorio si no existe",             "correct": false, "explanation": "mkdir crea; rmdir elimina" }
+            ]
+          },
+          {
+            "id": 14,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando tree?",
+            "options": [
+              { "option": "A", "text": "Muestra la estructura de archivos y directorios en forma de árbol", "correct": true,  "explanation": null },
+              { "option": "B", "text": "Es una opción del comando ls",                                    "correct": false, "explanation": "tree es un comando independiente" },
+              { "option": "C", "text": "Solo lista directorios y no archivos",                           "correct": false, "explanation": "tree lista ambos salvo que se filtre" },
+              { "option": "D", "text": "Requiere entorno gráfico",                                      "correct": false, "explanation": "Funciona en modo texto" },
+              { "option": "E", "text": "Muestra el contenido de archivos de texto",                      "correct": false, "explanation": "less o cat muestran contenido" }
+            ]
+          },
+          {
+            "id": 15,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando find?",
+            "options": [
+              { "option": "A", "text": "Busca archivos y directorios recursivamente desde un punto dado",             "correct": true,  "explanation": null },
+              { "option": "B", "text": "Puede ejecutar acciones en resultados con -exec",                              "correct": true,  "explanation": null },
+              { "option": "C", "text": "Por defecto busca texto dentro del contenido de archivos",                   "correct": false, "explanation": "find busca nombres, no contenido; grep busca dentro" },
+              { "option": "D", "text": "Utiliza base de datos indexada para búsqueda rápida",                         "correct": false, "explanation": "locate usa base de datos; find recorre en tiempo real" },
+              { "option": "E", "text": "Requiere permisos de root para buscar en cualquier ruta",                    "correct": false, "explanation": "Permisos dependen de la ruta; no es inherente a find" }
+            ]
+          },
+          {
+            "id": 16,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando diff?",
+            "options": [
+              { "option": "A", "text": "Compara dos archivos línea a línea y muestra las diferencias",                   "correct": true,  "explanation": null },
+              { "option": "B", "text": "Puede comparar directorios recursivamente para detectar archivos distintos",    "correct": true,  "explanation": null },
+              { "option": "C", "text": "Fusiona contenido de archivos eliminando duplicados",                        "correct": false, "explanation": "diff muestra diferencias; patch aplica parches" },
+              { "option": "D", "text": "Aplica cambios de un archivo a otro automáticamente",                       "correct": false, "explanation": "patch aplica cambios; diff solo genera parches" },
+              { "option": "E", "text": "Comprime los archivos comparados para ahorrar espacio",                      "correct": false, "explanation": "diff no comprime archivos" }
+            ]
+          },
+          {
+            "id": 17,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando uname?",
+            "options": [
+              { "option": "A", "text": "Sin opciones, muestra el nombre del kernel en ejecución",                    "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con flags muestra versión, arquitectura, nombre de máquina, etc.",           "correct": true,  "explanation": null },
+              { "option": "C", "text": "Cambia el nombre de host del sistema operativo",                            "correct": false, "explanation": "uname solo muestra información; hostnamectl cambia el hostname" },
+              { "option": "D", "text": "Indica la distribución de Linux instalada (Ubuntu, Fedora, etc.)",           "correct": false, "explanation": "uname solo muestra datos del kernel; para distro se usa lsb_release" },
+              { "option": "E", "text": "Reinicia el sistema mostrando info previa al reboot",                       "correct": false, "explanation": "uname no reinicia el sistema" }
+            ]
+          },
+          {
+            "id": 18,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando set (en Bash)?",
+            "options": [
+              { "option": "A", "text": "Sin argumentos, lista todas las variables y funciones de shell",                   "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite habilitar o deshabilitar opciones del shell con flags (e.g. -x, -e)",      "correct": true,  "explanation": null },
+              { "option": "C", "text": "Asigna valores a variables de entorno (e.g. set PATH=/usr/bin)",                 "correct": false, "explanation": "Para asignar se usa VAR=valor; set lista o configura la shell" },
+              { "option": "D", "text": "Cambia el intérprete de comandos actual (bash → sh)",                           "correct": false, "explanation": "Para cambiar shell se invoca directamente otro intérprete" },
+              { "option": "E", "text": "Reinicia la shell sin cerrar la terminal",                                      "correct": false, "explanation": "exit o logout cierran la shell; set no" }
+            ]
+          },
+          {
+            "id": 19,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando export?",
+            "options": [
+              { "option": "A", "text": "Hace que una variable esté disponible para procesos hijo del shell",           "correct": true,  "explanation": null },
+              { "option": "B", "text": "Se usa como export VAR=valor para crear o modificar variables de entorno",     "correct": true,  "explanation": null },
+              { "option": "C", "text": "Guarda permanentemente la variable para futuras sesiones",                   "correct": false, "explanation": "Para persistir hay que añadirlo a .bashrc u otro archivo de inicio" },
+              { "option": "D", "text": "Elimina variables de entorno del shell",                                     "correct": false, "explanation": "unset quita variables; export no elimina" },
+              { "option": "E", "text": "Muestra todas las variables de entorno definidas",                           "correct": false, "explanation": "printenv o env muestran variables; export sin args lista variables exportadas" }
+            ]
+          },
+          {
+            "id": 20,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando echo?",
+            "options": [
+              { "option": "A", "text": "Imprime en salida estándar los argumentos proporcionados",                     "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -e interpreta secuencias de escape como \\n para salto de línea",            "correct": true,  "explanation": null },
+              { "option": "C", "text": "Por defecto interpreta escapes especiales sin flags",                         "correct": false, "explanation": "Necesita -e para interpretar secuencias de escape" },
+              { "option": "D", "text": "Lee entrada del teclado antes de imprimir",                                   "correct": false, "explanation": "read lee entrada; echo solo imprime argumentos" },
+              { "option": "E", "text": "Guarda el texto impreso en un archivo de log",                                "correct": false, "explanation": "Para redirigir echo se usa > o >> manualmente" }
+            ]
+          },
+          {
+            "id": 21,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando less?",
+            "options": [
+              { "option": "A", "text": "Visualiza el contenido de un archivo de forma paginada y permite retroceder",    "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite buscar texto dentro del archivo mientras se visualiza",                  "correct": true,  "explanation": null },
+              { "option": "C", "text": "Solo avanza hacia adelante sin permitir retroceso",                              "correct": false, "explanation": "less permite retroceder; more no" },
+              { "option": "D", "text": "Funciona como editor para modificar el archivo",                                "correct": false, "explanation": "less solo lee; no edita" },
+              { "option": "E", "text": "Siempre muestra todo el archivo sin paginación",                               "correct": false, "explanation": "less pagina el contenido automáticamente" }
+            ]
+          },
+          {
+            "id": 22,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando more?",
+            "options": [
+              { "option": "A", "text": "Muestra el contenido de un archivo paginando hacia adelante",                    "correct": true,  "explanation": null },
+              { "option": "B", "text": "No permite retroceder a páginas anteriores",                                   "correct": true,  "explanation": null },
+              { "option": "C", "text": "Es una versión mejorada de less con más funcionalidades",                     "correct": false, "explanation": "more es más simple que less, con menos funciones" },
+              { "option": "D", "text": "Permite editar el archivo mientras lo muestra",                               "correct": false, "explanation": "more solo lee, no edita" },
+              { "option": "E", "text": "Por defecto muestra solo la primera línea del archivo",                       "correct": false, "explanation": "muestra 1 pantalla de líneas, no solo una línea" }
+            ]
+          },
+          {
+            "id": 23,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando tail?",
+            "options": [
+              { "option": "A", "text": "Muestra las últimas N líneas de un archivo (10 por defecto)",                  "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -f sigue en tiempo real nuevas líneas que se agregan al archivo",          "correct": true,  "explanation": null },
+              { "option": "C", "text": "Por defecto muestra únicamente la última línea",                              "correct": false, "explanation": "Por defecto muestra 10 líneas finales" },
+              { "option": "D", "text": "Muestra las primeras líneas de un archivo",                                   "correct": false, "explanation": "head muestra las primeras líneas" },
+              { "option": "E", "text": "Solo funciona con archivos de log",                                             "correct": false, "explanation": "Funciona con cualquier archivo de texto" }
+            ]
+          },
+          {
+            "id": 24,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando head?",
+            "options": [
+              { "option": "A", "text": "Muestra las primeras N líneas de un archivo (10 por defecto)",                 "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -n permite especificar cuántas líneas mostrar",                            "correct": true,  "explanation": null },
+              { "option": "C", "text": "Por defecto muestra solo la primera línea",                                  "correct": false, "explanation": "Por defecto muestra 10 líneas" },
+              { "option": "D", "text": "Sigue mostrando nuevas líneas en tiempo real al inicio",                     "correct": false, "explanation": "No hay modo para seguir inicio; tail -f sigue final" },
+              { "option": "E", "text": "Solo funciona con archivos binarios",                                        "correct": false, "explanation": "Funciona con cualquier archivo de texto" }
+            ]
+          },
+          {
+            "id": 25,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando date?",
+            "options": [
+              { "option": "A", "text": "Muestra la fecha y hora actuales del sistema",                               "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite formatear la salida usando especificadores (p. ej. +%Y-%m-%d)",       "correct": true,  "explanation": null },
+              { "option": "C", "text": "Muestra la fecha y hora de última modificación de un archivo",                "correct": false, "explanation": "date muestra fecha/hora actuales; stat o ls -l muestran fechas de archivos" },
+              { "option": "D", "text": "Sincroniza el reloj del sistema con servidores NTP",                          "correct": false, "explanation": "date solo muestra o ajusta fecha local; para NTP se usan servicios externos" },
+              { "option": "E", "text": "Reinicia el sistema al cambiar la hora",                                     "correct": false, "explanation": "Para reiniciar se usa reboot o shutdown" }
+            ]
+          },
+          {
+            "id": 26,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando cat?",
+            "options": [
+              { "option": "A", "text": "Concatena y muestra en pantalla el contenido de archivos",                    "correct": true,  "explanation": null },
+              { "option": "B", "text": "Puede redirigir la concatenación a un nuevo archivo",                         "correct": true,  "explanation": null },
+              { "option": "C", "text": "Comprime archivos para ahorrar espacio",                                      "correct": false, "explanation": "gzip, tar, etc. comprimen; cat solo muestra/concatena" },
+              { "option": "D", "text": "Funciona como editor en modo texto",                                          "correct": false, "explanation": "cat no edita archivos" },
+              { "option": "E", "text": "Borra el contenido de un archivo existente",                                  "correct": false, "explanation": "Para vaciar un archivo se redirecciona nada (> archivo)" }
+            ]
+          },
+          {
+            "id": 27,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando man?",
+            "options": [
+              { "option": "A", "text": "Muestra la página de manual detallada de un comando",                         "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite navegación paginada y búsqueda interna en el manual",                "correct": true,  "explanation": null },
+              { "option": "C", "text": "Proporciona solo un resumen breve similar a --help",                         "correct": false, "explanation": "man ofrece más detalle que --help" },
+              { "option": "D", "text": "Requiere conexión a Internet para descargar la página de manual",             "correct": false, "explanation": "man usa páginas locales instaladas" },
+              { "option": "E", "text": "Edita el comando seleccionado en el manual",                                  "correct": false, "explanation": "man solo lee; no edita contenido" }
+            ]
+          },
+          {
+            "id": 28,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando chmod?",
+            "options": [
+              { "option": "A", "text": "Cambia permisos de lectura, escritura y ejecución de archivos o directorios", "correct": true,  "explanation": null },
+              { "option": "B", "text": "Admite notación simbólica (u+r) o numérica (755) para permisos",            "correct": true,  "explanation": null },
+              { "option": "C", "text": "Cambia el propietario (dueño) de un archivo",                             "correct": false, "explanation": "chown cambia propietario; chmod modifica permisos" },
+              { "option": "D", "text": "No permite usar notación numérica para permisos",                          "correct": false, "explanation": "chmod admite ambas notaciones" },
+              { "option": "E", "text": "Recursivo por defecto en directorios",                                     "correct": false, "explanation": "Para directorios se usa -R" }
+            ]
+          },
+          {
+            "id": 29,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando chown?",
+            "options": [
+              { "option": "A", "text": "Cambia el propietario de un archivo o directorio",                         "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite cambiar simultáneamente propietario y grupo con usuario:grupo",     "correct": true,  "explanation": null },
+              { "option": "C", "text": "Puede ser usado por un usuario normal para cambiar la propiedad de otros",   "correct": false, "explanation": "Solo root puede cambiar propietario a otros usuarios" },
+              { "option": "D", "text": "Modifica permisos de archivos",                                           "correct": false, "explanation": "chmod sirve para permisos" },
+              { "option": "E", "text": "Muestra el árbol de dependencias de módulos",                            "correct": false, "explanation": "lsmod muestra módulos cargados" }
+            ]
+          },
+          {
+            "id": 30,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando exit?",
+            "options": [
+              { "option": "A", "text": "Termina la sesión de shell actual",                                        "correct": true,  "explanation": null },
+              { "option": "B", "text": "Puede usarse en scripts para detener la ejecución con un código de salida",   "correct": true,  "explanation": null },
+              { "option": "C", "text": "Finaliza cualquier programa en ejecución",                                  "correct": false, "explanation": "exit cierra solo la shell, no otros procesos" },
+              { "option": "D", "text": "Apaga el sistema cuando se ejecuta",                                         "correct": false, "explanation": "shutdown apaga el sistema; exit cierra la shell" },
+              { "option": "E", "text": "Reinicia el sistema",                                                       "correct": false, "explanation": "reboot o shutdown -r reinician el sistema" }
+            ]
+          },
+          {
+            "id": 31,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando shutdown?",
+            "options": [
+              { "option": "A", "text": "Apaga o reinicia el sistema de forma ordenada y programable",                 "correct": true,  "explanation": null },
+              { "option": "B", "text": "Requiere privilegios de superusuario para ejecutarse",                       "correct": true,  "explanation": null },
+              { "option": "C", "text": "No requiere permisos especiales",                                           "correct": false, "explanation": "Se necesita root o sudo" },
+              { "option": "D", "text": "Solo afecta a la terminal actual",                                          "correct": false, "explanation": "shutdown apaga todo el sistema" },
+              { "option": "E", "text": "Es un alias de reboot",                                                     "correct": false, "explanation": "Son comandos distintos" }
+            ]
+          },
+          {
+            "id": 32,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando top?",
+            "options": [
+              { "option": "A", "text": "Muestra en tiempo real procesos activos y su uso de recursos",               "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite interactuar para ordenar y enviar señales a procesos",                "correct": true,  "explanation": null },
+              { "option": "C", "text": "Genera un informe estático y termina inmediatamente",                        "correct": false, "explanation": "top permanece ejecutándose hasta que se cierra" },
+              { "option": "D", "text": "Muestra historial de todos los procesos ejecutados anteriormente",           "correct": false, "explanation": "Muestra procesos actuales, no históricos" },
+              { "option": "E", "text": "Requiere un entorno gráfico para funcionar",                                 "correct": false, "explanation": "Funciona en terminal" }
+            ]
+          },
+          {
+            "id": 33,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando ps?",
+            "options": [
+              { "option": "A", "text": "Muestra una instantánea de procesos en ejecución",                         "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con opciones (ps aux) lista todos los procesos con detalles",               "correct": true,  "explanation": null },
+              { "option": "C", "text": "Actualiza continuamente la lista hasta detenerse",                          "correct": false, "explanation": "ps muestra un listado puntual; top actualiza en tiempo real" },
+              { "option": "D", "text": "Solo muestra procesos del usuario actual",                                  "correct": false, "explanation": "Con ps -e muestra todos los procesos" },
+              { "option": "E", "text": "Permite modificar el estado de los procesos listados",                     "correct": false, "explanation": "ps solo muestra; kill o top modifican procesos" }
+            ]
+          },
+          {
+            "id": 34,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando unzip?",
+            "options": [
+              { "option": "A", "text": "Extrae archivos de un ZIP",                                            "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -l lista el contenido sin extraer",                                 "correct": true,  "explanation": null },
+              { "option": "C", "text": "Crea archivos ZIP a partir de directorios",                             "correct": false, "explanation": "zip crea ZIP; unzip solo extrae" },
+              { "option": "D", "text": "Funciona con TAR.GZ y TAR.BZ2 además de ZIP",                           "correct": false, "explanation": "tar maneja .tar.gz; unzip es solo ZIP" },
+              { "option": "E", "text": "Requiere privilegios de root para extraer archivos",                    "correct": false, "explanation": "Depende de permisos de los archivos y directorios" }
+            ]
+          },
+          {
+            "id": 35,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando apt-get?",
+            "options": [
+              { "option": "A", "text": "Instala, actualiza y elimina paquetes en Debian/Ubuntu",                  "correct": true,  "explanation": null },
+              { "option": "B", "text": "apt-get update actualiza la lista de paquetes; apt-get upgrade actualiza instalados", "correct": true,  "explanation": null },
+              { "option": "C", "text": "Funciona en todas las distribuciones Linux para gestionar paquetes",      "correct": false, "explanation": "Es específico de Debian/Ubuntu; otras usan yum, pacman, etc." },
+              { "option": "D", "text": "Compila paquetes desde el código fuente automáticamente",               "correct": false, "explanation": "Instala binarios precompilados; no compila código" },
+              { "option": "E", "text": "Es la interfaz gráfica para gestionar paquetes",                         "correct": false, "explanation": "Es una herramienta CLI" }
+            ]
+          },
+          {
+            "id": 36,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando kill?",
+            "options": [
+              { "option": "A", "text": "Envía una señal TERM al proceso por PID",                               "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -9 envía SIGKILL para forzar terminación inmediata",                 "correct": true,  "explanation": null },
+              { "option": "C", "text": "Reinicia automáticamente procesos congelados",                          "correct": false, "explanation": "kill no reinicia; solo envía señales" },
+              { "option": "D", "text": "Envía señales a procesos por nombre, igual que killall",                "correct": false, "explanation": "kill actúa por PID; killall usa nombres" },
+              { "option": "E", "text": "Solo funciona con procesos propios del usuario actual",                  "correct": false, "explanation": "Con permisos adecuados puede señalizar cualquier proceso" }
+            ]
+          },
+          {
+            "id": 37,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando ping?",
+            "options": [
+              { "option": "A", "text": "Envía paquetes ICMP echo para medir conectividad y latencia",           "correct": true,  "explanation": null },
+              { "option": "B", "text": "En Linux envía paquetes continuamente hasta interrumpirse manualmente", "correct": true,  "explanation": null },
+              { "option": "C", "text": "Usa paquetes TCP para verificar puertos específicos",                   "correct": false, "explanation": "ping usa ICMP, no TCP" },
+              { "option": "D", "text": "Finaliza tras cuatro paquetes de prueba",                               "correct": false, "explanation": "En Windows sí; en Linux continúa hasta CTRL+C" },
+              { "option": "E", "text": "Requiere privilegios de root",                                         "correct": false, "explanation": "Cualquier usuario puede usar ping si el binario es SUID" }
+            ]
+          },
+          {
+            "id": 38,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando ifconfig?",
+            "options": [
+              { "option": "A", "text": "Muestra y configura interfaces de red (IP, máscara, estado)",         "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite asignar direcciones IP y activar/desactivar interfaces",       "correct": true,  "explanation": null },
+              { "option": "C", "text": "Es parte de iproute2 y reemplaza al comando ip",                      "correct": false, "explanation": "ifconfig pertenece a net-tools; ip es la herramienta moderna" },
+              { "option": "D", "text": "Se utiliza en Windows para configurar TCP/IP",                         "correct": false, "explanation": "Windows usa ipconfig" },
+              { "option": "E", "text": "Requiere entorno gráfico",                                            "correct": false, "explanation": "Funciona en terminal" }
+            ]
+          },
+          {
+            "id": 39,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando route?",
+            "options": [
+              { "option": "A", "text": "Muestra la tabla de enrutamiento del sistema",                        "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite agregar o eliminar rutas estáticas",                          "correct": true,  "explanation": null },
+              { "option": "C", "text": "Gestiona reglas de firewall",                                         "correct": false, "explanation": "iptables o ufw gestionan firewall" },
+              { "option": "D", "text": "Asigna direcciones IP a interfaces",                                  "correct": false, "explanation": "ifconfig o ip adres gestionan IPs" },
+              { "option": "E", "text": "Monitorea tráfico de red en tiempo real",                             "correct": false, "explanation": "tcpdump o iftop monitorean tráfico" }
+            ]
+          },
+          {
+            "id": 40,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando history?",
+            "options": [
+              { "option": "A", "text": "Muestra el historial de comandos usados en la sesión actual",          "correct": true,  "explanation": null },
+              { "option": "B", "text": "Guarda los comandos en ~/.bash_history para sesiones futuras",         "correct": true,  "explanation": null },
+              { "option": "C", "text": "Busca comandos interactivamente al escribir (Ctrl+R)",                 "correct": false, "explanation": "Ctrl+R es función de la shell, no del comando history" },
+              { "option": "D", "text": "Ejecuta automáticamente el último comando del historial",             "correct": false, "explanation": "'!!' reinvoca, history solo muestra" },
+              { "option": "E", "text": "Permite editar el historial en un editor gráfico",                    "correct": false, "explanation": "history no edita; se puede reescribir manualmente ~/.bash_history" }
+            ]
+          },
+          {
+            "id": 41,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando passwd?",
+            "options": [
+              { "option": "A", "text": "Cambia la contraseña del usuario actual solicitando la antigua y la nueva", "correct": true,  "explanation": null },
+              { "option": "B", "text": "Root puede cambiar la contraseña de cualquier usuario especificando su nombre", "correct": true,  "explanation": null },
+              { "option": "C", "text": "Muestra la contraseña actual en texto claro antes de cambiarla",          "correct": false, "explanation": "No revela contraseñas en texto claro" },
+              { "option": "D", "text": "Permite cambiar la contraseña sin autenticar",                           "correct": false, "explanation": "Siempre se requiere autenticarse" },
+              { "option": "E", "text": "Genera un hash MD5 de la contraseña nueva",                              "correct": false, "explanation": "El sistema genera hashes internamente, no los muestra" }
+            ]
+          },
+          {
+            "id": 42,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando grep?",
+            "options": [
+              { "option": "A", "text": "Busca líneas que coincidan con un patrón de texto en archivos",         "correct": true,  "explanation": null },
+              { "option": "B", "text": "Admite expresiones regulares para búsquedas avanzadas",                  "correct": true,  "explanation": null },
+              { "option": "C", "text": "Por defecto no distingue entre mayúsculas y minúsculas",               "correct": false, "explanation": "Por defecto distingue; -i ignora mayúsc/minúsc" },
+              { "option": "D", "text": "No puede usarse sobre la salida de otro comando",                       "correct": false, "explanation": "grep puede leer de pipes: comando | grep texto" },
+              { "option": "E", "text": "Solamente funciona en archivos de texto plano",                         "correct": false, "explanation": "Funciona en cualquier archivo, pero resultados legibles en texto" }
+            ]
+          },
+          {
+            "id": 43,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando wc?",
+            "options": [
+              { "option": "A", "text": "Cuenta líneas, palabras y bytes de archivos o entrada estándar",         "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -l cuenta solo líneas, -w solo palabras, -m solo caracteres",      "correct": true,  "explanation": null },
+              { "option": "C", "text": "Por defecto muestra únicamente el total de palabras",                   "correct": false, "explanation": "Por defecto muestra líneas, palabras y bytes" },
+              { "option": "D", "text": "Genera resúmenes hash de archivos para verificación",                    "correct": false, "explanation": "md5sum o sha256sum generan hashes; wc cuenta" },
+              { "option": "E", "text": "Muestra una barra de progreso al contar archivos grandes",               "correct": false, "explanation": "wc no muestra progreso" }
+            ]
+          },
+          {
+            "id": 44,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando cal?",
+            "options": [
+              { "option": "A", "text": "Muestra un calendario del mes actual en la terminal",                     "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite mostrar calendario de mes y año específicos (ej. cal 12 2023)",   "correct": true,  "explanation": null },
+              { "option": "C", "text": "Incluye hora actual junto al calendario",                                 "correct": false, "explanation": "cal solo muestra los días; no incluye la hora" },
+              { "option": "D", "text": "Permite agregar eventos o recordatorios al calendario",                   "correct": false, "explanation": "No maneja eventos; solo despliega calendarios" },
+              { "option": "E", "text": "Muestra fases lunares y festividades por defecto",                       "correct": false, "explanation": "Religión o fases lunares no están incluidas en cal estándar" }
+            ]
+          },
+          {
+            "id": 45,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando uptime?",
+            "options": [
+              { "option": "A", "text": "Indica cuánto tiempo lleva encendido el sistema desde el último arranque",      "correct": true,  "explanation": null },
+              { "option": "B", "text": "Muestra usuarios conectados y carga promedio (1, 5 y 15 min)",                  "correct": true,  "explanation": null },
+              { "option": "C", "text": "Da detalles de uso de CPU y memoria actuales",                                 "correct": false, "explanation": "uptime no muestra uso detallado; top o free lo hacen" },
+              { "option": "D", "text": "Reinicia el contador de actividad al ejecutarlo",                             "correct": false, "explanation": "El contador lo lleva el sistema; uptime solo lo lee" },
+              { "option": "E", "text": "Debe ejecutarse en background para reportar datos",                            "correct": false, "explanation": "Solo se ejecuta cuando se llama; no necesita background" }
+            ]
+          },
+          {
+            "id": 46,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando wget?",
+            "options": [
+              { "option": "A", "text": "Descarga archivos de la web vía HTTP, HTTPS o FTP",                         "correct": true,  "explanation": null },
+              { "option": "B", "text": "Puede realizar descargas recursivas de sitios completos con -r",             "correct": true,  "explanation": null },
+              { "option": "C", "text": "Es un navegador de texto interactivo",                                      "correct": false, "explanation": "lynx es navegador de texto; wget solo descarga archivos" },
+              { "option": "D", "text": "Requiere entorno gráfico para mostrar progreso",                             "correct": false, "explanation": "Muestra el progreso en terminal" },
+              { "option": "E", "text": "Solo funciona con protocolos seguros (HTTPS)",                              "correct": false, "explanation": "También soporta HTTP y FTP" }
+            ]
+          },
+          {
+            "id": 47,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando lynx?",
+            "options": [
+              { "option": "A", "text": "Es un navegador web de texto en la terminal",                               "correct": true,  "explanation": null },
+              { "option": "B", "text": "Muestra solo texto y enlaces, sin gráficos ni multimedia",                  "correct": true,  "explanation": null },
+              { "option": "C", "text": "Requiere entorno gráfico X11",                                              "correct": false, "explanation": "lynx funciona completamente en terminal" },
+              { "option": "D", "text": "Se usa para descargar archivos en segundo plano",                           "correct": false, "explanation": "wget o curl descargan; lynx navega" },
+              { "option": "E", "text": "Permite editar páginas web directamente",                                   "correct": false, "explanation": "lynx solo lee; no edita" }
+            ]
+          },
+          {
+            "id": 48,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando df?",
+            "options": [
+              { "option": "A", "text": "Muestra espacio usado y disponible en cada sistema de archivos montado",   "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -h muestra tamaños en unidades legibles (KB, MB, GB)",                  "correct": true,  "explanation": null },
+              { "option": "C", "text": "Reporta tamaño de cada archivo en un directorio dado",                      "correct": false, "explanation": "du muestra tamaños de archivos y directorios" },
+              { "option": "D", "text": "Permite cambiar el tamaño de un sistema de archivos montado",               "correct": false, "explanation": "df solo informa; no modifica tamaños" },
+              { "option": "E", "text": "Muestra uso de memoria RAM",                                               "correct": false, "explanation": "free o top muestran uso de memoria" }
+            ]
+          },
+          {
+            "id": 49,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando du?",
+            "options": [
+              { "option": "A", "text": "Muestra espacio en disco usado por archivos y directorios",                "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -s resume el total y con -h muestra unidades legibles",               "correct": true,  "explanation": null },
+              { "option": "C", "text": "Lista sistemas de archivos montados y su espacio disponible",              "correct": false, "explanation": "df hace eso; du muestra uso por ruta" },
+              { "option": "D", "text": "Elimina automáticamente archivos que superen un umbral",                   "correct": false, "explanation": "du solo reporta; no elimina" },
+              { "option": "E", "text": "Monitorea espacio en tiempo real",                                        "correct": false, "explanation": "du muestra instantánea; no monitoreo continuo" }
+            ]
+          },
+          {
+            "id": 50,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando tar?",
+            "options": [
+              { "option": "A", "text": "Agrupa archivos y directorios en un solo archivo tar",                      "correct": true,  "explanation": null },
+              { "option": "B", "text": "Con -z comprime/descomprime con gzip, -j con bzip2",                          "correct": true,  "explanation": null },
+              { "option": "C", "text": "Por defecto comprime automáticamente sin flags",                              "correct": false, "explanation": "Se necesita -z, -j, etc. para comprimir" },
+              { "option": "D", "text": "No preserva rutas; todos los archivos quedan juntos en el tar",              "correct": false, "explanation": "tar preserva estructura de directorios" },
+              { "option": "E", "text": "Sirve para transferir archivos de forma segura por SSH",                      "correct": false, "explanation": "scp transfiere por SSH; tar empaqueta archivos" }
+            ]
+          },
+          {
+            "id": 51,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando ssh?",
+            "options": [
+              { "option": "A", "text": "Permite iniciar una sesión de shell remota cifrada",                          "correct": true,  "explanation": null },
+              { "option": "B", "text": "Usa por defecto el puerto 22 y algoritmos de cifrado fuertes",               "correct": true,  "explanation": null },
+              { "option": "C", "text": "Solo funciona en redes locales y no en Internet",                            "correct": false, "explanation": "ssh funciona siempre que haya conexión de red/internet al host" },
+              { "option": "D", "text": "Se usa principalmente para copiar archivos entre hosts",                      "correct": false, "explanation": "scp o sftp sirven para copiar; ssh abre shell remota" },
+              { "option": "E", "text": "Requiere un entorno gráfico para la autenticación",                         "correct": false, "explanation": "Funciona en modo texto; puede usar autenticación por llave" }
+            ]
+          },
+          {
+            "id": 52,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando scp?",
+            "options": [
+              { "option": "A", "text": "Copia archivos entre hosts de forma cifrada usando SSH",                    "correct": true,  "explanation": null },
+              { "option": "B", "text": "Usa la sintaxis usuario@host:ruta para especificar origen o destino",      "correct": true,  "explanation": null },
+              { "option": "C", "text": "Requiere montar el sistema remoto antes de copiar",                         "correct": false, "explanation": "scp usa SSH directamente; no necesita montaje" },
+              { "option": "D", "text": "Solo funciona en redes locales",                                           "correct": false, "explanation": "Funciona en cualquier red accesible" },
+              { "option": "E", "text": "No puede copiar directorios completos",                                     "correct": false, "explanation": "Con -r scp copia directorios recursivamente" }
+            ]
+          },
+          {
+            "id": 53,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando atop?",
+            "options": [
+              { "option": "A", "text": "Monitor similar a top con más detalle de CPU, memoria, disco y red",         "correct": true,  "explanation": null },
+              { "option": "B", "text": "Puede registrar la actividad del sistema para análisis posterior",            "correct": true,  "explanation": null },
+              { "option": "C", "text": "Viene instalado por defecto en la mayoría de distribuciones",                 "correct": false, "explanation": "No viene instalado por defecto; se instala manualmente" },
+              { "option": "D", "text": "Reemplaza al kernel para mejorar el rendimiento",                            "correct": false, "explanation": "Solo monitorea; no reemplaza funcionalidades del kernel" },
+              { "option": "E", "text": "Solo monitorea procesos de usuario, no del sistema",                          "correct": false, "explanation": "Monitorea todos los procesos y recursos" }
+            ]
+          },
+          {
+            "id": 54,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando lsmod?",
+            "options": [
+              { "option": "A", "text": "Lista los módulos del kernel cargados actualmente",                           "correct": true,  "explanation": null },
+              { "option": "B", "text": "Muestra tamaño y número de dependencias de cada módulo",                       "correct": true,  "explanation": null },
+              { "option": "C", "text": "Carga nuevos módulos al kernel",                                              "correct": false, "explanation": "modprobe o insmod sirven para cargar módulos" },
+              { "option": "D", "text": "Elimina automáticamente módulos no usados",                                   "correct": false, "explanation": "rmmod o modprobe -r eliminan módulos manualmente" },
+              { "option": "E", "text": "También lista dispositivos USB conectados",                                    "correct": false, "explanation": "lsusb lista USB; lsmodlista módulos de kernel" }
+            ]
+          },
+          {
+            "id": 55,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando lspci?",
+            "options": [
+              { "option": "A", "text": "Lista dispositivos conectados al bus PCI",                                  "correct": true,  "explanation": null },
+              { "option": "B", "text": "Muestra fabricante y modelo de cada dispositivo PCI",                       "correct": true,  "explanation": null },
+              { "option": "C", "text": "Incluye dispositivos USB junto con PCI",                                     "correct": false, "explanation": "lsusb lista USB; lspci lista PCI" },
+              { "option": "D", "text": "Carga controladores para los dispositivos listados",                         "correct": false, "explanation": "modprobe carga controladores; lspci solo identifica" },
+              { "option": "E", "text": "Elimina controladores de dispositivos PCI",                                 "correct": false, "explanation": "rmmod elimina módulos; lspci no" }
+            ]
+          },
+          {
+            "id": 56,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando lsusb?",
+            "options": [
+              { "option": "A", "text": "Lista dispositivos USB conectados al sistema",                             "correct": true,  "explanation": null },
+              { "option": "B", "text": "Muestra identificadores de fabricante y producto",                          "correct": true,  "explanation": null },
+              { "option": "C", "text": "Monta automáticamente unidades USB listadas",                              "correct": false, "explanation": "mount monta; lsusb solo lista dispositivos" },
+              { "option": "D", "text": "Incluye dispositivos PCI en la lista",                                      "correct": false, "explanation": "Para PCI se usa lspci" },
+              { "option": "E", "text": "Requiere permisos de root para listar dispositivos",                        "correct": false, "explanation": "Depende de permisos del sistema; no es inherente al comando" }
+            ]
+          },
+          {
+            "id": 57,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando systemctl?",
+            "options": [
+              { "option": "A", "text": "Controla y consulta servicios en sistemas con systemd",                     "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite iniciar, detener, habilitar o deshabilitar servicios",               "correct": true,  "explanation": null },
+              { "option": "C", "text": "Funciona en todas las distribuciones Linux, independientemente de init",      "correct": false, "explanation": "Solo en sistemas que usan systemd" },
+              { "option": "D", "text": "Gestiona paquetes de software del sistema",                                 "correct": false, "explanation": "apt, yum, pacman gestionan paquetes" },
+              { "option": "E", "text": "Carga módulos de kernel",                                                  "correct": false, "explanation": "modprobe o insmod cargan módulos" }
+            ]
+          },
+          {
+            "id": 58,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando dd?",
+            "options": [
+              { "option": "A", "text": "Copia datos byte a byte entre archivos o dispositivos",                    "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite especificar tamaño de bloque (bs=) y cantidad (count=)",            "correct": true,  "explanation": null },
+              { "option": "C", "text": "Solo funciona con archivos de texto",                                     "correct": false, "explanation": "Funciona a bajo nivel con cualquier dispositivo o archivo" },
+              { "option": "D", "text": "Evita sobrescribir datos por error mediante advertencias",                "correct": false, "explanation": "dd no advierte; use con cuidado" },
+              { "option": "E", "text": "Requiere entorno gráfico para clonar discos",                             "correct": false, "explanation": "Funciona en terminal" }
+            ]
+          },
+          {
+            "id": 59,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando md5sum?",
+            "options": [
+              { "option": "A", "text": "Calcula el hash MD5 de uno o varios archivos",                             "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite verificar integridad con la opción -c",                           "correct": true,  "explanation": null },
+              { "option": "C", "text": "Encripta archivos usando MD5",                                            "correct": false, "explanation": "MD5 es un hash, no cifrado" },
+              { "option": "D", "text": "Produce un hash distinto cada vez aunque el archivo no cambie",           "correct": false, "explanation": "MD5 es determinista; mismo contenido, mismo hash" },
+              { "option": "E", "text": "Solo funciona con archivos .iso",                                        "correct": false, "explanation": "Funciona con cualquier archivo" }
+            ]
+          },
+          {
+            "id": 60,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando sha256sum?",
+            "options": [
+              { "option": "A", "text": "Calcula el hash SHA-256 de archivos para verificar integridad",           "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite verificar hashes con -c comparando con un valor esperado",       "correct": true,  "explanation": null },
+              { "option": "C", "text": "Cifra archivos usando SHA-256 de forma reversible",                      "correct": false, "explanation": "SHA-256 es un hash unidireccional, no reversible" },
+              { "option": "D", "text": "Solo procesa archivos de texto, no binarios",                           "correct": false, "explanation": "Funciona con cualquier archivo" },
+              { "option": "E", "text": "Optimiza archivos grandes calculando un hash parcial",                  "correct": false, "explanation": "Procesa el archivo completo" }
+            ]
+          },
+          {
+            "id": 61,
+            "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando cfdisk?",
+            "options": [
+              { "option": "A", "text": "Utilidad de particionado con interfaz ncurses en texto",                 "correct": true,  "explanation": null },
+              { "option": "B", "text": "Permite crear, eliminar y modificar particiones en discos",              "correct": true,  "explanation": null },
+              { "option": "C", "text": "Requiere entorno gráfico para su ejecución",                              "correct": false, "explanation": "Funciona en la terminal (ncurses)" },
+              { "option": "D", "text": "Solo muestra la tabla de particiones sin permitir cambios",               "correct": false, "explanation": "También permite modificarlas y escribir cambios" },
+              { "option": "E", "text": "Es un comando para monitorizar el uso de CPU y memoria",                  "correct": false, "explanation": "top o htop monitorizan recursos" }
+            ]
+          }
+        ]
+      }
+          
+                  
 ]

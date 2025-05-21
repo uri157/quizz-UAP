@@ -1,115 +1,1837 @@
+
+
 {
-  "Topic": "Modos de procesamiento",
-  "questions": [
-    {
-      "id": 1,
-      "question": "¿Cuál(es) de estas afirmaciones describen correctamente la monoprogramación?",
-      "options": [
-        { "option": "A", "text": "Depende del kernel", "correct": false, "explanation": "La monoprogramación siempre ejecuta un solo proceso, sin excepciones." },
-        { "option": "B", "text": "Solo drivers", "correct": false, "explanation": "No se limita a drivers: es el modo de ejecución de procesos." },
-        { "option": "C", "text": "La CPU queda inactiva si el proceso se bloquea", "correct": true, "explanation": null },
-        { "option": "D", "text": "Un solo proceso activo a la vez", "correct": true, "explanation": null },
-        { "option": "E", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Algunas afirmaciones sí son correctas." }
-      ]
-    },
-    {
-      "id": 2,
-      "question": "¿Cuál(es) de estas afirmaciones describen correctamente la multiprogramación?",
-      "options": [
-        { "option": "A", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Varias afirmaciones sí son correctas." },
-        { "option": "B", "text": "Simulación de simultaneidad", "correct": true, "explanation": null },
-        { "option": "C", "text": "Varios procesos cargados en memoria", "correct": true, "explanation": null },
-        { "option": "D", "text": "Cuando un proceso se bloquea, se despacha otro listo", "correct": true, "explanation": null },
-        { "option": "E", "text": "No requiere planificador", "correct": false, "explanation": "Requiere scheduler para alternar procesos." }
-      ]
-    },
-    {
-      "id": 3,
-      "question": "¿Qué ventajas ofrece la multiprogramación frente a la monoprogramación?",
-      "options": [
-        { "option": "A", "text": "Voluntarias", "correct": false, "explanation": "No es relevante para ventajas." },
-        { "option": "B", "text": "Todas las anteriores", "correct": false, "explanation": "No todas las afirmaciones son correctas." },
-        { "option": "C", "text": "Síncronas", "correct": false, "explanation": "Es característica de syscalls, no de modos de procesamiento." },
-        { "option": "D", "text": "Asíncronas", "correct": false, "explanation": "No aplica." },
-        { "option": "E", "text": "Involuntarias", "correct": false, "explanation": "No aplica." }
-      ]
-    },
-    {
-      "id": 4,
-      "question": "¿Cuál de estas es una ventaja clara de la multiprogramación?",
-      "options": [
-        { "option": "A", "text": "malloc", "correct": false, "explanation": "Es una función de librería, no una ventaja." },
-        { "option": "B", "text": "write", "correct": false, "explanation": "No relaciona con ventajas de procesamiento." },
-        { "option": "C", "text": "fork", "correct": false, "explanation": "No es una ventaja; es syscall." },
-        { "option": "D", "text": "read", "correct": false, "explanation": "No es una ventaja." },
-        { "option": "E", "text": "exec", "correct": false, "explanation": "No es una ventaja." }
-      ]
-    },
-    {
-      "id": 5,
-      "question": "¿Cuál(es) de los siguientes segmentos están implicados en la multiprogramación?",
-      "options": [
-        { "option": "A", "text": "Heap", "correct": false, "explanation": "Es independiente de modos de procesamiento." },
-        { "option": "B", "text": "Text", "correct": false, "explanation": "Es el segmento de código, no específico a multiprogramación." },
-        { "option": "C", "text": "Data", "correct": false, "explanation": "Es la región de datos; no distingue modos de procesamiento." },
-        { "option": "D", "text": "Stack", "correct": false, "explanation": "Es la pila de ejecución; no distingue modos." },
-        { "option": "E", "text": "BSS", "correct": false, "explanation": "Es un subsegmento de datos estáticos." }
-      ]
-    },
-    {
-      "id": 6,
-      "question": "Durante un bloqueo por I/O en multiprogramación, ¿qué sucede?",
-      "options": [
-        { "option": "A", "text": "Memoria dinámica", "correct": false, "explanation": "No es relevante." },
-        { "option": "B", "text": "Parámetros de función", "correct": false, "explanation": "No es relevante." },
-        { "option": "C", "text": "Memoria dinámica no liberada", "correct": false, "explanation": "No aplica." },
-        { "option": "D", "text": "El SO despacha otro proceso listo", "correct": true, "explanation": null },
-        { "option": "E", "text": "La CPU queda inactiva", "correct": false, "explanation": "Eso ocurre en monoprogramación." }
-      ]
-    },
-    {
-      "id": 7,
-      "question": "Con 4 CPUs y 10 procesos abiertos en multiprogramación, ¿cuántos pueden ejecutarse en paralelo?",
-      "options": [
-        { "option": "A", "text": "3", "correct": false, "explanation": "No coincide con número de CPUs." },
-        { "option": "B", "text": "10", "correct": false, "explanation": "Solo 4 CPUs disponibles." },
-        { "option": "C", "text": "4", "correct": true, "explanation": null },
-        { "option": "D", "text": "1", "correct": false, "explanation": "Se pueden usar todas las CPUs." },
-        { "option": "E", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Una de las anteriores es correcta." }
-      ]
-    },
-    {
-      "id": 8,
-      "question": "¿Cuál es una desventaja de la multiprogramación?",
-      "options": [
-        { "option": "A", "text": "Mayor latencia individual", "correct": true, "explanation": null },
-        { "option": "B", "text": "Cada tarea finaliza antes", "correct": false, "explanation": "En realidad tarda más." },
-        { "option": "C", "text": "Alta simplicidad de implementación", "correct": false, "explanation": "Es más compleja." },
-        { "option": "D", "text": "CPU queda inactiva con bloqueos", "correct": false, "explanation": "Es característica de monoprogramación." },
-        { "option": "E", "text": "Interactividad baja", "correct": false, "explanation": "Multiprogramación mejora interactividad." }
-      ]
-    },
-    {
-      "id": 9,
-      "question": "El sistema operativo es responsable de:",
-      "options": [
-        { "option": "A", "text": "Cómo están escritos los procesos", "correct": false, "explanation": "No interviene en el código fuente." },
-        { "option": "B", "text": "Aprovechar al máximo la CPU distribuyendo trabajo", "correct": true, "explanation": null },
-        { "option": "C", "text": "Optimizar el código fuente", "correct": false, "explanation": "No compila ni revisa el código." },
-        { "option": "D", "text": "Garantizar la finalización inmediata", "correct": false, "explanation": "No puede forzar tiempos exactos." },
-        { "option": "E", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Una afirmación sí es correcta." }
-      ]
-    },
-    {
-      "id": 10,
-      "question": "El stack en monoprogramación crece hacia direcciones más grandes.",
-      "options": [
-        { "option": "A", "text": "Solo en 32 bits", "correct": false, "explanation": "Es independiente de la arquitectura." },
-        { "option": "B", "text": "Depende de la arquitectura", "correct": false, "explanation": "Generalmente crece hacia abajo." },
-        { "option": "C", "text": "Falso", "correct": true, "explanation": null },
-        { "option": "D", "text": "Verdadero", "correct": false, "explanation": "Es incorrecto: crece hacia abajo." },
-        { "option": "E", "text": "Ninguna de las anteriores", "correct": false, "explanation": "Una de las anteriores es correcta." }
-      ]
-    }
-  ]
-}
+  "Topic": "Comandos",
+    "questions": [
+      {
+        "id": 1,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando who?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra el nombre del usuario actual en la sesión de terminal",
+            "correct": false,
+            "explanation": "Eso lo hace whoami"
+          },
+          {
+            "option": "B",
+            "text": "Muestra todos los usuarios conectados actualmente al sistema",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Lista todos los usuarios registrados en el sistema (estén o no conectados)",
+            "correct": false,
+            "explanation": "Para ver todos los usuarios registrados se consultaría /etc/passwd u otro comando; who solo muestra usuarios conectados"
+          },
+          {
+            "option": "D",
+            "text": "Muestra los últimos usuarios que iniciaron sesión recientemente",
+            "correct": false,
+            "explanation": "Para ver historiales de inicios de sesión se usa el comando last"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando whoami?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra el nombre de usuario con el que se inició la sesión actual",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Muestra una lista de todos los usuarios conectados al sistema",
+            "correct": false,
+            "explanation": "Eso lo hace who"
+          },
+          {
+            "option": "C",
+            "text": "Muestra la identificación numérica (UID) del usuario actual",
+            "correct": false,
+            "explanation": "whoami muestra el nombre de usuario, no la identificación numérica"
+          },
+          {
+            "option": "D",
+            "text": "Muestra la información detallada del usuario actual, incluyendo grupos y UID",
+            "correct": false,
+            "explanation": "Para información detallada de un usuario se usaría el comando id"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando ls?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra el listado de archivos y directorios del directorio actual por defecto",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite ver archivos ocultos usando la opción -a",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Ordena los archivos por tamaño de archivo de forma predeterminada",
+            "correct": false,
+            "explanation": "Por defecto ls ordena alfabéticamente por nombre, no por tamaño"
+          },
+          {
+            "option": "D",
+            "text": "Muestra detalles como permisos y propietario de archivos de forma predeterminada",
+            "correct": false,
+            "explanation": "Para ver detalles como permisos se debe usar la opción -l; ls sin opciones muestra solo nombres"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando alias?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Se utiliza para definir un apodo o nombre alternativo para un comando existente",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Sin argumentos, muestra la lista de alias actualmente definidos en la shell",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Los alias creados con este comando se guardan permanentemente para nuevas sesiones automáticamente",
+            "correct": false,
+            "explanation": "Los alias por defecto solo duran en la sesión actual a menos que se configuren en archivos como .bashrc"
+          },
+          {
+            "option": "D",
+            "text": "Permite cambiar el nombre de archivos o directorios en el sistema",
+            "correct": false,
+            "explanation": "alias no renombra archivos; sirve para nombrar comandos abreviados. Renombrar archivos se logra con mv"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando cd?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Cambia el directorio de trabajo actual al directorio dado como argumento",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Si se ejecuta sin argumentos, lleva al usuario a su directorio home",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Permite copiar archivos de un directorio a otro",
+            "correct": false,
+            "explanation": "Para copiar archivos se usa cp; cd solo cambia el directorio actual"
+          },
+          {
+            "option": "D",
+            "text": "Muestra el contenido del directorio especificado después de cambiar a él",
+            "correct": false,
+            "explanation": "cd solo cambia el directorio; para ver el contenido se suele usar ls tras cambiar"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando pwd?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra la ruta completa del directorio de trabajo actual",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite cambiar al directorio de trabajo padre del actual",
+            "correct": false,
+            "explanation": "Para subir al directorio padre se usa cd ..; pwd solo muestra la ruta actual"
+          },
+          {
+            "option": "C",
+            "text": "Imprime los nombres de los archivos en el directorio actual",
+            "correct": false,
+            "explanation": "Para listar archivos en el directorio actual se usa ls; pwd solo muestra la ruta del directorio"
+          },
+          {
+            "option": "D",
+            "text": "Muestra solo el nombre del directorio actual sin la ruta completa",
+            "correct": false,
+            "explanation": "pwd muestra la ruta completa. Para obtener solo el nombre, habría que extraerlo de la ruta (pwd no tiene opción para solo el nombre)"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando mkdir?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Crea un nuevo directorio con el nombre especificado",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede crear directorios intermedios especificados en la ruta si se utiliza la opción -p",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Elimina un directorio y su contenido",
+            "correct": false,
+            "explanation": "Para eliminar directorios se utiliza rm (con -r si tiene contenido) o rmdir si está vacío; mkdir es para crearlos"
+          },
+          {
+            "option": "D",
+            "text": "Después de crear el directorio, cambia automáticamente a ese directorio",
+            "correct": false,
+            "explanation": "mkdir solo crea el directorio, no cambia de ubicación. Después de crearlo, se usaría cd para entrar en él"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando mv?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Mueve un archivo o directorio a una nueva ubicación",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede usarse para renombrar un archivo o directorio dentro de la misma carpeta",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Copia un archivo en otra ubicación manteniendo el original",
+            "correct": false,
+            "explanation": "Para copiar manteniendo el original se usa cp; mv mueve o renombra, eliminando el original de la ubicación anterior"
+          },
+          {
+            "option": "D",
+            "text": "Por defecto solicita confirmación antes de sobrescribir un archivo existente",
+            "correct": false,
+            "explanation": "mv sobrescribe archivos existentes sin preguntar a menos que se use la opción -i o se tenga un alias interactivo"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando touch?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Crea un archivo vacío si éste no existe",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Actualiza la marca de tiempo (timestamp) de acceso o modificación de un archivo",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Abre un archivo existente en el editor de texto predeterminado del sistema",
+            "correct": false,
+            "explanation": "touch no abre archivos; solo crea archivos vacíos o actualiza fechas. Para editar un archivo se usaría un editor (nano, vim, etc.)"
+          },
+          {
+            "option": "D",
+            "text": "Borra el contenido de un archivo existente, dejándolo en blanco",
+            "correct": false,
+            "explanation": "touch no modifica el contenido; si el archivo existe, solo actualiza su marca temporal. Para vaciar un archivo se podría redireccionar nada a él (> archivo)"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando file?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Determina el tipo de un archivo examinando su contenido en lugar de solo la extensión",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede reconocer archivos de texto, binarios, imágenes, etc., mostrando una descripción de su tipo",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Muestra el contenido del archivo en formato hexadecimal para identificarlo",
+            "correct": false,
+            "explanation": "file no muestra el contenido, solo indica el tipo; para ver contenido hexadecimal se usaría hexdump u otra herramienta"
+          },
+          {
+            "option": "D",
+            "text": "Renombra el archivo agregando la extensión apropiada según su formato",
+            "correct": false,
+            "explanation": "file no modifica ni renombra el archivo, solo reporta qué tipo de dato contiene"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando cp?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Copia un archivo de origen a una ubicación destino",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede copiar directorios completos de forma recursiva usando la opción -r",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Mueve un archivo al destino eliminándolo de la ubicación original",
+            "correct": false,
+            "explanation": "Esa acción corresponde a mv; cp deja el original en su lugar y crea una copia en el destino"
+          },
+          {
+            "option": "D",
+            "text": "Solicita confirmación antes de sobrescribir si el archivo destino ya existe",
+            "correct": false,
+            "explanation": "Por defecto cp sobrescribe sin preguntar; para confirmación se usaría la opción -i (interactivo) o un alias"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando rm?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Elimina (borra) archivos especificados",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede eliminar directorios completos y su contenido usando la opción -r",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Mueve los archivos eliminados a la papelera en lugar de borrarlos definitivamente",
+            "correct": false,
+            "explanation": "rm borra directamente; no hay papelera a menos que se use una herramienta separada (como trash-cli)"
+          },
+          {
+            "option": "D",
+            "text": "Solicita confirmación interactiva antes de borrar cada archivo de manera predeterminada",
+            "correct": false,
+            "explanation": "Por defecto rm no pide confirmación; se puede usar -i para confirmación interactiva"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando rmdir?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Solo puede eliminar directorios que estén vacíos",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede eliminar un directorio aunque este contenga archivos, usando la opción -r",
+            "correct": false,
+            "explanation": "rmdir no puede eliminar directorios con archivos; para eso se usa rm -r"
+          },
+          {
+            "option": "C",
+            "text": "También permite eliminar archivos individuales especificando su ruta",
+            "correct": false,
+            "explanation": "rmdir solo elimina directorios, no archivos individuales; para archivos se usa rm"
+          },
+          {
+            "option": "D",
+            "text": "Es equivalente a ejecutar rm -r sobre el directorio especificado",
+            "correct": false,
+            "explanation": "rmdir no es equivalente a rm -r; solo elimina directorios vacíos y no tiene función recursiva"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando tree?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra la estructura de directorios y archivos en forma de árbol (jerarquía)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Es una opción del comando ls para listar recursivamente en formato de árbol",
+            "correct": false,
+            "explanation": "tree es un comando independiente, no una opción de ls"
+          },
+          {
+            "option": "C",
+            "text": "Muestra únicamente directorios pero no los archivos contenidos en ellos",
+            "correct": false,
+            "explanation": "tree muestra tanto directorios como archivos, a menos que se use una opción para filtrar"
+          },
+          {
+            "option": "D",
+            "text": "Requiere un entorno gráfico para poder visualizar la estructura en forma de árbol",
+            "correct": false,
+            "explanation": "tree muestra la estructura en la terminal (modo texto) sin necesidad de entorno gráfico"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando find?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Permite buscar archivos y directorios en forma recursiva a partir de un directorio dado",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede ejecutar acciones sobre los resultados encontrados (por ejemplo, borrar archivos) mediante -exec",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Por defecto busca un texto dado dentro del contenido de los archivos",
+            "correct": false,
+            "explanation": "Para buscar texto dentro de archivos se usa grep; find busca archivos/directorios por nombre u otros criterios"
+          },
+          {
+            "option": "D",
+            "text": "Utiliza una base de datos indexada del sistema para encontrar archivos rápidamente",
+            "correct": false,
+            "explanation": "find recorre el sistema de archivos en tiempo real. Quien usa una base de datos (actualizada con updatedb) es el comando locate"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando diff?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Compara dos archivos línea por línea y muestra las diferencias",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede comparar directorios de forma recursiva para listar archivos que difieren entre sí",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Fusiona el contenido de dos archivos en uno solo, eliminando duplicados",
+            "correct": false,
+            "explanation": "diff solo compara y muestra diferencias; no fusiona archivos"
+          },
+          {
+            "option": "D",
+            "text": "Aplica cambios de un archivo a otro automáticamente",
+            "correct": false,
+            "explanation": "diff se limita a mostrar diferencias o crear parches; para aplicar un parche se utiliza el comando patch"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando uname?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Sin opciones, muestra el nombre del sistema operativo o kernel en ejecución (por ejemplo, \"Linux\")",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Con opciones, puede mostrar detalles como la versión del kernel, el nombre de la máquina y otros datos del sistema",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Sirve para cambiar el nombre de host (hostname) del sistema operativo",
+            "correct": false,
+            "explanation": "uname solo muestra información; para cambiar el hostname se usaría hostnamectl u otro comando"
+          },
+          {
+            "option": "D",
+            "text": "Muestra la distribución de Linux instalada (por ejemplo, Ubuntu, Fedora) junto con su versión",
+            "correct": false,
+            "explanation": "uname no muestra la distribución de Linux; solo informa datos del kernel. Para la distribución se usan herramientas como lsb_release"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando set (en Bash)?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Sin argumentos, muestra todas las variables y funciones de shell actualmente establecidas",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite habilitar o deshabilitar ciertas opciones del shell (por ejemplo, modo debug, exit on error) mediante flags",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Se utiliza para asignar un valor a una variable de entorno (por ejemplo, set PATH=/usr/local/bin)",
+            "correct": false,
+            "explanation": "Para asignar valor a una variable se usa la sintaxis VAR=valor (y export si se quiere en entorno); set sin argumentos lista variables o con opciones configura la shell"
+          },
+          {
+            "option": "D",
+            "text": "Sirve para cambiar el intérprete de comandos actual por otro (por ejemplo, pasar de bash a sh)",
+            "correct": false,
+            "explanation": "set no cambia de shell; para usar otro intérprete se debe invocar directamente ese programa (por ejemplo, ejecutar sh o bash)"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando export?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Permite que una variable definida pase a estar disponible para los procesos hijo del shell actual",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Se usa con sintaxis como \"export VAR=valor\" para crear o modificar una variable de entorno",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Guarda permanentemente una variable de entorno para que esté disponible en futuros inicios de sesión",
+            "correct": false,
+            "explanation": "export solo afecta al entorno de la sesión actual; para hacerlo permanente hay que definir la variable en archivos de inicio (e.g., .bashrc)"
+          },
+          {
+            "option": "D",
+            "text": "Elimina una variable de entorno especificada, quitándola del entorno actual",
+            "correct": false,
+            "explanation": "export no elimina variables; para quitar una variable del entorno se usa unset"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando echo?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra en la salida estándar los argumentos o cadenas que se le proporcionen",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Con la opción -e, puede interpretar secuencias de escape como \\n para salto de línea",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Por omisión interpreta caracteres de escape especiales (como \\n) y los convierte en saltos de línea",
+            "correct": false,
+            "explanation": "Por defecto echo no interpreta secuencias de escape (como \\n) a menos que se use -e"
+          },
+          {
+            "option": "D",
+            "text": "Lee entrada de teclado y luego la vuelve a imprimir en la salida estándar",
+            "correct": false,
+            "explanation": "echo no lee entrada; solo imprime sus argumentos. Para leer entrada se usaría read u otro comando"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando less?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Permite visualizar el contenido de un archivo de texto de forma paginada (por pantallas) en la terminal",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite realizar búsquedas de texto dentro del archivo mientras se está visualizando",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "No permite retroceder a páginas anteriores del archivo, solo avanzar",
+            "correct": false,
+            "explanation": "less sí permite retroceder; quien solo avanza es more"
+          },
+          {
+            "option": "D",
+            "text": "Funciona como un editor de texto permitiendo modificar el archivo mostrado",
+            "correct": false,
+            "explanation": "less solo permite lectura; para editar archivos se usan editores como vi, nano, etc."
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando more?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra el contenido de un archivo de texto de forma paginada (avanzando pantalla por pantalla)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "No permite desplazarse hacia atrás en el archivo, solo avanzar hacia adelante",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Es una versión mejorada del comando less con más funcionalidades",
+            "correct": false,
+            "explanation": "more es más simple que less, con menos funcionalidades"
+          },
+          {
+            "option": "D",
+            "text": "Permite modificar el archivo durante la paginación, actuando como editor",
+            "correct": false,
+            "explanation": "more no permite editar, solo visualizar; para editar se debe usar un editor de texto"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando tail?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra las últimas líneas de un archivo (por ejemplo, 10 líneas finales por defecto)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Con la opción -f permite seguir actualizaciones de un archivo en tiempo real conforme crece",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Por defecto muestra únicamente la última línea de un archivo",
+            "correct": false,
+            "explanation": "Por defecto tail muestra las últimas 10 líneas, no solo la última"
+          },
+          {
+            "option": "D",
+            "text": "Su función es mostrar las primeras n líneas de un archivo de texto",
+            "correct": false,
+            "explanation": "Mostrar las primeras líneas es tarea del comando head; tail muestra las finales"
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando head?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra las primeras líneas de un archivo de texto (por ejemplo, las 10 primeras por defecto)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite especificar cuántas líneas iniciales mostrar mediante la opción -n",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Por defecto muestra solo la primera línea del archivo",
+            "correct": false,
+            "explanation": "head muestra las primeras 10 líneas de forma predeterminada, no solo la primera"
+          },
+          {
+            "option": "D",
+            "text": "Se utiliza para monitorear en vivo las nuevas líneas que se agregan al inicio de un archivo",
+            "correct": false,
+            "explanation": "No existe un modo para seguir nuevas líneas al inicio; tail -f sigue el final de un archivo en crecimiento"
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando date?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra la fecha y hora actuales del sistema",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite formatear la salida de la fecha y hora usando especificadores (por ejemplo, +%Y-%m-%d para año-mes-día)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Muestra la fecha y hora de última modificación de un archivo dado",
+            "correct": false,
+            "explanation": "date muestra la fecha/hora actuales del sistema, no la de archivos (para archivos se usa ls -l, stat, etc.)"
+          },
+          {
+            "option": "D",
+            "text": "Sincroniza el reloj del sistema con un servidor horario de Internet",
+            "correct": false,
+            "explanation": "date no sincroniza el reloj; para eso se utilizan servicios/protocolos como NTP (ej. ntpdate, chrony)"
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando cat?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Imprime en la salida estándar el contenido de uno o varios archivos concatenados",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede utilizarse para concatenar varios archivos de texto en uno solo (por ejemplo, redirigiendo la salida a un nuevo archivo)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Comprime el contenido de un archivo para reducir su tamaño",
+            "correct": false,
+            "explanation": "cat no comprime archivos; solo muestra/concatena su contenido. Para comprimir se usan herramientas como gzip o tar"
+          },
+          {
+            "option": "D",
+            "text": "Inicia un modo interactivo para editar o introducir texto manualmente en un archivo",
+            "correct": false,
+            "explanation": "cat no es un editor; solo vuelca lo que recibe a la salida. Para editar se usan editores (nano, vim, etc.)"
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando man?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra la página de manual (documentación detallada) de un comando o programa",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite navegar por la documentación de forma paginada y buscar texto dentro de la página de manual",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Proporciona solo un resumen breve de la sintaxis del comando, similar a la opción --help",
+            "correct": false,
+            "explanation": "man normalmente ofrece información detallada, más extensa que la que brinda --help"
+          },
+          {
+            "option": "D",
+            "text": "Requiere conexión a Internet para recuperar la información del manual del comando",
+            "correct": false,
+            "explanation": "man utiliza páginas locales de manual instaladas en el sistema; no requiere Internet"
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando chmod?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Sirve para cambiar los permisos de lectura, escritura y ejecución de archivos o directorios",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite especificar los permisos en formato simbólico (por ejemplo, u+r, g-w) o numérico (por ejemplo, 755)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Cambia el propietario (dueño) de un archivo o directorio",
+            "correct": false,
+            "explanation": "Cambiar el dueño corresponde al comando chown; chmod solo modifica permisos"
+          },
+          {
+            "option": "D",
+            "text": "No permite usar notación numérica para los permisos, solo la notación con letras",
+            "correct": false,
+            "explanation": "chmod admite tanto notación numérica como simbólica para los permisos"
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando chown?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Cambia el propietario (usuario dueño) de un archivo o directorio",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite cambiar simultáneamente propietario y grupo con la sintaxis usuario:grupo",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Puede ser utilizado por un usuario normal para transferir la propiedad de su archivo a otro usuario",
+            "correct": false,
+            "explanation": "En la mayoría de sistemas, solo root puede cambiar el propietario de un archivo; un usuario normal no puede ceder así la propiedad"
+          },
+          {
+            "option": "D",
+            "text": "Sirve para cambiar los permisos de lectura/escritura de un archivo",
+            "correct": false,
+            "explanation": "chown no modifica permisos de acceso; para eso se utiliza chmod"
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando exit?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Termina la sesión actual de la shell, cerrando el intérprete de comandos",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede usarse dentro de un script para detener su ejecución y devolver un código de salida",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Finaliza cualquier programa en ejecución (como si se presionara Ctrl+C)",
+            "correct": false,
+            "explanation": "exit cierra solo la shell actual; para terminar un programa ajeno se usa Ctrl+C o kill"
+          },
+          {
+            "option": "D",
+            "text": "Apaga el sistema completamente al invocarlo desde la terminal",
+            "correct": false,
+            "explanation": "exit solo cierra la sesión de la shell; para apagar el sistema se usa shutdown u otro comando especializado"
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando shutdown?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Apaga o reinicia el sistema de forma ordenada, pudiendo programar la acción para más tarde (por ejemplo, shutdown +5 para apagar en 5 minutos)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Requiere privilegios de superusuario (root) para poder ejecutarse",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "No requiere permisos especiales; cualquier usuario puede apagar el sistema con este comando",
+            "correct": false,
+            "explanation": "Para apagar/reiniciar se requieren privilegios de root (sudo); un usuario normal no puede usar shutdown directamente en la mayoría de sistemas"
+          },
+          {
+            "option": "D",
+            "text": "Solo cierra la sesión de terminal actual pero no afecta al resto del sistema",
+            "correct": false,
+            "explanation": "shutdown afecta a todo el sistema, apagándolo o reiniciándolo, no solo la terminal actual"
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando top?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra en tiempo real la lista de procesos activos junto con el uso de CPU, memoria y otros recursos",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite interactuar para ordenar los procesos por diferentes criterios y enviar señales (por ejemplo, finalizar un proceso)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Genera un informe estático de uso de recursos y termina inmediatamente después de ejecutarse",
+            "correct": false,
+            "explanation": "top se mantiene ejecutándose y actualiza la información en tiempo real hasta que se cierra, no es un informe puntual"
+          },
+          {
+            "option": "D",
+            "text": "Muestra un historial de todos los procesos ejecutados anteriormente en el sistema",
+            "correct": false,
+            "explanation": "top muestra procesos actuales, no históricos; para historial de comandos se usaría history, y para procesos finalizados, los registros del sistema"
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando ps?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra una lista instantánea (en un momento dado) de los procesos en ejecución",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Con opciones adicionales puede listar todos los procesos del sistema con detalles como PID, uso de memoria, etc.",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Actualiza constantemente la lista de procesos hasta que el usuario la detenga, similar a top",
+            "correct": false,
+            "explanation": "ps muestra un listado puntual de procesos; para monitorizar continuamente se usa top u otras herramientas"
+          },
+          {
+            "option": "D",
+            "text": "Solo permite ver procesos del usuario actual; no puede listar procesos de otros usuarios",
+            "correct": false,
+            "explanation": "ps puede mostrar procesos de cualquier usuario (por ejemplo con ps -e) si se tienen los permisos adecuados; no está limitado solo al usuario actual"
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando unzip?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Extrae los archivos contenidos en un archivo comprimido .zip",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite ver la lista de archivos dentro de un archivo .zip sin extraerlos (por ejemplo, con la opción -l)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "También puede crear archivos zip a partir de una carpeta dada",
+            "correct": false,
+            "explanation": "unzip no crea archivos zip; para eso se utiliza el comando zip"
+          },
+          {
+            "option": "D",
+            "text": "Solo funciona con archivos .tar.gz y formatos similares, no con archivos .zip",
+            "correct": false,
+            "explanation": "unzip está diseñado precisamente para archivos .zip; otros formatos (tar.gz, etc.) requieren sus propias herramientas (tar, gzip, etc.)"
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando apt-get?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Se utiliza en distribuciones basadas en Debian/Ubuntu para instalar, actualizar o eliminar paquetes de software",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Cuenta con comandos como \"apt-get update\" para actualizar la lista de paquetes y \"apt-get upgrade\" para actualizar los paquetes instalados",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Funciona en cualquier distribución Linux para gestionar paquetes (Debian, RedHat, SUSE, etc.)",
+            "correct": false,
+            "explanation": "apt-get es propio de distribuciones basadas en Debian/Ubuntu; otras familias usan gestores diferentes (yum/dnf, pacman, etc.)"
+          },
+          {
+            "option": "D",
+            "text": "Compila e instala programas desde su código fuente automáticamente",
+            "correct": false,
+            "explanation": "apt-get instala paquetes binarios precompilados desde repositorios; no compila el código fuente de los programas"
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando kill?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Envía una señal a un proceso identificado por su PID (por defecto, la señal TERM para terminarlo de forma graciable)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite especificar diferentes señales al proceso, por ejemplo -9 para forzar la terminación inmediata (SIGKILL)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Reinicia un proceso que se ha quedado congelado en el sistema",
+            "correct": false,
+            "explanation": "kill no reinicia procesos; solo les envía señales (normalmente para terminarlos). Reiniciar implicaría volver a ejecutar el proceso"
+          },
+          {
+            "option": "D",
+            "text": "Envía señales a todos los procesos con un cierto nombre, igual que hace killall",
+            "correct": false,
+            "explanation": "kill actúa sobre procesos por PID individual. Para señalar por nombre de proceso se usaría killall u otras herramientas"
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando ping?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Envía paquetes ICMP de eco a una dirección de red para verificar la conectividad y medir el tiempo de respuesta",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "En Linux, por defecto envía paquetes continuamente hasta que se detiene manualmente el comando",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Usa paquetes del protocolo TCP para probar la conectividad a un puerto específico",
+            "correct": false,
+            "explanation": "ping utiliza paquetes ICMP (no TCP) y no verifica puertos específicos"
+          },
+          {
+            "option": "D",
+            "text": "Finaliza automáticamente tras enviar cuatro paquetes de prueba",
+            "correct": false,
+            "explanation": "En Linux ping sigue enviando paquetes hasta interrumpirlo; no se detiene tras cuatro envíos (como sí ocurre en Windows por defecto)"
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando ifconfig?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra la configuración de las interfaces de red (direcciones IP, máscaras, etc.) del sistema",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite configurar interfaces de red (asignar direcciones IP, activar o desactivar una interfaz, etc.) con permisos adecuados",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Forma parte de las utilidades modernas iproute2 y reemplaza al comando ip",
+            "correct": false,
+            "explanation": "ifconfig pertenece a las antiguas net-tools; la herramienta moderna equivalente es 'ip'. De hecho, ip ha reemplazado a ifconfig en muchos sistemas"
+          },
+          {
+            "option": "D",
+            "text": "Es utilizado en sistemas Windows para configurar la red de forma equivalente a Linux",
+            "correct": false,
+            "explanation": "ifconfig no existe en Windows (allí se usa ipconfig); es una herramienta propia de sistemas Unix/Linux"
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando route?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra la tabla de enrutamiento del sistema (las rutas de red configuradas y sus puertas de enlace)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite agregar o eliminar entradas de ruta estáticas en la tabla de enrutamiento (requiere privilegios de administrador)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Sirve para ver y configurar las reglas del cortafuegos (firewall) del sistema",
+            "correct": false,
+            "explanation": "route gestiona la tabla de enrutamiento de redes, no las reglas de firewall (para firewall se usan comandos como iptables/ufw)"
+          },
+          {
+            "option": "D",
+            "text": "Se utiliza para asignar una dirección IP a una interfaz de red específica",
+            "correct": false,
+            "explanation": "Asignar direcciones IP a interfaces se hace con ifconfig o 'ip'; route se enfoca en las rutas de red, no en la configuración de IP de una interfaz"
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando history?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra el historial de comandos utilizados en la sesión actual de la shell",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Por lo general conserva los comandos en un archivo (como ~/.bash_history) para recordarlos en sesiones posteriores",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Busca comandos en el historial de manera interactiva conforme se escribe (similar a presionar Ctrl+R)",
+            "correct": false,
+            "explanation": "El comando history solo muestra o manipula la lista; la búsqueda interactiva (Ctrl+R) es una función de la shell, no del comando history en sí"
+          },
+          {
+            "option": "D",
+            "text": "Ejecuta inmediatamente el último comando del historial sin confirmación",
+            "correct": false,
+            "explanation": "history por sí solo no ejecuta comandos; para re-ejecutar el último comando se usa '!!' (característica de la shell), no el comando history directamente"
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando passwd?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Sirve para cambiar la contraseña del usuario actual, solicitando introducir la nueva clave dos veces para confirmarla",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Un administrador (root) puede usarlo para cambiar la contraseña de cualquier cuenta especificando el nombre de usuario",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Muestra la contraseña actual del usuario en texto claro antes de pedir cambiarla",
+            "correct": false,
+            "explanation": "Las contraseñas no se pueden ver en texto plano mediante passwd; este comando solo permite cambiarlas, no revelarlas"
+          },
+          {
+            "option": "D",
+            "text": "Un usuario normal puede cambiar la contraseña de otro usuario proporcionándola como argumento al comando",
+            "correct": false,
+            "explanation": "Solo el administrador (root) puede cambiar la contraseña de otro usuario; un usuario normal solo puede cambiar la suya propia"
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando grep?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Busca líneas que coincidan con un patrón de texto dado dentro de uno o varios archivos",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Admite el uso de expresiones regulares para realizar búsquedas avanzadas en el texto",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "De forma predeterminada no distingue entre mayúsculas y minúsculas al buscar (búsqueda insensible a mayúsculas)",
+            "correct": false,
+            "explanation": "Por defecto grep diferencia entre mayúsculas y minúsculas; para ignorar el caso se debe usar la opción -i"
+          },
+          {
+            "option": "D",
+            "text": "No se puede usar sobre la salida de otro comando, solo funciona con archivos directamente",
+            "correct": false,
+            "explanation": "grep puede usarse en una tubería para filtrar la salida de otros comandos (ejemplo: comando | grep texto), no solo con archivos"
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando wc?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Cuenta la cantidad de líneas, palabras y bytes (u octetos) en uno o varios archivos o en la entrada estándar",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Tiene opciones para contar solo líneas (-l), solo palabras (-w) o solo caracteres (-m) en el contenido analizado",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Por defecto muestra únicamente el total de palabras en el archivo analizado",
+            "correct": false,
+            "explanation": "Sin opciones, wc muestra líneas, palabras y bytes; no solo palabras"
+          },
+          {
+            "option": "D",
+            "text": "Se utiliza para generar un resumen hash (suma de verificación) del contenido de un archivo",
+            "correct": false,
+            "explanation": "wc no calcula sumas de verificación; para hashes se usan comandos como md5sum o sha256sum"
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando cal?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra un calendario del mes actual en la terminal si se ejecuta sin opciones ni argumentos",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite mostrar calendarios de un mes y/o año especificados, por ejemplo \"cal 12 2023\" para diciembre de 2023",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Incluye la hora actual y otros datos de tiempo junto con el calendario del mes",
+            "correct": false,
+            "explanation": "cal solo muestra el calendario (los días del mes); no muestra la hora actual ni otros datos de tiempo"
+          },
+          {
+            "option": "D",
+            "text": "Permite crear recordatorios o eventos dentro del calendario mostrado",
+            "correct": false,
+            "explanation": "cal no maneja eventos ni recordatorios; solo despliega calendarios. Para eventos se usarían otras herramientas o aplicaciones"
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando uptime?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Indica cuánto tiempo ha estado en funcionamiento el sistema desde el último arranque",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Muestra también la cantidad de usuarios conectados y la carga promedio del sistema en los últimos 1, 5 y 15 minutos",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Reporta el uso actual detallado de CPU y memoria junto con el tiempo de actividad",
+            "correct": false,
+            "explanation": "uptime no muestra uso detallado de CPU o memoria; se limita al tiempo activo, número de usuarios y carga promedio"
+          },
+          {
+            "option": "D",
+            "text": "Debe permanecer ejecutándose en segundo plano para que el contador de tiempo de actividad avance",
+            "correct": false,
+            "explanation": "El tiempo de actividad lo lleva el sistema operativo; uptime solo lo consulta cuando se ejecuta, no necesita permanecer corriendo"
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando wget?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Descarga archivos o contenido desde la web dado una URL, soportando protocolos como HTTP, HTTPS o FTP",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede realizar descargas recursivas de sitios completos (por ejemplo con la opción -r) para espejar páginas y recursos",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Es un navegador web en modo texto que permite al usuario navegar por sitios manualmente",
+            "correct": false,
+            "explanation": "wget no es un navegador interactivo; solo descarga archivos. Para navegar en texto se podría usar lynx u otro navegador de terminal"
+          },
+          {
+            "option": "D",
+            "text": "Requiere un entorno gráfico para mostrar el progreso de la descarga",
+            "correct": false,
+            "explanation": "wget funciona completamente en la terminal; no necesita entorno gráfico y muestra el progreso de la descarga en formato texto"
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando lynx?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Es un navegador web de modo texto que permite navegar por sitios web desde la terminal",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Muestra solo el texto y los enlaces de las páginas (no renderiza imágenes ni contenido multimedia)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Requiere un entorno gráfico X11 para poder ejecutarse",
+            "correct": false,
+            "explanation": "lynx funciona en la terminal y no necesita entorno gráfico; muestra el HTML en forma de texto puro"
+          },
+          {
+            "option": "D",
+            "text": "Su única función es descargar archivos; no permite interactuar con páginas web",
+            "correct": false,
+            "explanation": "lynx permite navegar páginas web en texto de forma interactiva, no es solo un descargador (para solo descargar se usaría wget u otra herramienta)"
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando df?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra el espacio utilizado y disponible en cada sistema de archivos montado en el sistema",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Con la opción -h muestra los tamaños en unidades legibles (KB, MB, GB) en lugar de bloques en bytes",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Reporta el tamaño de cada archivo dentro de un directorio especificado",
+            "correct": false,
+            "explanation": "df muestra el uso de espacio por sistema de archivos completo; para ver tamaños de archivos individuales se utiliza el comando du"
+          },
+          {
+            "option": "D",
+            "text": "Permite cambiar el espacio asignado a un sistema de archivos directamente desde la terminal",
+            "correct": false,
+            "explanation": "df solo informa el espacio utilizado/disponible; no modifica el tamaño de un sistema de archivos (eso requeriría herramientas de particionado o LVM)"
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando du?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra el espacio en disco que utilizan archivos y directorios, normalmente expresado en bloques o bytes",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Con opciones puede resumir el uso total de un directorio completo (-s) o mostrar los tamaños en formato legible (-h)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Enumera los sistemas de archivos montados y su espacio disponible en disco",
+            "correct": false,
+            "explanation": "Listar sistemas de archivos y espacio libre corresponde al comando df; du se enfoca en el espacio ocupado por archivos/directorios"
+          },
+          {
+            "option": "D",
+            "text": "Puede eliminar archivos que ocupan mucho espacio para liberar disco automáticamente",
+            "correct": false,
+            "explanation": "du solo reporta el uso de espacio; no elimina archivos. Para borrar archivos se debería usar rm u otra herramienta manualmente"
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando tar?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Sirve para agrupar varios archivos y directorios en un solo archivo (archivar en un tarball)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Con opciones puede comprimir o descomprimir el archivo tar utilizando gzip, bzip2 u otros (por ejemplo -z para gzip)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Por defecto comprime los archivos al crear el tar, sin necesidad de opciones adicionales",
+            "correct": false,
+            "explanation": "tar por sí solo no comprime; para comprimir el archivo tar se deben usar opciones como -z (gzip) o -j (bzip2)"
+          },
+          {
+            "option": "D",
+            "text": "No conserva la estructura de subdirectorios; todos los archivos quedan en un solo nivel dentro del tar",
+            "correct": false,
+            "explanation": "tar preserva la estructura de directorios dentro del archivo; los subdirectorios y rutas se mantienen tal cual"
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando ssh?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Permite iniciar una sesión de terminal segura en un sistema remoto mediante una conexión cifrada",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Por defecto utiliza el puerto 22 y protocolos de cifrado fuertes para proteger la comunicación",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "No se puede utilizar a través de Internet, solo funciona en redes locales seguras",
+            "correct": false,
+            "explanation": "ssh funciona a través de cualquier red (incluida Internet) siempre que el servidor sea accesible en el puerto adecuado"
+          },
+          {
+            "option": "D",
+            "text": "Se utiliza principalmente para transferir archivos entre equipos de forma eficiente",
+            "correct": false,
+            "explanation": "ssh se usa para acceder a una shell remota; para transferir archivos se suelen usar scp o sftp, que funcionan sobre ssh"
+          }
+        ]
+      },
+      {
+        "id": 52,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando scp?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Copia archivos de forma segura entre un host local y uno remoto utilizando el protocolo SSH",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Emplea la sintaxis usuario@servidor:ruta para especificar archivos remotos y realiza la transferencia de forma cifrada",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Requiere montar previamente el sistema de archivos remoto para poder copiar archivos hacia él",
+            "correct": false,
+            "explanation": "scp usa SSH para conectarse y transferir directamente; no es necesario montar el sistema de archivos remoto"
+          },
+          {
+            "option": "D",
+            "text": "No puede copiar directorios completos; solo funciona con archivos individuales",
+            "correct": false,
+            "explanation": "scp puede transferir directorios completos usando la opción -r; no está limitado a archivos sueltos"
+          }
+        ]
+      },
+      {
+        "id": 53,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando atop?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Es una herramienta de monitoreo similar a top, pero muestra información más detallada de procesos y recursos (CPU, memoria, disco, red)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Puede registrar la actividad del sistema a lo largo del tiempo para análisis posterior del rendimiento",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Viene instalado y activo por defecto en la mayoría de distribuciones Linux para monitoreo continuo",
+            "correct": false,
+            "explanation": "atop no suele venir instalado por defecto; debe instalarse y ejecutarse manualmente cuando se requiere un monitoreo detallado"
+          },
+          {
+            "option": "D",
+            "text": "Reemplaza al planificador del kernel para gestionar procesos y mejorar el rendimiento del sistema",
+            "correct": false,
+            "explanation": "atop solo monitorea y muestra información de rendimiento; no reemplaza ninguna funcionalidad del kernel ni gestiona procesos"
+          }
+        ]
+      },
+      {
+        "id": 54,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando lsmod?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Lista los módulos del kernel que están cargados actualmente en el sistema",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Muestra información como el tamaño de cada módulo y cuántas veces está en uso (dependencias) por otros módulos",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Se utiliza para cargar un nuevo módulo en el kernel en tiempo de ejecución",
+            "correct": false,
+            "explanation": "lsmod solo lista módulos; para cargar uno se usaría modprobe o insmod"
+          },
+          {
+            "option": "D",
+            "text": "Elimina automáticamente los módulos que no están en uso en el sistema",
+            "correct": false,
+            "explanation": "lsmod no elimina módulos; para remover módulos se usa rmmod o modprobe -r manualmente"
+          }
+        ]
+      },
+      {
+        "id": 55,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando lspci?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Muestra la lista de dispositivos PCI presentes en el sistema, como controladores y tarjetas de expansión",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite identificar el hardware PCI instalado mostrando el fabricante y modelo de cada dispositivo",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Incluye también en el listado los dispositivos USB conectados al sistema",
+            "correct": false,
+            "explanation": "lspci se limita a dispositivos en buses PCI/PCIe. Los dispositivos USB se listan con el comando lsusb"
+          },
+          {
+            "option": "D",
+            "text": "Carga automáticamente los controladores necesarios para los dispositivos PCI listados",
+            "correct": false,
+            "explanation": "lspci solo identifica los dispositivos; no carga controladores. La carga de drivers la gestiona el sistema (o comandos como modprobe)"
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando lsusb?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Lista los dispositivos USB conectados al sistema y brinda información básica de ellos",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Muestra los identificadores de fabricante y producto de cada dispositivo USB conectado",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Monta automáticamente las unidades USB listadas en el sistema de archivos",
+            "correct": false,
+            "explanation": "lsusb solo lista dispositivos; no monta unidades. El montaje se realiza por el sistema o manualmente con mount u herramientas de escritorio"
+          },
+          {
+            "option": "D",
+            "text": "Incluye dispositivos de otros buses (como PCI) en el listado junto con los USB",
+            "correct": false,
+            "explanation": "lsusb se limita a dispositivos USB; para dispositivos PCI se usa lspci"
+          }
+        ]
+      },
+      {
+        "id": 57,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando systemctl?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Es la herramienta principal para controlar y consultar el estado de servicios (y otras unidades) en sistemas Linux con systemd",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite iniciar, detener, habilitar (activar al arranque) o deshabilitar servicios del sistema",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Funciona en cualquier distribución Linux, incluso en aquellas que no usan systemd como init",
+            "correct": false,
+            "explanation": "systemctl solo está disponible en sistemas que usan systemd como init; en distros con SysV o Upstart no existe"
+          },
+          {
+            "option": "D",
+            "text": "Sirve para instalar y actualizar paquetes de software del sistema operativo",
+            "correct": false,
+            "explanation": "systemctl gestiona servicios y unidades de systemd; la instalación/actualización de paquetes corresponde al gestor de paquetes (apt, yum, etc.)"
+          }
+        ]
+      },
+      {
+        "id": 58,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando dd?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Copia datos byte a byte desde un archivo (o dispositivo) origen a un destino, siendo útil para clonar discos o crear imágenes de bajo nivel",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite especificar opciones como el tamaño de bloque de lectura/escritura (bs=) y la cantidad de datos a copiar (count=) para afinar la transferencia",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Solo funciona con archivos de texto; no se puede usar con dispositivos de bloque (como unidades de disco)",
+            "correct": false,
+            "explanation": "dd opera a nivel bajo con cualquier archivo o dispositivo (texto o binario); se usa justamente para copiar datos de dispositivos de bloque también"
+          },
+          {
+            "option": "D",
+            "text": "Incluye mecanismos de seguridad que previenen sobrescribir datos del disco por error",
+            "correct": false,
+            "explanation": "dd ejecuta exactamente las instrucciones dadas sin advertencias; no evita sobrescrituras, por lo que debe usarse con mucha precaución"
+          }
+        ]
+      },
+      {
+        "id": 59,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando md5sum?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Calcula el resumen criptográfico MD5 (checksum) de uno o varios archivos",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite verificar la integridad comparando el checksum MD5 calculado con uno esperado (por ejemplo, con la opción -c)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Encripta el archivo completo utilizando el algoritmo MD5 para proteger su contenido",
+            "correct": false,
+            "explanation": "md5sum no encripta archivos; solo calcula un hash (resumen) de ellos. El hash MD5 no permite reconstruir el archivo original"
+          },
+          {
+            "option": "D",
+            "text": "Si se ejecuta dos veces sobre el mismo archivo, generará un checksum distinto cada vez",
+            "correct": false,
+            "explanation": "El checksum MD5 de un archivo es determinista; mientras el archivo no cambie, md5sum producirá siempre el mismo resultado"
+          }
+        ]
+      },
+      {
+        "id": 60,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando sha256sum?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Calcula la suma de verificación SHA-256 (hash criptográfico) de uno o varios archivos",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Permite verificar la integridad de un archivo comparando su hash SHA-256 con uno esperado (por ejemplo con la opción -c)",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Encripta el archivo completo utilizando el algoritmo SHA-256, de modo que solo pueda recuperarse con la clave adecuada",
+            "correct": false,
+            "explanation": "sha256sum no encripta el archivo; genera un resumen (hash) irreversiblemente. No existe una clave para revertirlo y obtener el archivo original a partir del hash"
+          },
+          {
+            "option": "D",
+            "text": "Por eficiencia, en archivos muy grandes solo calcula la suma de parte del contenido en lugar de todo el archivo",
+            "correct": false,
+            "explanation": "sha256sum procesa el archivo completo para calcular el hash, independientemente de su tamaño; no realiza cálculos parciales"
+          }
+        ]
+      },
+      {
+        "id": 61,
+        "question": "¿Cuál(es) de estas afirmaciones describen correctamente el comando cfdisk?",
+        "options": [
+          {
+            "option": "A",
+            "text": "Es una herramienta interactiva de particionado de disco que permite crear, eliminar o modificar particiones mediante una interfaz de texto",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "B",
+            "text": "Ofrece una interfaz de menú en la terminal (ncurses) para editar la tabla de particiones de un disco de forma amigable",
+            "correct": true,
+            "explanation": null
+          },
+          {
+            "option": "C",
+            "text": "Requiere un entorno gráfico (X Window) para poder ejecutarse",
+            "correct": false,
+            "explanation": "cfdisk funciona en modo texto (interfaz ncurses) directamente en la terminal; no necesita entorno gráfico"
+          },
+          {
+            "option": "D",
+            "text": "Solo permite visualizar la tabla de particiones existente pero no realizar cambios en ella",
+            "correct": false,
+            "explanation": "cfdisk permite tanto ver como modificar la tabla de particiones (aunque los cambios no se aplican hasta confirmarlos con la opción de escribir en disco)"
+          }
+        ]
+      }
+    ]
+  }
