@@ -3,111 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quiz de Repaso Arquitectura</title>
+  <title>Quiz Universitario</title>
   <style>
     :root {
-      --primary-color: #2c3e50;
-      --accent-color: #3498db;
-      --success-color: #27ae60;
-      --error-color: #e74c3c;
-      --missed-color: #f39c12;
-      --bg-light: #ecf0f1;
+      --primary-color: #2c3e50; --accent-color: #3498db;
+      --success-color: #27ae60; --error-color: #e74c3c;
+      --missed-color: #f39c12;  --bg-light: #ecf0f1;
       --text-color: #333;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin:0; padding:0; }
     body {
       font-family: Arial, sans-serif;
       background: var(--bg-light);
       color: var(--text-color);
-      display: flex; justify-content: center;
-      padding: 1rem;
+      display:flex; justify-content:center; padding:1rem;
     }
     .container {
-      width: 100%; max-width: 800px;
-      background: #fff; border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 1.5rem;
+      width:100%; max-width:800px;
+      background:#fff; border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      padding:1.5rem;
     }
-    h1 {
-      text-align: center; margin-bottom: 1rem;
-      color: var(--primary-color); font-size: 1.75rem;
-    }
-    #loader {
-      text-align: center; margin: 1rem 0;
-      font-size: 1.1rem; color: #666;
-    }
-    #selector {
-      display: none;
-      margin: 1rem 0;
-      text-align: center;
-    }
-    #selector select {
-      padding: 0.5rem;
-      font-size: 1rem;
-      margin-right: 0.5rem;
-    }
-    .question { margin-bottom: 1rem; }
-    .options {
-      display: flex; flex-direction: column;
-      gap: 0.75rem; margin-bottom: 1rem;
-    }
+    h1 { text-align:center; margin-bottom:1rem; color:var(--primary-color); }
+    #loader { text-align:center; margin:1rem 0; color:#666; }
+    #selector { display:none; margin:1rem 0; text-align:center; }
+    #selector select { padding:.5rem; font-size:1rem; margin:0 .5rem; }
+    .question { margin-bottom:1rem; }
+    .options { display:flex; flex-direction:column; gap:.75rem; margin-bottom:1rem; }
     .options label {
-      display: flex; align-items: center;
-      background: var(--bg-light);
-      border: 1px solid #ccc; border-radius: 4px;
-      padding: 0.5rem; cursor: pointer;
-      transition: background 0.3s, border-color 0.3s;
+      display:flex; align-items:center;
+      background:var(--bg-light); border:1px solid #ccc;
+      border-radius:4px; padding:.5rem; cursor:pointer;
+      transition: background .3s, border-color .3s;
     }
-    .options label:hover {
-      background: #fff; border-color: var(--accent-color);
-    }
-    .options label.wrong {
-      border-color: var(--error-color);
-      background: #fdecea;
-    }
-    .options label.missed {
-      border-color: var(--missed-color);
-      background: #fff4e5;
-    }
-    .options input { margin-right: 0.5rem; }
+    .options label:hover { background:#fff; border-color:var(--accent-color); }
+    .options label.wrong { border-color:var(--error-color); background:#fdecea; }
+    .options label.missed { border-color:var(--missed-color); background:#fff4e5; }
+    .options input { margin-right:.5rem; }
     button {
-      background: var(--accent-color); color: #fff;
-      border: none; border-radius: 4px;
-      padding: 0.75rem 1.25rem;
-      font-size: 1rem; cursor: pointer;
-      transition: background 0.3s;
-      margin-right: 0.5rem;
+      background: var(--accent-color); color:#fff;
+      border:none; border-radius:4px;
+      padding:.75rem 1.25rem;
+      font-size:1rem; cursor:pointer;
+      transition: background .3s;
+      margin-right:.5rem;
     }
-    button:disabled { background: #aaa; cursor: not-allowed; }
-    button:hover:enabled { background: #2980b9; }
-    #feedback { margin-top: 0.75rem; font-weight: bold; }
-    #status {
-      margin-top: 1rem; text-align: center;
-      font-weight: 600; color: var(--primary-color);
-    }
-    @media (max-width: 600px) {
-      button { width: 100%; margin-bottom: 0.5rem; }
-      #selector { flex-direction: column; }
+    button:disabled { background:#aaa; cursor:not-allowed; }
+    button:hover:enabled { background:#2980b9; }
+    #feedback { margin-top:.75rem; font-weight:bold; }
+    #status { margin-top:1rem; text-align:center; font-weight:600; }
+    @media (max-width:600px){
+      button { width:100%; margin-bottom:.5rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Quiz de Repaso Arquitectura</h1>
+    <h1>Quiz Universitario</h1>
 
-    <div id="loader">Cargando preguntas...</div>
+    <div id="loader">Cargando asignaturas...</div>
 
-    <!-- Selector de tema -->
+    <!-- Selector de asignatura → tema → quiz -->
     <div id="selector">
-      <label for="topic-select">Elige un tema:</label>
-      <select id="topic-select"></select>
-      <button id="start-btn">Comenzar Quiz</button>
+      <label for="subject-select">Elige asignatura:</label>
+      <select id="subject-select"></select>
+
+      <label for="topic-select" id="topic-label" style="display:none; margin-left:1rem;">
+        Elige tema:
+      </label>
+      <select id="topic-select" style="display:none;"></select>
+
+      <button id="load-topics-btn" style="display:none;">Ver temas</button>
+      <button id="start-btn"    style="display:none;">Comenzar Quiz</button>
     </div>
 
-    <!-- Quiz propiamente dicho -->
+    <!-- Contenedor del quiz -->
     <div id="quiz" style="display:none">
       <div class="question">
-        <div id="topic" style="font-weight:bold; margin-bottom:0.5rem;"></div>
+        <div id="topic" style="font-weight:bold; margin-bottom:.5rem;"></div>
         <div id="question-text"></div>
       </div>
       <div id="options" class="options"></div>
@@ -119,91 +92,101 @@
   </div>
 
   <script>
-    let allQuestions = [], questions = [], current = 0, score = { correct: 0, wrong: 0 };
-    const loader      = document.getElementById('loader'),
-          selector    = document.getElementById('selector'),
-          topicSelect = document.getElementById('topic-select'),
-          startBtn    = document.getElementById('start-btn'),
-          quizEl      = document.getElementById('quiz'),
-          topicEl     = document.getElementById('topic'),
-          questionEl  = document.getElementById('question-text'),
-          optionsEl   = document.getElementById('options'),
-          submitBtn   = document.getElementById('submit'),
-          nextBtn     = document.getElementById('next'),
-          feedbackEl  = document.getElementById('feedback'),
-          statusEl    = document.getElementById('status');
+    let subjects = [], subjectData = [], allQuestions = [],
+        questions = [], current = 0, score = {correct:0, wrong:0};
 
-    window.addEventListener('DOMContentLoaded', () => {
-      fetch('preguntas.json')
-        .then(res => { if (!res.ok) throw new Error(res.status); return res.json(); })
-        .then(initData)
-        .catch(setupFileLoader);
+    const loader       = document.getElementById('loader'),
+          selector     = document.getElementById('selector'),
+          subjectSelect= document.getElementById('subject-select'),
+          topicLabel   = document.getElementById('topic-label'),
+          topicSelect  = document.getElementById('topic-select'),
+          loadTopics   = document.getElementById('load-topics-btn'),
+          startBtn     = document.getElementById('start-btn'),
+          quizEl       = document.getElementById('quiz'),
+          topicEl      = document.getElementById('topic'),
+          questionEl   = document.getElementById('question-text'),
+          optionsEl    = document.getElementById('options'),
+          submitBtn    = document.getElementById('submit'),
+          nextBtn      = document.getElementById('next'),
+          feedbackEl   = document.getElementById('feedback'),
+          statusEl     = document.getElementById('status');
+
+    // 1) Al cargar, pedimos index.json
+    window.addEventListener('DOMContentLoaded', ()=>{
+      fetch('index.json')
+        .then(r => { if(!r.ok) throw ''; return r.json() })
+        .then(initSubjects)
+        .catch(()=> loader.textContent = 'Error al cargar index.json');
     });
 
-    function setupFileLoader() {
-      loader.innerHTML = `
-        <input type="file" id="fileInput" accept=".json">
-        <button id="loadBtn">Cargar preguntas</button>
-      `;
-      document.getElementById('loadBtn').onclick = () => {
-        const file = document.getElementById('fileInput').files[0];
-        if (!file) return alert('Selecciona el archivo JSON');
-        const reader = new FileReader();
-        reader.onload = e => {
-          try { initData(JSON.parse(e.target.result)); }
-          catch { alert('JSON inválido'); }
-        };
-        reader.readAsText(file);
-      };
-    }
-
-    function initData(data) {
-      // Aplanar y guardar todas las preguntas
-      data.forEach(topic => {
-        const t = topic.Topic || topic.tema || '';
-        (topic.questions || topic.preguntas || []).forEach(q => {
-          q.Topic = t;
-          allQuestions.push(q);
-        });
-      });
-      // Poblar selector de temas
-      const temas = Array.from(new Set(allQuestions.map(q => q.Topic))).sort();
-      topicSelect.innerHTML =
-        `<option value="Todos">— Todos —</option>` +
-        temas.map(t => `<option value="${t}">${t}</option>`).join('');
+    function initSubjects(data){
+      subjects = data;
+      // Llenar dropdown de asignaturas
+      subjectSelect.innerHTML = subjects
+        .map(s => `<option value="${s.url}">${s.asignatura}</option>`)
+        .join('');
       loader.style.display = 'none';
       selector.style.display = 'block';
+      loadTopics.style.display = 'inline-block';
     }
 
-    startBtn.onclick = () => {
+    // 2) Al hacer click en "Ver temas", traemos el JSON de esa asignatura
+    loadTopics.onclick = ()=>{
+      const url = subjectSelect.value;
+      fetch(url)
+        .then(r => { if(!r.ok) throw ''; return r.json() })
+        .then(data => {
+          subjectData = data;
+          // Sacamos la lista única de topics
+          const temas = Array.from(new Set(
+            subjectData.map(t => t.Topic)
+          )).sort();
+          topicSelect.innerHTML =
+            `<option value="Todos">— Todos —</option>` +
+            temas.map(t => `<option value="${t}">${t}</option>`).join('');
+          topicLabel.style.display  = 'inline';
+          topicSelect.style.display = 'inline';
+          startBtn.style.display    = 'inline-block';
+          loadTopics.style.display  = 'none';
+        })
+        .catch(()=> alert('No pude cargar preguntas de la asignatura.'));
+    };
+
+    // 3) Al hacer click en "Comenzar Quiz", aplanamos preguntas y arrancamos
+    startBtn.onclick = ()=>{
       const selTema = topicSelect.value;
-      questions = selTema === 'Todos'
-        ? [...allQuestions]
-        : allQuestions.filter(q => q.Topic === selTema);
-      questions.sort(() => Math.random() - 0.5);
-      current = 0;
-      score = { correct: 0, wrong: 0 };
+      allQuestions = [];
+      subjectData.forEach(block => {
+        if(selTema==='Todos' || block.Topic===selTema){
+          block.questions.forEach(q=>{
+            q.Topic = block.Topic;
+            allQuestions.push(q);
+          });
+        }
+      });
+      questions = [...allQuestions].sort(()=>Math.random()-0.5);
+      current = 0; score = {correct:0, wrong:0};
       selector.style.display = 'none';
-      quizEl.style.display = 'block';
+      quizEl.style.display   = 'block';
       showQuestion();
     };
 
-    function showQuestion() {
+    function showQuestion(){
       const q = questions[current];
-      topicEl.textContent = `Tema: ${q.Topic} (${current+1}/${questions.length})`;
-      questionEl.textContent = q.question;
-      optionsEl.innerHTML = '';
-      feedbackEl.textContent = '';
-      submitBtn.disabled = false;
-      nextBtn.style.display = 'none';
+      topicEl.textContent      = `Tema: ${q.Topic} (${current+1}/${questions.length})`;
+      questionEl.textContent   = q.question;
+      optionsEl.innerHTML       = '';
+      feedbackEl.textContent    = '';
+      submitBtn.disabled        = false;
+      nextBtn.style.display     = 'none';
 
-      const correctCount = q.options.filter(o => o.correct).length;
-      const multi = correctCount > 1;
+      const correctCount = q.options.filter(o=>o.correct).length;
+      const multi = correctCount>1;
 
-      q.options.forEach(o => {
+      q.options.forEach(o=>{
         const lbl = document.createElement('label');
         lbl.innerHTML = `
-          <input type="${multi ? 'checkbox' : 'radio'}"
+          <input type="${multi?'checkbox':'radio'}"
                  name="opt" value="${o.option}">
           <strong>${o.option.toUpperCase()})</strong> ${o.text}
         `;
@@ -212,81 +195,75 @@
       updateStatus();
     }
 
-    submitBtn.onclick = () => {
-      const inputs   = Array.from(document.querySelectorAll('input[name="opt"]'));
-      const selected = inputs.filter(i => i.checked).map(i => i.value);
-      if (selected.length === 0) return alert('Selecciona al menos una opción');
+    submitBtn.onclick = ()=>{
+      const inputs   = Array.from(optionsEl.querySelectorAll('input'));
+      const chosen   = inputs.filter(i=>i.checked).map(i=>i.value);
+      if(chosen.length===0) return alert('Selecciona al menos una opción');
 
       submitBtn.disabled = true;
       const q = questions[current];
-      const correctOpts = q.options.filter(o => o.correct).map(o => o.option);
-      const multi = correctOpts.length > 1;
-      let fbHtml = '';
+      const correctOpts = q.options.filter(o=>o.correct).map(o=>o.option);
+      const multi = correctOpts.length>1;
+      let fb = '';
 
-      if (!multi) {
-        // Pregunta de respuesta única
-        const chosen = selected[0];
-        const o = q.options.find(o => o.option === chosen);
-        if (o.correct) {
-          fbHtml = `<span style="color:var(--success-color)">¡Correcto!</span>`;
+      if(!multi){
+        const sel = chosen[0];
+        const opt = q.options.find(o=>o.option===sel);
+        if(opt.correct){
+          fb = `<span style="color:var(--success-color)">¡Correcto!</span>`;
           score.correct++;
         } else {
-          const corr = correctOpts[0];
-          const explanation = o.explanation || 'Respuesta incorrecta.';
-          fbHtml = `<span style="color:var(--error-color)">Incorrecto: ${explanation}</span><br>`
-                 + `Respuesta correcta: ${corr.toUpperCase()}`;
+          fb = `<span style="color:var(--error-color)">
+                  Incorrecto: ${opt.explanation||'Respuesta incorrecta.'}
+                </span><br>
+                Respuesta correcta: ${correctOpts[0].toUpperCase()}`;
           score.wrong++;
-          inputs.forEach(i => {
+          inputs.forEach(i=>{
             const lbl = i.closest('label');
-            if (i.value === chosen) lbl.classList.add('wrong');
-            if (i.value === corr)    lbl.classList.add('missed');
+            if(i.value===sel)       lbl.classList.add('wrong');
+            if(i.value===correctOpts[0]) lbl.classList.add('missed');
             i.disabled = true;
           });
         }
       } else {
-        // Pregunta de múltiples respuestas
-        const extras = selected.filter(v => !correctOpts.includes(v));
-        const missed = correctOpts.filter(v => !selected.includes(v));
-
-        if (extras.length === 0 && missed.length === 0) {
-          // TODO perfecto
-          fbHtml = `<span style="color:var(--success-color)">¡Correcto!</span>`;
+        const extras = chosen.filter(o=>!correctOpts.includes(o));
+        const missed = correctOpts.filter(o=>!chosen.includes(o));
+        if(extras.length===0 && missed.length===0){
+          fb = `<span style="color:var(--success-color)">¡Correcto!</span>`;
           score.correct++;
         } else {
-          fbHtml = `<span style="color:var(--error-color)">Incorrecto.</span><br>`;
-          extras.forEach(opt => {
-            const o = q.options.find(o => o.option === opt);
-            fbHtml += `<div>- Opción ${opt.toUpperCase()} errónea. Explicación: ${o.explanation||'Incorrecta.'}</div>`;
+          fb = `<span style="color:var(--error-color)">Incorrecto.</span>`;
+          extras.forEach(o=>{
+            const exp = q.options.find(x=>x.option===o).explanation||'Incorrecta';
+            fb += `<div>- Opción ${o.toUpperCase()} errónea: ${exp}</div>`;
           });
-          missed.forEach(opt => {
-            fbHtml += `<div>- Te faltó la respuesta correcta: ${opt.toUpperCase()}</div>`;
+          missed.forEach(o=>{
+            fb += `<div>- Faltó la ${o.toUpperCase()}</div>`;
           });
           score.wrong++;
-          inputs.forEach(i => {
+          inputs.forEach(i=>{
             const lbl = i.closest('label');
-            if (extras.includes(i.value)) lbl.classList.add('wrong');
-            if (missed.includes(i.value)) lbl.classList.add('missed');
+            if(extras.includes(i.value)) lbl.classList.add('wrong');
+            if(missed.includes(i.value)) lbl.classList.add('missed');
             i.disabled = true;
           });
         }
       }
 
-      feedbackEl.innerHTML = fbHtml;
+      feedbackEl.innerHTML = fb;
       updateStatus();
       nextBtn.style.display = 'inline-block';
     };
 
-    nextBtn.onclick = () => {
+    nextBtn.onclick = ()=>{
       current++;
-      if (current >= questions.length) {
+      if(current>=questions.length){
         alert(`Quiz terminado\nAcertadas: ${score.correct}\nErradas: ${score.wrong}`);
         location.reload();
-      } else {
-        showQuestion();
-      }
+      } else showQuestion();
     };
 
-    function updateStatus() {
+    function updateStatus(){
       statusEl.textContent = `Acertadas: ${score.correct} | Erradas: ${score.wrong}`;
     }
   </script>

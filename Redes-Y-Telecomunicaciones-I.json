@@ -1,0 +1,395 @@
+[
+    {
+      "Topic": "? - Capa de Enlace de Datos (Capa 2)",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Señale las funciones principales de la capa de enlace de datos ",
+          "options": [
+            { "option": "a", "text": "Entregar tramas entre nodos adyacentes en el mismo medio físico", "correct": true, "explanation": null },
+            { "option": "b", "text": "Multiplexación de protocolos de capa de red", "correct": false, "explanation": "La multiplexación la gestiona la subcapa LLC, no toda la capa 2." },
+            { "option": "c", "text": "Control de errores", "correct": true, "explanation": null },
+            { "option": "d", "text": "Control de flujo", "correct": true, "explanation": null },
+            { "option": "e", "text": "Enrutamiento entre distintas redes", "correct": false, "explanation": "El enrutamiento es función de la capa de red (capa 3)." }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "¿Cuáles son funciones de la subcapa LLC (Logical Link Control)?",
+          "options": [
+            { "option": "a", "text": "Definir el formato de la trama física", "correct": false, "explanation": "La definición del formato de trama la realiza la subcapa MAC." },
+            { "option": "b", "text": "Control de flujo y detección de errores", "correct": true, "explanation": null },
+            { "option": "c", "text": "Multiplexación de protocolos de capa de red", "correct": true, "explanation": null },
+            { "option": "d", "text": "Actuar como interfaz universal para la capa de red", "correct": true, "explanation": null },
+            { "option": "e", "text": "Control de acceso al medio físico", "correct": false, "explanation": "El control de acceso al medio lo gestiona la subcapa MAC." },
+            { "option": "f", "text": "Gestionar direcciones MAC de 48 bits", "correct": false, "explanation": "El direccionamiento MAC corresponde a la subcapa MAC." },
+            { "option": "g", "text": "Secuenciamiento y confirmaciones de tramas", "correct": true, "explanation": null }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "En la subcapa MAC (Media Access Control) de la capa de enlace de datos, ¿cuáles son sus responsabilidades?",
+          "options": [
+            { "option": "a", "text": "Control de flujo entre dispositivos", "correct": false, "explanation": "El control de flujo es competencia de la subcapa LLC." },
+            { "option": "b", "text": "Multiplexación de protocolos de nivel de red", "correct": false, "explanation": "La multiplexación la gestiona la subcapa LLC, no MAC." },
+            { "option": "c", "text": "Direccionamiento local con direcciones MAC de 48 bits", "correct": true, "explanation": null },
+            { "option": "d", "text": "Control de acceso al medio (e.g., CSMA/CD, CSMA/CA)", "correct": true, "explanation": null },
+            { "option": "e", "text": "Detección y corrección de errores", "correct": false, "explanation": "La detección de errores es función de la capa 2 en general, pero no específica de MAC." },
+            { "option": "f", "text": "Definir el formato de la trama física", "correct": true, "explanation": null }
+          ]
+        },
+        {
+          "id": 4,
+          "question": "Verdadero o Falso: La PDU (unidad de datos) propia de la capa de enlace de datos se denomina \"paquete\".",
+          "options": [
+            { "option": "a", "text": "Verdadero", "correct": false, "explanation": "La PDU de capa 2 se denomina \"trama\" (frame), no paquete." },
+            { "option": "b", "text": "Falso", "correct": true, "explanation": null }
+          ]
+        },
+        {
+          "id": 5,
+          "question": "Verdadero o Falso: Para que dos dispositivos intercambien tramas en la capa 2 deben estar en el mismo dominio de broadcast o conectados solo por dispositivos de capa 2.",
+          "options": [
+            { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+            { "option": "b", "text": "Falso", "correct": false, "explanation": "Si hay un router (capa 3) de por medio, no pueden intercambiar tramas directamente." }
+          ]
+        }
+      ]
+    },
+    {
+        "Topic":"? - Capa 3 - Servicios de Red",
+        "questions":
+        [
+            {
+                "id": 1,
+                "question": "Seleccione las afirmaciones correctas sobre la función de un router en la arquitectura OSI:",
+                "options": [
+                  { "option": "a", "text": "Entregar tramas entre nodos adyacentes", "correct": false, "explanation": "La entrega de tramas corresponde a la capa 2 (enlace de datos)." },
+                  { "option": "b", "text": "Controlar el acceso al medio físico", "correct": false, "explanation": "Eso lo realiza la subcapa MAC de la capa 2." },
+                  { "option": "c", "text": "Interconectar dos o más redes diferentes", "correct": true, "explanation": null },
+                  { "option": "d", "text": "Detectar y corregir errores", "correct": false, "explanation": "La detección de errores con CRC es función de la capa 2." },
+                  { "option": "e", "text": "Multiplexar protocolos de capa de red", "correct": false, "explanation": "La multiplexación la gestiona la subcapa LLC, no el router." }
+                ]
+              },
+              {
+                "id": 2,
+                "question": "¿Cuál de los siguientes métodos de acceso al medio se utiliza en redes Wi-Fi?",
+                "options": [
+                  { "option": "a", "text": "CSMA/CD", "correct": false, "explanation": "CSMA/CD se emplea en Ethernet, no en Wi-Fi." },
+                  { "option": "b", "text": "Token Ring", "correct": false, "explanation": "Token Ring usa paso de testigo en redes de anillo." },
+                  { "option": "c", "text": "CSMA/CA", "correct": true, "explanation": null },
+                  { "option": "d", "text": "ALOHA", "correct": false, "explanation": "ALOHA es un método antiguo, no usado en Wi-Fi moderna." },
+                  { "option": "e", "text": "Token Bus", "correct": false, "explanation": "Token Bus no se emplea en Wi-Fi." },
+                  { "option": "f", "text": "Ninguno de los anteriores", "correct": false, "explanation": "Existe una respuesta correcta: CSMA/CA." }
+                ]
+              },
+              {
+                "id": 3,
+                "question": "Verdadero o Falso: La capa de transporte ve a la capa de enlace de datos como una \"caja negra\" y establece comunicación extremo a extremo entre aplicaciones.",
+                "options": [
+                  { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Falso", "correct": false, "explanation": "La capa de transporte interactúa con la capa de red, no directamente con la de enlace." }
+                ]
+              },
+              {
+                "id": 4,
+                "question": "¿Qué criterio suele utilizar un router para elegir entre varias rutas a un mismo destino? (puede haber más de una correcta)",
+                "options": [
+                  { "option": "a", "text": "Métrica más baja (menor costo)", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Menor número de saltos", "correct": true, "explanation": null },
+                  { "option": "c", "text": "Mayor velocidad de la interfaz física", "correct": false, "explanation": "La velocidad de la interfaz no es un criterio de enrutamiento estándar; entra en juego la métrica." },
+                  { "option": "d", "text": "Más ancho de banda disponible", "correct": false, "explanation": "El ancho de banda puede influir en la métrica, pero no se mide directamente en la tabla de enrutamiento." },
+                  { "option": "e", "text": "Orden alfabético de la dirección IP de destino", "correct": false, "explanation": "El orden alfabético no se utiliza para el ruteo." }
+                ]
+              },
+              {
+                "id": 5,
+                "question": "Verdadero o Falso: Un router puede reenviar un paquete por la misma interfaz por la que lo recibió si esa interfaz es la mejor ruta al destino.",
+                "options": [
+                  { "option": "a", "text": "Verdadero", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Falso", "correct": false, "explanation": "Si la interfaz por la que llegó es también la mejor para salir, el router puede hacerlo." }
+                ]
+              },
+              {
+                "id": 6,
+                "question": "¿Qué sucede cuando ningún prefijo en la tabla de enrutamiento coincide con la dirección de destino de un paquete y no existe ruta por defecto?",
+                "options": [
+                  { "option": "a", "text": "El router lo envía al gateway por defecto", "correct": false, "explanation": "No hay ruta por defecto configurada." },
+                  { "option": "b", "text": "El paquete se descarta", "correct": true, "explanation": "El paquete se descarta y se genera un mensaje ICMP \"Destination Unreachable\"" },
+                  { "option": "c", "text": "El router reenvía el paquete al origen original", "correct": false, "explanation": "Un router no devuelve el paquete al emisor sino que lo descarta." },
+                  { "option": "d", "text": "El router inicia un protocolo de descubrimiento de rutas", "correct": false, "explanation": "Los protocolos dinámicos funcionan de manera independiente al reenvío de paquetes." }
+                ]
+              },
+              {
+                "id": 7,
+                "question": "Seleccione las fases que corresponden a un servicio orientado a conexión:",
+                "options": [
+                  { "option": "a", "text": "Establecimiento de la conexión", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Selección dinámica de ruta por paquete", "correct": false, "explanation": "La selección por paquete es típica del servicio sin conexión (datagramas)." },
+                  { "option": "c", "text": "Transmisión de datos con ID de circuito", "correct": true, "explanation": null },
+                  { "option": "d", "text": "Liberación de la conexión", "correct": true, "explanation": null },
+                  { "option": "e", "text": "Consulta de tabla en cada salto", "correct": false, "explanation": "Eso es parte del forwarding en un servicio sin conexión." }
+                ]
+              },
+              {
+                "id": 8,
+                "question": "¿Cuales considera son desventajas claras de los circuitos virtuales respecto al servicio sin conexión?",
+                "options": [
+                  { "option": "b", "text": "Imposibilidad de combinarse con protocolos confiables", "correct": false, "explanation": "Pueden combinarse con fiabilidad, igual que los datagramas." },
+                  { "option": "c", "text": "No se guarda estado local en el router", "correct": false, "explanation": "Justamente guarda estado de conexión en cada router." },
+                  { "option": "a", "text": "Mayor overhead", "correct": true, "explanation": null },
+                  { "option": "d", "text": "No garantiza orden de llegada de los paquetes", "correct": false, "explanation": "Los circuitos virtuales mantienen el orden, porque usan la ruta pactada." },
+                  { "option": "e", "text": "No requiere fase de establecimiento", "correct": false, "explanation": "Requiere fase de establecimiento antes de transmitir datos." }
+                ]
+              },
+              {
+                "id": 9,
+                "question": "Verdadero o Falso: En un servicio sin conexión (datagramas), cada paquete sigue la misma ruta establecida previamente.",
+                "options": [
+                  { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Cada paquete puede tomar rutas distintas según la tabla dinámica." },
+                  { "option": "b", "text": "Falso", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 10,
+                "question": "Seleccione las características del servicio sin conexión (datagramas):",
+                "options": [
+                  { "option": "a", "text": "No hay fase de establecimiento previa", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Se guarda información de estado de cada conexión", "correct": false, "explanation": "No mantiene estado: cada paquete es independiente." },
+                  { "option": "c", "text": "Consulta de la tabla de enrutamiento por cada paquete", "correct": true, "explanation": null },
+                  { "option": "d", "text": "Puede garantizar orden estricto de entrega", "correct": false, "explanation": "El orden no está garantizado; depende de rutas variables." },
+                  { "option": "e", "text": "Permite recuperación rápida ante fallo de un router", "correct": true, "explanation": null },
+                  { "option": "f", "text": "Requiere señalización de liberación al finalizar", "correct": false, "explanation": "No hay fase de liberación en los datagramas." }
+                ]
+              },
+              {
+                "id": 11,
+                "question": "El overhead en un circuito virtual proviene particularmente de un exceso de metadatos y el procesamiento de los mismos en los paquetes (ID de identificacion virtual, etc)",
+                "options": [
+                  { "option": "a", "text": "Verdadero", "correct": false, "explanation": "El overhead proviene particularmente de paquetes de señalización, no de paquetes con carga util." },
+                  { "option": "b", "text": "Falso", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 12,
+                "question": "Verdadero o Falso: Un servicio orientado a conexión puede recuperar automáticamente un camino alternativo si un router intermedio falla sin intervención de capas superiores.",
+                "options": [
+                  { "option": "a", "text": "Verdadero", "correct": false, "explanation": "La ruta queda fijada; no cambia sin nueva señalización." },
+                  { "option": "b", "text": "Falso", "correct": true, "explanation": "Requiere reestablecer el circuito o intervención de capas superiores." }
+                ]
+              },
+              {
+                "id": 13,
+                "question": "¿Cuales de estas afirmaciones considera correctas acerca de la gestión de rutas en circuitos virtuales?",
+                "options": [
+                  { "option": "a", "text": "Las rutas se negocian dinámicamente para cada paquete individual", "correct": false, "explanation": "Se negocia una ruta única en la fase de establecimiento." },
+                  { "option": "b", "text": "Cada paquete lleva un identificador de circuito en su cabecera", "correct": true, "explanation": null },
+                  { "option": "c", "text": "No hay necesidad de liberar recursos al finalizar la comunicación", "correct": false, "explanation": "Se debe liberar la información de estado en el cierre." },
+                  { "option": "d", "text": "La ruta se recalcula automáticamente por cada nodo al recibir el paquete", "correct": false, "explanation": "La ruta ya está acordada; el forwarding sigue la misma ruta." }
+                ]
+              },
+              {
+                "id": 14,
+                "question": "Seleccione las fases que definen el establecimiento de un circuito virtual",
+                "options": [
+                  { "option": "a", "text": "Intercambio de paquetes de señalización para crear estado en cada router", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Consulta de la tabla de enrutamiento por cada paquete", "correct": false, "explanation": "La consulta única se hace solo al establecer el circuito, no por cada paquete." },
+                  { "option": "c", "text": "Asignación de un identificador de conexión en cada salto", "correct": true, "explanation": null },
+                  { "option": "d", "text": "Liberación automática sin señalización", "correct": false, "explanation": "La liberación requiere paquetes de señalización explícitos." },
+                  { "option": "e", "text": "Transmisión de datos con ID de circuito preestablecido", "correct": false, "explanation": "Eso corresponde a la fase de transmisión, no de establecimiento." }
+                ]
+              },
+              {
+                "id": 15,
+                "question": "En un servicio orientado a conexión, la tabla de enrutamiento se consulta cada vez que llega un paquete al router.",
+                "options": [
+                  { "option": "a", "text": "Verdadero", "correct": false, "explanation": "En conexión solo se consulta una vez: al construir la tabla de circuitos virtuales." },
+                  { "option": "b", "text": "Falso", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 16,
+                "question": "¿Qué campos contiene la tabla de entrada de circuitos virtuales en un router? (puede haber más de una correcta)",
+                "options": [
+                  { "option": "a", "text": "ID de circuito asignado por el nodo anterior", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Dirección IP de origen del paquete", "correct": false, "explanation": "La IP no forma parte de la tabla de circuitos; solo los IDs." },
+                  { "option": "c", "text": "Nodo anterior por el que llegó la conexión", "correct": true, "explanation": null },
+                  { "option": "d", "text": "Métrica del camino", "correct": false, "explanation": "La métrica se usa en ruteo, no en la tabla de circuitos virtuales." }
+                ]
+              },
+              {
+                "id": 17,
+                "question": "¿Qué información almacena la tabla de salida de circuitos virtuales?",
+                "options": [
+                  { "option": "a", "text": "Dirección MAC de destino final", "correct": false, "explanation": "La MAC se añade al reenviar, pero no se guarda en la tabla de circuitos." },
+                  { "option": "b", "text": "Interfaz de salida por la que enviar el paquete", "correct": true, "explanation": null },
+                  { "option": "c", "text": "Estado de la señalización de liberación", "correct": false, "explanation": "El estado de liberación no figura en la tabla de salida." },
+                  { "option": "d", "text": "ID de circuito asignado por el nodo actual", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 18,
+                "question": "En un circuito virtual los paquetes pueden llegar desordenados al destino.",
+                "options": [
+                  { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Los circuitos virtuales garantizan orden porque todos los paquetes siguen la misma ruta." },
+                  { "option": "b", "text": "Falso", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 19,
+                "question": "Al pasar un paquete de un router A a un router B dentro de un circuito virtual, ¿qué valor modifica A en la celda correspondiente del head?",
+                "options": [
+                  { "option": "a", "text": "La dirección MAC de origen", "correct": false, "explanation": "La MAC se renueva, pero el campo relevante aquí es el ID de circuito." },
+                  { "option": "b", "text": "El identificador de circuito", "correct": true, "explanation": null },
+                  { "option": "c", "text": "El campo TTL (Time To Live)", "correct": false, "explanation": "El TTL se decrementa en capa 3, no se reasigna como ID de conexión." },
+                  { "option": "d", "text": "El número de secuencia de transporte", "correct": false, "explanation": "La secuencia de transporte pertenece a la capa 4." }
+                ]
+              },
+              {
+                "id": 20,
+                "question": "¿Cuál es la consecuencia más probable si un nodo intermedio del circuito virtual deja de funcionar durante la transmisión?",
+                "options": [
+                  { "option": "a", "text": "El circuito delegado se reajusta automáticamente sin afectar a la aplicación", "correct": false, "explanation": "Se requerirá restablecer el circuito completo; no es automático." },
+                  { "option": "b", "text": "La aplicación probablemente fallará hasta que se restablezca la conexión", "correct": true, "explanation": null },
+                  { "option": "c", "text": "El router saltará a un protocolo de datagramas temporal", "correct": false, "explanation": "No cambia el modo de servicio; el circuito debe recrearse." },
+                  { "option": "d", "text": "Todos los paquetes entrantes se encolan hasta restaurar la ruta", "correct": false, "explanation": "Los routers descartan paquetes de circuitos caídos, no los encolan indefinidamente." }
+                ]
+              },
+              {
+                "id": 21,
+                "question": "Seleccione las ventajas que ofrece un servicio orientado a conexión frente a un servicio sin conexión (puede haber más de una correcta):",
+                "options": [
+                  { "option": "a", "text": "Garantía de orden estricto de entrega", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Calidad de servicio predefinida", "correct": true, "explanation": null },
+                  { "option": "c", "text": "Menor overhead de señalización", "correct": false, "explanation": "El establecimiento y liberación añaden overhead adicional." },
+                  { "option": "d", "text": "Tolerancia automática a fallos de nodos intermedios", "correct": false, "explanation": "No recupera conexiones rotas sin intervención." },
+                  { "option": "e", "text": "Consulta única de ruteo al inicio de la sesión", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 22,
+                "question": "Señale las afirmaciones correctas sobre congestión en un router:",
+                "options": [
+                  { "option": "a", "text": "Ocurre cuando la tasa de llegada de paquetes supera la capacidad de procesamiento", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Provoca pérdida de paquetes en la cola", "correct": true, "explanation": null },
+                  { "option": "c", "text": "Activa automáticamente el control de flujo en capa 4", "correct": false, "explanation": "El control de flujo en capa 4 no es parte del mecanismo de congestión en el router." },
+                  { "option": "d", "text": "Genera retrasos excesivos que pueden cerrar la aplicación", "correct": true, "explanation": null },
+                  { "option": "e", "text": "Se detecta midiendo el TTL de los paquetes", "correct": false, "explanation": "El TTL no se usa para detectar congestión." }
+                ]
+              },
+              {
+                "id": 23,
+                "question": "Señale las afirmaciones correctas sobre paquetes reguladores",
+                "options": [
+                  { "option": "a", "text": "Indican al emisor que reduzca su tasa de envío", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Se reenvían de router en router hasta llegar al emisor", "correct": false, "explanation": "Deben marcarse para no reencaminarse en cada salto." },
+                  { "option": "c", "text": "Aumentan el tráfico de señalización", "correct": true, "explanation": null },
+                  { "option": "d", "text": "Son enviados por los hosts hacia los routers", "correct": false, "explanation": "Los genera el router y los envía al emisor original." },
+                  { "option": "e", "text": "Se conocen en Internet como SOURCE-QUENCH", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 24,
+                "question": "SOURCE-QUENCH es un mecanismo eficaz de control de congestión.",
+                "options": [
+                  { "option": "a", "text": "Verdadero", "correct": false, "explanation": "En la práctica es ineficaz: los hosts suelen ignorar estos mensajes." },
+                  { "option": "b", "text": "Falso", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 25,
+                "question": "Señale las afirmaciones correctas sobre la señalización implícita de congestión:",
+                "options": [
+                  { "option": "a", "text": "No requiere modificaciones en la cabecera de los paquetes", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Es tan precisa como la señalización explícita", "correct": false, "explanation": "La inferencia puede ser lenta o imprecisa." },
+                  { "option": "c", "text": "Detecta congestión inferida por aumento del RTT", "correct": true, "explanation": null },
+                  { "option": "d", "text": "Envía paquetes especiales de control por congestión", "correct": false, "explanation": "No usa paquetes de control explícitos." },
+                  { "option": "e", "text": "Se basa en medir retardos de transmisión (latencia)", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 26,
+                "question": "Seleccione las modalidades de señalización explícita de congestión:",
+                "options": [
+                  { "option": "a", "text": "Marcar el mismo paquete en tránsito", "correct": true, "explanation": "señalizacion hacia adelante" },
+                  { "option": "c", "text": "Broadcast a todos los routers vecinos", "correct": false, "explanation": "No se difunde a todos, se señala punto a punto." },
+                  { "option": "b", "text": "Enviar un paquete de control invertido al emisor", "correct": true, "explanation": "Señalización hacia atras" },
+                  { "option": "d", "text": "Uso de paquetes reguladores SOURCE-QUENCH", "correct": false, "explanation": "Source-Quench es un método antiguo, no parte de la señalización explícita estándar hacia adelante/atrás." },
+                  { "option": "e", "text": "Marcado de un bit o campo en la cabecera de datos", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 27,
+                "question": "Señale las afirmaciones correctas sobre el desprendimiento de carga (load shedding):",
+                "options": [
+                  { "option": "a", "text": "Consiste en descartar paquetes cuando la cola del router está llena", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Utiliza conocimiento semántico de los paquetes para decidir descartes", "correct": false, "explanation": "No hay información de capa superior; se descarta a ciegas." },
+                  { "option": "c", "text": "Es inevitable porque la cola no puede crecer indefinidamente", "correct": true, "explanation": null },
+                  { "option": "d", "text": "En sistemas de tiempo real es sencillo elegir cuál descartar", "correct": false, "explanation": "Es difícil sin criterio semántico." },
+                  { "option": "e", "text": "Se basa en algoritmos de balanceo de carga entre interfaces", "correct": false, "explanation": "No involucra balanceo, solo descartar paquetes." }
+                ]
+              },
+              {
+                "id": 28,
+                "question": "Verdadero o Falso: El algoritmo FIFO drop-tail descarta siempre el paquete más antiguo de la cola cuando está llena.",
+                "options": [
+                  { "option": "a", "text": "Verdadero", "correct": false, "explanation": "Drop-tail descarta los paquetes nuevos al llegar al final de la cola, no los más antiguos." },
+                  { "option": "b", "text": "Falso", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 29,
+                "question": "Seleccione las afirmaciones correctas sobre el algoritmo FIFO drop-tail:",
+                "options": [
+                  { "option": "a", "text": "Descarta paquetes nuevos que llegan cuando la cola está llena", "correct": true, "explanation": null },
+                  { "option": "b", "text": "Descarta primero los paquetes con mayor tiempo en cola", "correct": false, "explanation": "Descarta al final de la cola; no prioriza antigüedad." },
+                  { "option": "c", "text": "No hace distinción entre tipos de paquetes", "correct": true, "explanation": null },
+                  { "option": "d", "text": "Permite decidir semánticamente qué paquetes descartar", "correct": false, "explanation": "No tiene información semántica para tomar decisiones." },
+                  { "option": "e", "text": "Se basa en el orden de llegada a la cola", "correct": true, "explanation": null }
+                ]
+              },
+              {
+                "id": 30,
+                "question": "¿Cómo se denomina la PDU (unidad de datos) de la capa de red?",
+                "options": [
+                  { "option": "a", "text": "Bit", "correct": false, "explanation": "Es la PDU de la capa física." },
+                  { "option": "b", "text": "Trama", "correct": false, "explanation": "Es la PDU de la capa de enlace de datos." },
+                  { "option": "c", "text": "Paquete", "correct": true, "explanation": null },
+                  { "option": "d", "text": "Segmento", "correct": false, "explanation": "Es la PDU de la capa de transporte." }
+                ]
+              },
+              {
+                "id": 31,
+                "question": "¿Cuál es el número mínimo de interfaces que debe tener un router para interconectar redes?",
+                "options": [
+                  { "option": "a", "text": "1", "correct": false, "explanation": "Con una sola interfaz no puede interconectar redes distintas." },
+                  { "option": "b", "text": "2", "correct": true, "explanation": null },
+                  { "option": "c", "text": "3", "correct": false, "explanation": "Puede tener más, pero el mínimo son dos." },
+                  { "option": "d", "text": "4", "correct": false, "explanation": "No hay que confundir mínimo con configuraciones típicas." }
+                ]
+              },
+              {
+                "id": 32,
+                "question": "¿Qué sucede con el campo TTL (Time To Live) de un paquete al atravesar un router?",
+                "options": [
+                  { "option": "a", "text": "Se mantiene igual", "correct": false, "explanation": "El TTL se decrementa en cada salto." },
+                  { "option": "b", "text": "Se decrementa en uno", "correct": true, "explanation": null },
+                  { "option": "c", "text": "Se reinicia al valor inicial", "correct": false, "explanation": "Solo el emisor fija el TTL; no se reinicia en el camino." },
+                  { "option": "d", "text": "Se reemplaza por la distancia al siguiente salto", "correct": false, "explanation": "No cambia con esa lógica." }
+                ]
+              },
+              {
+                "id": 33,
+                "question": "Seleccione las diferencias entre ruteo estático y ruteo dinámico",
+                "options": [
+                  { "option": "a", "text": "En estático las rutas se configuran manualmente", "correct": true, "explanation": null },
+                  { "option": "b", "text": "En dinámico las rutas se actualizan automáticamente mediante protocolos", "correct": true, "explanation": null },
+                  { "option": "c", "text": "El ruteo dinámico no utiliza tabla de enrutamiento", "correct": false, "explanation": "Ambos usan tabla de enrutamiento." },
+                  { "option": "d", "text": "El ruteo estático se adapta automáticamente a fallas de enlaces", "correct": false, "explanation": "No se adapta sin intervención manual." },
+                  { "option": "e", "text": "Los protocolos dinámicos consumen ancho de banda para señalización", "correct": true, "explanation": null }
+                ]
+              }
+        ]
+    }
+  ]
+  
